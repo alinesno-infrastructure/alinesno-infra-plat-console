@@ -22,7 +22,7 @@ public class KaptchaTextCreator extends DefaultTextCreator
         int y = random.nextInt(10);
         StringBuilder suChinese = new StringBuilder();
 
-        int randomoperands = (int) Math.round(random.nextInt() * 2);
+        int randomoperands = (int) Math.round(random.nextFloat() * 2);
         if (randomoperands == 0)
         {
             result = x * y;
