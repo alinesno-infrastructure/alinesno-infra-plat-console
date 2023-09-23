@@ -1,7 +1,7 @@
 @import "./variables.module.scss";
 
 $chartWidth: 150px;
-$chartColor: #005bd5;
+$chartColor: #3b5998;
 
 .top-headers {
   height: $base-topheader-height;
@@ -338,7 +338,7 @@ $chartColor: #005bd5;
       float: left;
       width: 20px;
       font-size: 20px;
-      color: #045fd6;
+      color: #3b5998;
       margin-right: 10px;
       margin-top: 5px;
     }
@@ -423,7 +423,7 @@ $chartColor: #005bd5;
     height: calc($chartWidth - 18px);
     background: #fff !important;
     border-radius: 70% 60% 60% 60%;
-    color: #005bd5;
+    color: #3b5998;
   }
 
   .circle-wave-bg {
@@ -969,7 +969,7 @@ $chartColor: #005bd5;
 
   .server-desc {
     font-size: 1.8rem;
-    color: #005bd5;
+    color: #3b5998;
     height: 30px;
     width: 30px;
     margin: auto;
@@ -1350,5 +1350,56 @@ $chartColor: #005bd5;
 
   .forgot-password {
     margin-top: 10px;
+  }
+}
+
+.direct-box {
+  ul,li{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+
+  li.box-item{
+
+    float: left;
+    width: 33%;
+    margin-top: 10px;
+    padding: 15px;
+    line-height: 1.3rem;
+    border-left: 1px solid #eee !important;
+    margin-bottom: 10px;
+
+    img.dire-panel-icon {
+      float: left;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
+
+    .panel-title {
+      color: #3b5998;
+      font-weight: 550;
+      font-size: 1rem;
+      height: 28px;
+      line-height: 1.5rem;
+    }
+
+    .panel-tip {
+        margin-top: 10px;
+        color: #333;
+        font-size: 13px;
+        float: left;
+    }
+
+    .panel-describe {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #333;
+    }
+  }
+
+  li.box-item:nth-child(3n+1) {
+    border-left: 0px solid #eee !important;
   }
 }
