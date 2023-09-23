@@ -19,22 +19,6 @@
                         <div class="content">
                             <h3 class="app-item__title">
                                 {{ item.name }}
-
-                                <span v-if="item.prodStatus == 'recommend'" class="product-text-label recommend">
-                                    推荐
-                                </span>
-                                <span v-if="item.prodStatus == 'public'" class="product-text-label public">
-                                    公测中
-                                </span>
-                                <span v-if="item.prodStatus == 'internal'" class="product-text-label internal">
-                                    内测中</span>
-                                <span v-if="item.prodStatus == 'company'" class="product-text-label company">
-                                    企业</span>
-                                <span v-if="item.prodStatus == 'inner'" class="product-text-label company">
-                                    体验</span>
-                                <span v-if="item.prodStatus == 'design'" class="product-text-label design">
-                                    整合中</span>
-
                                 <a class="cf-service-nav-item-label" style="margin-left:10px"
                                     @click="saveCollectProduct(item)" :title="item.name">
                                     <el-button type="text" size="medium"><i class="fa-regular fa-star"></i> 收藏</el-button>
@@ -57,218 +41,28 @@
     </div>
 </template>
   
-<script setup>
+<script setup name="ServiceList">
 
-const productList = [
-    {
-        "subList": [
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-initializr.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "项目生成器服务",
-                "id": "afc6ca933b57a3c1766247c124da8702"
-            },
-            {
-                "hasInner": 1,
-                "linkPath": "/appscreen/technique_devops",
-                "prodStatus": "normal",
-                "name": "技术研发体系",
-                "id": "6ba4914274a9b3fb09580caa61b047a6"
-            },
-            {
-                "hasInner": 1,
-                "linkPath": "/appscreen/microservices",
-                "prodStatus": "normal",
-                "name": "微服务研发引擎",
-                "id": "12eda4ce44d5b13826bc1996ee0f0012"
-            }
-        ],
-        "name": "技术引擎框架",
-        "banner": "fas fa-chart-area",
-        "id": "787440042262921216"
-    },
-    {
-        "subList": [
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-authority.beta.linesno.com",
-                "prodStatus": "recommend",
-                "name": "权限资源引擎服务",
-                "id": "d35c6e325ebcbeeb2206cde013d0542e"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-message.beta.linesno.com/index",
-                "prodStatus": "normal",
-                "name": "分布式消息服务",
-                "id": "14d3deb5b6fcfdb950a9f1a0d1531abf"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-notice.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": " 多渠道通知服务 ",
-                "id": "c230a72a7e1bb97c8d383a27327d7a77"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-storage.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "公共存储服务",
-                "id": "ffb4d99c033cbacf52e9e0945c7fefd7"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-oauth-admin.beta.linesno.com/",
-                "prodStatus": "normal",
-                "name": "单点登陆管理",
-                "id": "e87772d81e3a2fb37e82c9cc97c050de"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-gateway.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "网关配置服务",
-                "id": "053b9e440df2d3a2ddfc714b206c9731"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-captcha.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "安全验证码服务",
-                "id": "71340e02f2c3a2da8adc69c93910ab1a"
-            }
-        ],
-        "name": "研发组件服务",
-        "banner": "fab fa-angular",
-        "id": "787440246718464000"
-    },
-    {
-        "subList": [
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-databus.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "数据采集总线",
-                "id": "a18f33c24aaf645d80ab4b96ff4ba5ce"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-data-mdm.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "主数据服务",
-                "id": "d45dcd026717b7c589051b62547b6b67"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-dolphinscheduler.beta.linesno.com",
-                "prodStatus": "inner",
-                "name": "数据计算服务",
-                "id": "36be675751d5fcff0cc62b926aedf401"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-data-integration.beta.linesno.com",
-                "prodStatus": "inner",
-                "name": "数据上报服务",
-                "id": "e82499b02e88599feb686f5ef1620f65"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-data-etl.beta.linesno.com/",
-                "prodStatus": "normal",
-                "name": "数据集成服务",
-                "id": "46f0299eba7aaf72668def8e1e756843"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-assets.beta.linesno.com/index",
-                "prodStatus": "internal",
-                "name": "数据资产服务",
-                "id": "183d2933d64d279ecd07abefab8ac5cf"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-data-sec.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "数据网关服务",
-                "id": "4f156e73089ddd7c0406f214952d73a4"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-data-flink.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "实时数据服务(Flink)",
-                "id": "7b0e76e1289f28c9ec7356b8cdd78c25"
-            }
-        ],
-        "name": "数据治理服务",
-        "banner": "fab fa-artstation",
-        "id": "787440555398266880"
-    },
-    {
-        "subList": [
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-configuration.beta.linesno.com/",
-                "prodStatus": "normal",
-                "name": "配置管理服务",
-                "id": "b8bb226de8de62decb1e293283fc6c62"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-watcher.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "审计日志服务",
-                "id": "569297434f090ac584cf615c333f6ecd"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-jenkins.beta.linesno.com/",
-                "prodStatus": "company",
-                "name": "持续集成服务",
-                "id": "6a3512430d3b610ffa67263ee365cc13"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-operation-pipeline.beta.linesno.com",
-                "prodStatus": "normal",
-                "name": "自动化操作服务",
-                "id": "801e85de62ca5b9f8f76b5e31987730e"
-            }
-        ],
-        "name": "自动运维套件",
-        "banner": "fas fa-chalkboard-teacher",
-        "id": "793938687002935296"
-    },
-    {
-        "subList": [
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-security.beta.linesno.com/",
-                "prodStatus": "normal",
-                "name": "一体化安全触感服务",
-                "id": "a23cbf1efa2dc6df7ac5820102dbae5f"
-            },
-            {
-                "hasInner": 0,
-                "linkPath": "http://alinesno-kube-platform.beta.linesno.com",
-                "prodStatus": "internal",
-                "name": "容器云管理平台",
-                "id": "c6fca12e348cccf97495b3aea33adcef"
-            }
-        ],
-        "name": "运营管理套件",
-        "banner": "fas fa-charging-station",
-        "id": "332e19911ee96f8a9241471b6954ec7f"
-    }
-];
+const productList = ref([]);
 const fullscreenLoading = false;
+import { getProduct } from "@/api/console/product";
 
-const getAssetURL = (image) => {
-    return new URL(`../assets/banner/${image}`, import.meta.url).href
+function getProductList() {
+    getProduct().then(response => {
+        console.log('response = ' + response);
+        productList.value = response.data ;
+    });
+};
+
+function openService(item){
+    var link = item.linkPath ;
+    // 使用 window.open 在当前窗口打开链接
+    window.open(link, '_self');
 }
+
+// 获取产品列表
+getProductList() ;
+
 
 </script>
   
@@ -429,7 +223,7 @@ span.product-text-label {
     border-radius: 3px;
 }
 
-span.internal {
+span.normal {
     color: #fe892c;
     border: 1px solid #fe892c;
 }
