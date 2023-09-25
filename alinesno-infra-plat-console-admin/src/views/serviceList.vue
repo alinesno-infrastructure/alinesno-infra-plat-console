@@ -73,7 +73,7 @@ getProductList() ;
     background-color: #fff;
     padding: 10px;
     margin: 10px;
-    max-width: 1240px;
+    /* max-width: 1240px; */
     width: 90%;
     margin: auto;
 
