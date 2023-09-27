@@ -568,7 +568,7 @@ public class ProductController {
         // 21. 认证授权服务
         SubProduct subProduct5009 = new SubProduct();
         subProduct5009.setHasInner(0);
-        subProduct5009.setLinkPath("http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com/sso/auth");
+        subProduct5009.setLinkPath("http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com");
         subProduct5009.setProdStatus("normal");
         subProduct5009.setName("认证授权服务");
         subProduct5009.setId("c6fca12e348cccf97495b3aea33adcef");

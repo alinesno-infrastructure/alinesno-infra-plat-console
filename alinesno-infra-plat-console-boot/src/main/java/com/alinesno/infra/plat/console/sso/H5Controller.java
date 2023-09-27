@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.console.sso;
 
+import cn.dev33.satoken.config.SaSsoConfig;
+import com.dtflys.forest.Forest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,5 +59,14 @@ public class H5Controller {
 	public SaResult handlerException(Exception e) {
 		return SaResult.error(e.getMessage());
 	}
-	
+
+	@Autowired
+	private void configSso(SaSsoConfig sso) {
+		sso.setSendHttp(url -> {
+			System.out.println("客户端发起请求------："+ url);
+			return Forest.get(url).executeAsString();
+		});
+	}
+
+
 }
