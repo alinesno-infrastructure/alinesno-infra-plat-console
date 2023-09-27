@@ -1,6 +1,6 @@
 <template>
   <el-container class="login-container">
-    <el-header style="z-index: 100;height: 45px;background: #3b5998;box-shadow: 0 2px 4px 0 var(--cb-color-shadow,rgba(0,0,0,.16));">
+    <el-header style="z-index: 100;height: 45px;background: #fff;border-bottom: 1px solid #e5e5e5;">
       <div>
         <div style="float: left;font-size: 30px;color: rgb(255, 255, 255);margin-top: 5px;">
           <img src="http://portal.infra.linesno.com/logo.png" style="width:35px" alt="">
@@ -8,7 +8,7 @@
         <div class="banner-text">
           基设平台服务
         </div>
-        <a href="http://portal.infra.linesno.com/" target="_blank" lass="banner-text" style="float: right;font-weight: 500;font-size: 13px;margin-top: 14px;color: rgb(255, 255, 255);">
+        <a href="http://portal.infra.linesno.com/" target="_blank" lass="banner-text" style="float: right;font-weight: 500;font-size: 13px;margin-top: 14px;color:#222 ;">
           <i class="fas fa-link"></i> 官网
         </a>
       </div>
