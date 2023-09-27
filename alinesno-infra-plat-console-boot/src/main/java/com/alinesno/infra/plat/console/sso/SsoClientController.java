@@ -40,6 +40,16 @@ public class SsoClientController {
 		return SaSsoProcessor.instance.clientDister();
 	}
 
+	@PutMapping("/sso/*")
+	public Object ssoRequestForPut() {
+		return SaSsoProcessor.instance.clientDister();
+	}
+
+	@DeleteMapping("/sso/*")
+	public Object ssoRequestForDelete() {
+		return SaSsoProcessor.instance.clientDister();
+	}
+
 	// 配置SSO相关参数 
 	@Autowired
 	private void configSso(SaSsoConfig sso) {
