@@ -164,7 +164,7 @@ public class ProductController {
         // 01. 权限配置服务
         SubProduct subProduct10001 = new SubProduct();
         subProduct10001.setHasInner(0);
-        subProduct10001.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct10001.setLinkPath("http://alinesno-infra-base-authority-admin.beta.base.infra.linesno.com");
         subProduct10001.setProdStatus("normal");
         subProduct10001.setName("权限配置服务");
         subProduct10001.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -173,7 +173,7 @@ public class ProductController {
         // 02. 代码生成器
         SubProduct subProduct20001 = new SubProduct();
         subProduct20001.setHasInner(0);
-        subProduct20001.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct20001.setLinkPath("http://alinesno-infra-base-starter-admin.beta.base.infra.linesno.com");
         subProduct20001.setProdStatus("normal");
         subProduct20001.setName("代码生成器");
         subProduct20001.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -182,7 +182,7 @@ public class ProductController {
         // 03. 分布式配置服务
         SubProduct subProduct30001 = new SubProduct();
         subProduct30001.setHasInner(0);
-        subProduct30001.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct30001.setLinkPath("http://alinesno-infra-base-config-admin.beta.base.infra.linesno.com");
         subProduct30001.setProdStatus("normal");
         subProduct30001.setName("分布式配置服务");
         subProduct30001.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -191,7 +191,7 @@ public class ProductController {
         // 04. 事务消息服务
         SubProduct subProduct4 = new SubProduct();
         subProduct4.setHasInner(0);
-        subProduct4.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4.setLinkPath("http://alinesno-infra-base-message-admin.beta.base.infra.linesno.com");
         subProduct4.setProdStatus("normal");
         subProduct4.setName("事务消息服务");
         subProduct4.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -200,7 +200,7 @@ public class ProductController {
         // 05. 通知管理服务
         SubProduct subProduct5 = new SubProduct();
         subProduct5.setHasInner(0);
-        subProduct5.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct5.setLinkPath("http://alinesno-infra-base-notices-admin.beta.base.infra.linesno.com");
         subProduct5.setProdStatus("normal");
         subProduct5.setName("通知管理服务");
         subProduct5.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -209,7 +209,7 @@ public class ProductController {
         // 存储管理服务
         SubProduct subProduct6 = new SubProduct();
         subProduct6.setHasInner(0);
-        subProduct6.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct6.setLinkPath("http://alinesno-infra-base-storage-admin.beta.base.infra.linesno.com");
         subProduct6.setProdStatus("normal");
         subProduct6.setName("存储管理服务");
         subProduct6.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -236,7 +236,7 @@ public class ProductController {
         // 09. 安全验证码服务
         SubProduct subProduct9 = new SubProduct();
         subProduct9.setHasInner(0);
-        subProduct9.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct9.setLinkPath("http://alinesno-infra-base-validate-admin.beta.base.infra.linesno.com");
         subProduct9.setProdStatus("normal");
         subProduct9.setName("安全验证码服务");
         subProduct9.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -245,7 +245,7 @@ public class ProductController {
         // 10. IM消息服务
         SubProduct subProduct10 = new SubProduct();
         subProduct10.setHasInner(0);
-        subProduct10.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct10.setLinkPath("http://alinesno-infra-base-im-admin.beta.base.infra.linesno.com");
         subProduct10.setProdStatus("normal");
         subProduct10.setName("IM消息服务");
         subProduct10.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -254,7 +254,7 @@ public class ProductController {
         // 11. 邮箱管理服务
         SubProduct subProduct11 = new SubProduct();
         subProduct11.setHasInner(0);
-        subProduct11.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct11.setLinkPath("http://alinesno-infra-base-email-admin.beta.base.infra.linesno.com");
         subProduct11.setProdStatus("normal");
         subProduct11.setName("邮箱管理服务");
         subProduct11.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -263,7 +263,7 @@ public class ProductController {
         // 12. 文档搜索服务
         SubProduct subProduct12 = new SubProduct();
         subProduct12.setHasInner(0);
-        subProduct12.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct12.setLinkPath("http://alinesno-infra-base-document-admin.beta.base.infra.linesno.com");
         subProduct12.setProdStatus("normal");
         subProduct12.setName("文档搜索服务");
         subProduct12.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -272,7 +272,7 @@ public class ProductController {
         // 13. 分布式ID服务
         SubProduct subProduct13 = new SubProduct();
         subProduct13.setHasInner(0);
-        subProduct13.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct13.setLinkPath("http://alinesno-infra-base-id-admin.beta.base.infra.linesno.com");
         subProduct13.setProdStatus("normal");
         subProduct13.setName("分布式ID服务");
         subProduct13.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -281,7 +281,7 @@ public class ProductController {
         // 14. 敏感词过滤服务
         SubProduct subProduct14 = new SubProduct();
         subProduct14.setHasInner(0);
-        subProduct14.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct14.setLinkPath("http://alinesno-infra-base-sensitive-admin.beta.base.infra.linesno.com");
         subProduct14.setProdStatus("normal");
         subProduct14.setName("敏感词过滤服务");
         subProduct14.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -290,7 +290,7 @@ public class ProductController {
         // 15. 支付服务
         SubProduct subProduct15 = new SubProduct();
         subProduct15.setHasInner(0);
-        subProduct15.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct15.setLinkPath("http://alinesno-infra-base-pay-admin.beta.base.infra.linesno.com");
         subProduct15.setProdStatus("normal");
         subProduct15.setName("支付服务");
         subProduct15.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -299,7 +299,7 @@ public class ProductController {
         // 16. 会员服务
         SubProduct subProduct16 = new SubProduct();
         subProduct16.setHasInner(0);
-        subProduct16.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct16.setLinkPath("http://alinesno-infra-base-member-admin.beta.base.infra.linesno.com");
         subProduct16.setProdStatus("normal");
         subProduct16.setName("会员服务");
         subProduct16.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -308,7 +308,7 @@ public class ProductController {
         // 17. 内容服务
         SubProduct subProduct17 = new SubProduct();
         subProduct17.setHasInner(0);
-        subProduct17.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct17.setLinkPath("http://alinesno-infra-base-cms-admin.beta.base.infra.linesno.com");
         subProduct17.setProdStatus("normal");
         subProduct17.setName("内容服务");
         subProduct17.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -317,7 +317,7 @@ public class ProductController {
         // 18. 商城服务
         SubProduct subProduct18 = new SubProduct();
         subProduct18.setHasInner(0);
-        subProduct18.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct18.setLinkPath("http://alinesno-infra-base-shop-admin.beta.base.infra.linesno.com");
         subProduct18.setProdStatus("normal");
         subProduct18.setName("商城服务");
         subProduct18.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -335,7 +335,7 @@ public class ProductController {
         // 20. 文档查看服务
         SubProduct subProduct20 = new SubProduct();
         subProduct20.setHasInner(0);
-        subProduct20.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct20.setLinkPath("http://alinesno-infra-base-fileshow-admin.beta.base.infra.linesno.com");
         subProduct20.setProdStatus("normal");
         subProduct20.setName("文档查看服务");
         subProduct20.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -550,7 +550,7 @@ public class ProductController {
         // 21. 基设平台管理服务
         SubProduct subProduct21 = new SubProduct();
         subProduct21.setHasInner(0);
-        subProduct21.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct21.setLinkPath("http://alinesno-infra-base-platform-admin.beta.base.infra.linesno.com");
         subProduct21.setProdStatus("normal");
         subProduct21.setName("基设平台管理服务");
         subProduct21.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -559,11 +559,11 @@ public class ProductController {
         // 21. 项目管理服务
         SubProduct subProduct4009 = new SubProduct();
         subProduct4009.setHasInner(0);
-        subProduct4009.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4009.setLinkPath("http://alinesno-infra-base-project-admin.beta.base.infra.linesno.com");
         subProduct4009.setProdStatus("normal");
         subProduct4009.setName("项目管理服务");
         subProduct4009.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct4009.setDesc("alinesno-infra-base-platform");
+        subProduct4009.setDesc("alinesno-infra-base-project");
 
         // 21. 认证授权服务
         SubProduct subProduct5009 = new SubProduct();
