@@ -420,7 +420,7 @@ public class ProductController {
         // 01. 自动化任务服务
         SubProduct subProduct1007 = new SubProduct();
         subProduct1007.setHasInner(0);
-        subProduct1007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct1007.setLinkPath("http://alinesno-infra-ops-scheduler-admin.beta.base.infra.linesno.com");
         subProduct1007.setProdStatus("normal");
         subProduct1007.setName("自动化任务服务");
         subProduct1007.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -429,7 +429,7 @@ public class ProductController {
         // 02. 分布式日志服务
         SubProduct subProduct2007 = new SubProduct();
         subProduct2007.setHasInner(0);
-        subProduct2007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct2007.setLinkPath("http://alinesno-infra-ops-logback-admin.beta.base.infra.linesno.com");
         subProduct2007.setProdStatus("normal");
         subProduct2007.setName("分布式日志服务");
         subProduct2007.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -438,7 +438,7 @@ public class ProductController {
         // 03. 分布式链路跟踪服务
         SubProduct subProduct3007 = new SubProduct();
         subProduct3007.setHasInner(0);
-        subProduct3007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct3007.setLinkPath("http://alinesno-infra-ops-telemetry-admin.beta.base.infra.linesno.com");
         subProduct3007.setProdStatus("normal");
         subProduct3007.setName("分布式链路跟踪服务");
         subProduct3007.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -447,7 +447,7 @@ public class ProductController {
         // 04. 持续集成服务
         SubProduct subProduct4007 = new SubProduct();
         subProduct4007.setHasInner(0);
-        subProduct4007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4007.setLinkPath("http://alinesno-infra-ops-pipeline-admin.beta.base.infra.linesno.com");
         subProduct4007.setProdStatus("normal");
         subProduct4007.setName("持续集成服务");
         subProduct4007.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -456,7 +456,7 @@ public class ProductController {
         // 05. 容器管理服务
         SubProduct subProduct5007 = new SubProduct();
         subProduct5007.setHasInner(0);
-        subProduct5007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct5007.setLinkPath("http://alinesno-infra-ops-container-admin.beta.base.infra.linesno.com");
         subProduct5007.setProdStatus("normal");
         subProduct5007.setName("容器管理服务");
         subProduct5007.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -465,7 +465,7 @@ public class ProductController {
         // 监控预警服务
         SubProduct subProduct6007 = new SubProduct();
         subProduct6007.setHasInner(0);
-        subProduct6007.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct6007.setLinkPath("http://alinesno-infra-ops-watcher-admin.beta.base.infra.linesno.com");
         subProduct6007.setProdStatus("normal");
         subProduct6007.setName("监控预警服务");
         subProduct6007.setId("c6fca12e348cccf97495b3aea33adcef");
