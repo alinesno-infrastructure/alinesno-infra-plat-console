@@ -20,140 +20,39 @@ public class ProductController {
 
         List<Product> productList = new ArrayList<>();
 
-        // 核心框架
-        Product coreFramework = new Product();
-        coreFramework.setName("核心框架");
-        coreFramework.setBanner("fas fa-chart-area");
-        coreFramework.setId("1");
-
-        SubProduct subProduct1 = new SubProduct();
-        subProduct1.setHasInner(0);
-        subProduct1.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct1.setProdStatus("normal");
-        subProduct1.setName("核心开发框架");
-        subProduct1.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct1.setDesc("alinesno-infra-common");
-
-        SubProduct subProduct2 = new SubProduct();
-        subProduct2.setHasInner(0);
-        subProduct2.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct2.setProdStatus("normal");
-        subProduct2.setName("前端开发框架（桌面）");
-        subProduct2.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct2.setDesc("alinesno-infra-ui");
-
-        SubProduct subProduct3 = new SubProduct();
-        subProduct3.setHasInner(0);
-        subProduct3.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct3.setProdStatus("normal");
-        subProduct3.setName("前端开发框架（移动）");
-        subProduct3.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct3.setDesc("alinesno-infra-app");
-
-        coreFramework.setSubList(Arrays.asList(subProduct1, subProduct2, subProduct3));
-
-        productList.add(coreFramework);
-
-        // 创建一个新的Product对象来表示"数据服务"
-        Product dataService = new Product();
-        dataService.setName("数据服务");
-        dataService.setId("fbd5d9a8d5f84c50b12235363f7f8e8b");
-        dataService.setBanner("fab fa-angular");
-
-        // 01. 主数据服务
-        SubProduct subProduct1002 = new SubProduct();
-        subProduct1002.setHasInner(0);
-        subProduct1002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct1002.setProdStatus("normal");
-        subProduct1002.setName("主数据服务");
-        subProduct1002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct1002.setDesc("alinesno-infra-data-mdm");
-
-        // 02. 数据上报服务
-        SubProduct subProduct2002 = new SubProduct();
-        subProduct2002.setHasInner(0);
-        subProduct2002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct2002.setProdStatus("normal");
-        subProduct2002.setName("数据上报服务");
-        subProduct2002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct2002.setDesc("alinesno-infra-data-report");
-
-        // 03. 数据集成服务
-        SubProduct subProduct3002 = new SubProduct();
-        subProduct3002.setHasInner(0);
-        subProduct3002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct3002.setProdStatus("normal");
-        subProduct3002.setName("数据集成服务");
-        subProduct3002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct3002.setDesc("alinesno-infra-data-pipeline");
-
-        // 04. 数据开发服务
-        SubProduct subProduct4002 = new SubProduct();
-        subProduct4002.setHasInner(0);
-        subProduct4002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct4002.setProdStatus("normal");
-        subProduct4002.setName("数据开发服务");
-        subProduct4002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct4002.setDesc("alinesno-infra-data-dolphinscheduler");
-
-        // 05. 实时计算服务
-        SubProduct subProduct51 = new SubProduct();
-        subProduct51.setHasInner(0);
-        subProduct51.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct51.setProdStatus("normal");
-        subProduct51.setName("实时计算服务");
-        subProduct51.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct51.setDesc("alinesno-infra-data-flink");
-
-        // 数据安全服务
-        SubProduct subProduct6002 = new SubProduct();
-        subProduct6002.setHasInner(0);
-        subProduct6002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct6002.setProdStatus("normal");
-        subProduct6002.setName("数据安全服务");
-        subProduct6002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct6002.setDesc("alinesno-infra-data-security");
-
-        // 07. 数据质量服务
-        SubProduct subProduct7002 = new SubProduct();
-        subProduct7002.setHasInner(0);
-        subProduct7002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct7002.setProdStatus("normal");
-        subProduct7002.setName("数据质量服务");
-        subProduct7002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct7002.setDesc("alinesno-infra-data-quality");
-
-        // 08. 数据总线服务
-        SubProduct subProduct8002 = new SubProduct();
-        subProduct8002.setHasInner(0);
-        subProduct8002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct8002.setProdStatus("normal");
-        subProduct8002.setName("数据总线服务");
-        subProduct8002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct8002.setDesc("alinesno-infra-data-bus");
-
-        // 09. 数据资产服务
-        SubProduct subProduct9002 = new SubProduct();
-        subProduct9002.setHasInner(0);
-        subProduct9002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct9002.setProdStatus("normal");
-        subProduct9002.setName("数据资产服务");
-        subProduct9002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct9002.setDesc("alinesno-infra-data-assets");
-
-        // 10. 数据算法服务
-        SubProduct subProduct10002 = new SubProduct();
-        subProduct10002.setHasInner(0);
-        subProduct10002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-        subProduct10002.setProdStatus("normal");
-        subProduct10002.setName("数据算法服务");
-        subProduct10002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct10002.setDesc("alinesno-infra-data-algorithm");
-
-        // 将所有的SubProduct对象添加到数据服务的subList中
-        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, subProduct7002, subProduct8002, subProduct9002, subProduct10002));
-
-        productList.add(dataService);
+//        // 核心框架
+//        Product coreFramework = new Product();
+//        coreFramework.setName("核心框架");
+//        coreFramework.setBanner("fas fa-chart-area");
+//        coreFramework.setId("1");
+//
+//        SubProduct subProduct1 = new SubProduct();
+//        subProduct1.setHasInner(0);
+//        subProduct1.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+//        subProduct1.setProdStatus("normal");
+//        subProduct1.setName("核心开发框架");
+//        subProduct1.setId("c6fca12e348cccf97495b3aea33adcef");
+//        subProduct1.setDesc("alinesno-infra-common");
+//
+//        SubProduct subProduct2 = new SubProduct();
+//        subProduct2.setHasInner(0);
+//        subProduct2.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+//        subProduct2.setProdStatus("normal");
+//        subProduct2.setName("前端开发框架（桌面）");
+//        subProduct2.setId("c6fca12e348cccf97495b3aea33adcef");
+//        subProduct2.setDesc("alinesno-infra-ui");
+//
+//        SubProduct subProduct3 = new SubProduct();
+//        subProduct3.setHasInner(0);
+//        subProduct3.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+//        subProduct3.setProdStatus("normal");
+//        subProduct3.setName("前端开发框架（移动）");
+//        subProduct3.setId("c6fca12e348cccf97495b3aea33adcef");
+//        subProduct3.setDesc("alinesno-infra-app");
+//
+//        coreFramework.setSubList(Arrays.asList(subProduct1, subProduct2, subProduct3));
+//
+//        productList.add(coreFramework);
 
         // 基础服务
         Product baseService = new Product();
@@ -345,6 +244,108 @@ public class ProductController {
         baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, subProduct10, subProduct11, subProduct12, subProduct13, subProduct14, subProduct15, subProduct16, subProduct17, subProduct18, subProduct19, subProduct20 ));
 
         productList.add(baseService);
+
+        // 创建一个新的Product对象来表示"数据服务"
+        Product dataService = new Product();
+        dataService.setName("数据服务");
+        dataService.setId("fbd5d9a8d5f84c50b12235363f7f8e8b");
+        dataService.setBanner("fab fa-angular");
+
+        // 01. 主数据服务
+        SubProduct subProduct1002 = new SubProduct();
+        subProduct1002.setHasInner(0);
+        subProduct1002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct1002.setProdStatus("normal");
+        subProduct1002.setName("主数据服务");
+        subProduct1002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct1002.setDesc("alinesno-infra-data-mdm");
+
+        // 02. 数据上报服务
+        SubProduct subProduct2002 = new SubProduct();
+        subProduct2002.setHasInner(0);
+        subProduct2002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct2002.setProdStatus("normal");
+        subProduct2002.setName("数据上报服务");
+        subProduct2002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct2002.setDesc("alinesno-infra-data-report");
+
+        // 03. 数据集成服务
+        SubProduct subProduct3002 = new SubProduct();
+        subProduct3002.setHasInner(0);
+        subProduct3002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct3002.setProdStatus("normal");
+        subProduct3002.setName("数据集成服务");
+        subProduct3002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct3002.setDesc("alinesno-infra-data-pipeline");
+
+        // 04. 数据开发服务
+        SubProduct subProduct4002 = new SubProduct();
+        subProduct4002.setHasInner(0);
+        subProduct4002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4002.setProdStatus("normal");
+        subProduct4002.setName("数据开发服务");
+        subProduct4002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct4002.setDesc("alinesno-infra-data-dolphinscheduler");
+
+        // 05. 实时计算服务
+        SubProduct subProduct51 = new SubProduct();
+        subProduct51.setHasInner(0);
+        subProduct51.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct51.setProdStatus("normal");
+        subProduct51.setName("实时计算服务");
+        subProduct51.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct51.setDesc("alinesno-infra-data-flink");
+
+        // 数据安全服务
+        SubProduct subProduct6002 = new SubProduct();
+        subProduct6002.setHasInner(0);
+        subProduct6002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct6002.setProdStatus("normal");
+        subProduct6002.setName("数据安全服务");
+        subProduct6002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct6002.setDesc("alinesno-infra-data-security");
+
+        // 07. 数据质量服务
+        SubProduct subProduct7002 = new SubProduct();
+        subProduct7002.setHasInner(0);
+        subProduct7002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct7002.setProdStatus("normal");
+        subProduct7002.setName("数据质量服务");
+        subProduct7002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct7002.setDesc("alinesno-infra-data-quality");
+
+        // 08. 数据总线服务
+        SubProduct subProduct8002 = new SubProduct();
+        subProduct8002.setHasInner(0);
+        subProduct8002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct8002.setProdStatus("normal");
+        subProduct8002.setName("数据总线服务");
+        subProduct8002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct8002.setDesc("alinesno-infra-data-bus");
+
+        // 09. 数据资产服务
+        SubProduct subProduct9002 = new SubProduct();
+        subProduct9002.setHasInner(0);
+        subProduct9002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct9002.setProdStatus("normal");
+        subProduct9002.setName("数据资产服务");
+        subProduct9002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct9002.setDesc("alinesno-infra-data-assets");
+
+        // 10. 数据算法服务
+        SubProduct subProduct10002 = new SubProduct();
+        subProduct10002.setHasInner(0);
+        subProduct10002.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct10002.setProdStatus("normal");
+        subProduct10002.setName("数据算法服务");
+        subProduct10002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct10002.setDesc("alinesno-infra-data-algorithm");
+
+        // 将所有的SubProduct对象添加到数据服务的subList中
+        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, subProduct7002, subProduct8002, subProduct9002, subProduct10002));
+
+        productList.add(dataService);
+
 
         // 创建一个新的Product对象来表示"智能服务"
         Product smartService = new Product();
