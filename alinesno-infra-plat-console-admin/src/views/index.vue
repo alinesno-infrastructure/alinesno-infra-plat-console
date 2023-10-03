@@ -13,11 +13,15 @@
     <!-- 通知服务 -->
     <DashboardNotices />
 
+    <!-- 用户初始化信息 -->
+    <DashboardCollectInfo />
+
   </div>
 </template>
 
 <script setup name="Index">
 
+import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardService from './dashboard/service.vue'
 import DashboardApps from './dashboard/apps.vue'
 import DashboardNotices from './dashboard/notices.vue'
