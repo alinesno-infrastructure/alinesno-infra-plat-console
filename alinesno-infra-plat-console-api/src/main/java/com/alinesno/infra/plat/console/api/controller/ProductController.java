@@ -533,7 +533,7 @@ public class ProductController {
         // 02. 安全感触服务
         SubProduct subProduct2009 = new SubProduct();
         subProduct2009.setHasInner(0);
-        subProduct2009.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct2009.setLinkPath("http://alinesno-infra-plat-security-admin.beta.plat.infra.linesno.com");
         subProduct2009.setProdStatus("normal");
         subProduct2009.setName("安全感触服务");
         subProduct2009.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -542,7 +542,7 @@ public class ProductController {
         // 03. 智能运营大脑服务
         SubProduct subProduct3009 = new SubProduct();
         subProduct3009.setHasInner(0);
-        subProduct3009.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct3009.setLinkPath("http://alinesno-infra-plat-security-admin.beta.plat.infra.linesno.com");
         subProduct3009.setProdStatus("normal");
         subProduct3009.setName("智能运营大脑服务");
         subProduct3009.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -560,7 +560,7 @@ public class ProductController {
         // 21. 项目管理服务
         SubProduct subProduct4009 = new SubProduct();
         subProduct4009.setHasInner(0);
-        subProduct4009.setLinkPath("http://alinesno-infra-base-project-admin.beta.base.infra.linesno.com");
+        subProduct4009.setLinkPath("http://alinesno-infra-plat-project-admin.beta.plat.infra.linesno.com");
         subProduct4009.setProdStatus("normal");
         subProduct4009.setName("项目管理服务");
         subProduct4009.setId("c6fca12e348cccf97495b3aea33adcef");
