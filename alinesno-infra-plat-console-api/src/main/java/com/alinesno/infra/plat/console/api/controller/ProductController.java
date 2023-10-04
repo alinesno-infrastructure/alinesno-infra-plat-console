@@ -356,7 +356,7 @@ public class ProductController {
         // 01. OCR视觉识别服务
         SubProduct subProduct1003 = new SubProduct();
         subProduct1003.setHasInner(0);
-        subProduct1003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct1003.setLinkPath("http://alinesno-infra-smart-ocr-admin.beta.smart.infra.linesno.com");
         subProduct1003.setProdStatus("normal");
         subProduct1003.setName("OCR视觉识别服务");
         subProduct1003.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -365,7 +365,7 @@ public class ProductController {
         // 02. 自然语言识别服务
         SubProduct subProduct2003 = new SubProduct();
         subProduct2003.setHasInner(0);
-        subProduct2003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct2003.setLinkPath("http://alinesno-infra-smart-nlp-admin.beta.smart.infra.linesno.com");
         subProduct2003.setProdStatus("normal");
         subProduct2003.setName("自然语言识别服务");
         subProduct2003.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -383,7 +383,7 @@ public class ProductController {
         // 04. 流媒体识别服务
         SubProduct subProduct4003 = new SubProduct();
         subProduct4003.setHasInner(0);
-        subProduct4003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4003.setLinkPath("http://alinesno-infra-smart-media-admin.beta.smart.infra.linesno.com");
         subProduct4003.setProdStatus("normal");
         subProduct4003.setName("流媒体识别服务");
         subProduct4003.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -392,7 +392,7 @@ public class ProductController {
         // 05. 智能助手服务
         SubProduct subProduct5003 = new SubProduct();
         subProduct5003.setHasInner(0);
-        subProduct5003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct5003.setLinkPath("http://alinesno-infra-smart-assistant-admin.beta.smart.infra.linesno.com");
         subProduct5003.setProdStatus("normal");
         subProduct5003.setName("智能助手服务");
         subProduct5003.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -401,7 +401,7 @@ public class ProductController {
         // 目标检测识别服务
         SubProduct subProduct6003 = new SubProduct();
         subProduct6003.setHasInner(0);
-        subProduct6003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct6003.setLinkPath("http://alinesno-infra-smart-detection-admin.beta.smart.infra.linesno.com");
         subProduct6003.setProdStatus("normal");
         subProduct6003.setName("目标检测识别服务");
         subProduct6003.setId("c6fca12e348cccf97495b3aea33adcef");
