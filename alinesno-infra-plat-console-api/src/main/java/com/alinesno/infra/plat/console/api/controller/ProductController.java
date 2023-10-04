@@ -99,7 +99,7 @@ public class ProductController {
         // 05. 通知管理服务
         SubProduct subProduct5 = new SubProduct();
         subProduct5.setHasInner(0);
-        subProduct5.setLinkPath("http://alinesno-infra-base-notices-admin.beta.base.infra.linesno.com");
+        subProduct5.setLinkPath("http://alinesno-infra-base-notice-admin.beta.base.infra.linesno.com");
         subProduct5.setProdStatus("normal");
         subProduct5.setName("通知管理服务");
         subProduct5.setId("c6fca12e348cccf97495b3aea33adcef");
