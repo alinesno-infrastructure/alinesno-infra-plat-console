@@ -486,7 +486,7 @@ public class ProductController {
         // 01. 商品秒杀服务
         SubProduct subProduct1008 = new SubProduct();
         subProduct1008.setHasInner(0);
-        subProduct1008.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct1008.setLinkPath("http://alinesno-infra-bus-limit-admin.beta.data.infra.linesno.com");
         subProduct1008.setProdStatus("normal");
         subProduct1008.setName("商品秒杀服务");
         subProduct1008.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -495,7 +495,7 @@ public class ProductController {
         // 02. 实时推荐服务
         SubProduct subProduct2008 = new SubProduct();
         subProduct2008.setHasInner(0);
-        subProduct2008.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct2008.setLinkPath("http://alinesno-infra-bus-recommend-admin.beta.data.infra.linesno.com");
         subProduct2008.setProdStatus("normal");
         subProduct2008.setName("实时推荐服务");
         subProduct2008.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -504,7 +504,7 @@ public class ProductController {
         // 03. 实时画像服务
         SubProduct subProduct3008 = new SubProduct();
         subProduct3008.setHasInner(0);
-        subProduct3008.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct3008.setLinkPath("http://alinesno-infra-bus-profiling-admin.beta.data.infra.linesno.com");
         subProduct3008.setProdStatus("normal");
         subProduct3008.setName("实时画像服务");
         subProduct3008.setId("c6fca12e348cccf97495b3aea33adcef");
@@ -513,7 +513,7 @@ public class ProductController {
         // 04. 无代码开发服务
         SubProduct subProduct4008 = new SubProduct();
         subProduct4008.setHasInner(0);
-        subProduct4008.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct4008.setLinkPath("http://alinesno-infra-bus-nocode-admin.beta.data.infra.linesno.com");
         subProduct4008.setProdStatus("normal");
         subProduct4008.setName("无代码开发服务");
         subProduct4008.setId("c6fca12e348cccf97495b3aea33adcef");
