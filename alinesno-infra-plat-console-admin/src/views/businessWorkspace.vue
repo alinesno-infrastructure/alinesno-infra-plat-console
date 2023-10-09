@@ -2,7 +2,7 @@
   <div class="app-container acp-dashboard">
 
     <!-- 面板切换-->
-    <HeadTypeTab :currentTab="1" />
+    <HeadTypeTab :currentTab="2" />
 
     <!-- 应用套件和状态 -->
     <BusinessWorkspaceService />

@@ -144,7 +144,6 @@ const apps = ref([
   {icon:'https://d1by4p17n947rt.cloudfront.net/icon/a5ffe5487f62ef75d8e5cf78c18525a5-d4867f9d4adcd749f0c5aff987232847.svg' , name:'分布式消息服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'https://d1by4p17n947rt.cloudfront.net/icon/6e9e16955bd76c1d3a9996e0d6d3ad15-04cfc8c62f597690680d948b366980cf.svg' , name:'多渠道通知服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg' , name:'代码生成器服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg' , name:'支付管理服务' , desc:'With Route 53 (3 分钟)'},
 ]);
 
 </script>

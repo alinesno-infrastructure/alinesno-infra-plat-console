@@ -2,7 +2,7 @@
   <div class="app-container acp-dashboard">
 
     <!-- 面板切换-->
-    <HeadTypeTab :currentTab="3" />
+    <HeadTypeTab :currentTab="4" />
 
     <!-- 应用统计 -->
     <OperationWorkspaceCountStaitcs />

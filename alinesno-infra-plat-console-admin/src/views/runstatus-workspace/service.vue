@@ -20,7 +20,7 @@
                 </div>
               </el-col>
 
-              <el-col :span="6">
+              <!-- <el-col :span="6">
                 <div class="box">
                   <div class="circle-wave">
                     <div class="circle-wave-bg"></div>
@@ -31,9 +31,9 @@
                     </div>
                   </div>
                 </div>
-              </el-col>
+              </el-col> -->
 
-              <el-col :span="18">
+              <el-col :span="24">
                 <div class="acp-app-list">
                   <ul>
                     <li class="app-items" v-for="item in screenJsonList" :key="item">

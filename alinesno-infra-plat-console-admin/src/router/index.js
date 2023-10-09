@@ -64,6 +64,12 @@ export const constantRoutes = [
         name: '/index',
         meta: { title: '首页', icon: 'dashboard', affix: true }
       },
+      {
+        path: '/dashboard/runStatus',
+        component: () => import('@/views/runStatus'),
+        name: '/dashboard/runStatus',
+        meta: { title: '运营状态', icon: 'dashboard', affix: true }
+      },
 
       {
         path: '/dashboard/build/operation',
