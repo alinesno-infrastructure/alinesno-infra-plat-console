@@ -57,7 +57,7 @@ public class ProductController {
         // 基础服务
         Product baseService = new Product();
         baseService.setName("基础服务");
-        baseService.setBanner("fas fa-chart-area");
+        baseService.setBanner("fa-brands fa-slack");
         baseService.setId("2");
 
         // 01. 权限配置服务

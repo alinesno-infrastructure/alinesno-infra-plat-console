@@ -1,11 +1,12 @@
 <template>
     <div class="container-main" style="padding-top: 20px;background-color: #fff;">
         <div class="tpl-app app-main-content" v-loading="fullscreenLoading">
+
             <div class="header">
                 服务列表
                 <span style="font-size: 13px;color: #a5a5a5;">这里包含所有需要运营的能力服务列表</span>
             </div>
-             
+
             <section class="section" v-for="(type, index) in productList" :key="index">
                 <h2 class="section-title">
                     <i :class="type.banner" /> {{ type.name }}
@@ -13,8 +14,10 @@
                 <div class="section-body">
                     <div class="app-item border-bottom" v-for="(item, index) in type.subList" :key="index">
                         <div class="app-item__icon wk wk-icon-user">
-                            <i v-if="index % 2 == 0" style="color:#fff;" class="icon-img fas fa-feather fa-fw" />
-                            <i v-if="index % 2 == 1" style="color:#fff;" class="fab fa-pinterest-p fa-fw" />
+                            <i v-if="index % 4 == 1" style="color:#3b5998;" class="icon-img fa-brands fa-slack" />
+                            <i v-if="index % 4 == 0" style="color:#3b5998;" class="fab fa-pinterest-p fa-fw" />
+                            <i v-if="index % 4 == 2" style="color:#3b5998;" class="icon-img fas fa-feather fa-fw" />
+                            <i v-if="index % 4 == 3" style="color:#3b5998;" class="icon-img fa-brands fa-slack" />
                         </div>
                         <div class="content">
                             <h3 class="app-item__title">
@@ -73,7 +76,6 @@ getProductList() ;
     background-color: #fff;
     padding: 10px;
     margin: 10px;
-    /* max-width: 1240px; */
     width: 90%;
     margin: auto;
 
@@ -158,10 +160,9 @@ getProductList() ;
                 margin-top: 15px;
                 width: 48px;
                 height: 48px;
-                margin-right: 15px;
-                font-size: 30px;
-                color: #fff;
-                background-color: #3b5998;
+                margin-right: 5px;
+                font-size: 35px;
+                background-color: #fff;
                 border-radius: 4px;
             }
 
