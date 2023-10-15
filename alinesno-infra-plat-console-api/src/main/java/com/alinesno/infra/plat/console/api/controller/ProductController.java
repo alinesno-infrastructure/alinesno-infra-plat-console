@@ -278,12 +278,12 @@ public class ProductController {
         subProduct3002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct3002.setDesc("alinesno-infra-data-pipeline");
 
-        // 04. 数据开发服务
+        // 04. 数据编排计算服务
         SubProduct subProduct4002 = new SubProduct();
         subProduct4002.setHasInner(0);
-        subProduct4002.setLinkPath("http://alinesno-infra-data-dolphinscheduler-admin.beta.data.infra.linesno.com");
+        subProduct4002.setLinkPath("http://alinesno-infra-data-dolphinscheduler-ui.beta.data.infra.linesno.com");
         subProduct4002.setProdStatus("normal");
-        subProduct4002.setName("数据开发服务");
+        subProduct4002.setName("数据编排计算服务");
         subProduct4002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct4002.setDesc("alinesno-infra-data-dolphinscheduler");
 
