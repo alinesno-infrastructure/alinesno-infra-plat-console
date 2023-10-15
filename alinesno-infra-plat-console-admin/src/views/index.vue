@@ -42,7 +42,7 @@
     <!-- <DashboardNotices /> -->
 
     <!-- 用户初始化信息 -->
-    <!-- <DashboardCollectInfo /> -->
+    <DashboardCollectInfo />
 
   </div>
 </template>
