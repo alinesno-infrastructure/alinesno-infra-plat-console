@@ -290,7 +290,7 @@ public class ProductController {
         // 05. 实时计算服务
         SubProduct subProduct51 = new SubProduct();
         subProduct51.setHasInner(0);
-        subProduct51.setLinkPath("https://alinesno-infra-data-stream-admin.beta.data.infra.linesno.com");
+        subProduct51.setLinkPath("http://alinesno-infra-data-stream-admin.beta.data.infra.linesno.com");
         subProduct51.setProdStatus("normal");
         subProduct51.setName("实时计算服务");
         subProduct51.setId("c6fca12e348cccf97495b3aea33adcef");
