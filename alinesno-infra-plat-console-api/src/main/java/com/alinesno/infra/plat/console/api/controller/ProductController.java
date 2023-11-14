@@ -341,8 +341,17 @@ public class ProductController {
         subProduct10002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct10002.setDesc("alinesno-infra-data-algorithm");
 
+        // 10. 数据算法服务
+        SubProduct subProduct11002 = new SubProduct();
+        subProduct11002.setHasInner(0);
+        subProduct11002.setLinkPath("http://alinesno-infra-data-fastapi-admin.beta.data.infra.linesno.com");
+        subProduct11002.setProdStatus("normal");
+        subProduct11002.setName("数据接口服务");
+        subProduct11002.setId("c6fca12e348cccf97495b3aea33adcef");
+        subProduct11002.setDesc("alinesno-infra-data-fastapi");
+
         // 将所有的SubProduct对象添加到数据服务的subList中
-        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, subProduct7002, subProduct8002, subProduct9002, subProduct10002));
+        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, subProduct7002, subProduct8002, subProduct9002, subProduct10002 , subProduct11002));
 
         productList.add(dataService);
 
