@@ -225,7 +225,7 @@ public class ProductController {
         // 19. 流程中心服务
         SubProduct subProduct19 = new SubProduct();
         subProduct19.setHasInner(0);
-        subProduct19.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct19.setLinkPath("http://alinesno-infra-base-workflow-admin.beta.base.infra.linesno.com");
         subProduct19.setProdStatus("normal");
         subProduct19.setName("流程中心服务");
         subProduct19.setId("c6fca12e348cccf97495b3aea33adcef");
