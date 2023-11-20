@@ -41,8 +41,9 @@
     <!-- 通知服务 -->
     <!-- <DashboardNotices /> -->
 
-    <!-- 用户初始化信息 -->
+    <!-- 用户初始化信息 
     <DashboardCollectInfo />
+    -->
 
   </div>
 </template>
