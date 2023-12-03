@@ -20,40 +20,6 @@ public class ProductController {
 
         List<Product> productList = new ArrayList<>();
 
-//        // 核心框架
-//        Product coreFramework = new Product();
-//        coreFramework.setName("核心框架");
-//        coreFramework.setBanner("fas fa-chart-area");
-//        coreFramework.setId("1");
-//
-//        SubProduct subProduct1 = new SubProduct();
-//        subProduct1.setHasInner(0);
-//        subProduct1.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-//        subProduct1.setProdStatus("normal");
-//        subProduct1.setName("核心开发框架");
-//        subProduct1.setId("c6fca12e348cccf97495b3aea33adcef");
-//        subProduct1.setDesc("alinesno-infra-common");
-//
-//        SubProduct subProduct2 = new SubProduct();
-//        subProduct2.setHasInner(0);
-//        subProduct2.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-//        subProduct2.setProdStatus("normal");
-//        subProduct2.setName("前端开发框架（桌面）");
-//        subProduct2.setId("c6fca12e348cccf97495b3aea33adcef");
-//        subProduct2.setDesc("alinesno-infra-ui");
-//
-//        SubProduct subProduct3 = new SubProduct();
-//        subProduct3.setHasInner(0);
-//        subProduct3.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
-//        subProduct3.setProdStatus("normal");
-//        subProduct3.setName("前端开发框架（移动）");
-//        subProduct3.setId("c6fca12e348cccf97495b3aea33adcef");
-//        subProduct3.setDesc("alinesno-infra-app");
-//
-//        coreFramework.setSubList(Arrays.asList(subProduct1, subProduct2, subProduct3));
-//
-//        productList.add(coreFramework);
-
         // 基础服务
         Product baseService = new Product();
         baseService.setName("基础服务");
