@@ -367,7 +367,7 @@ public class ProductController {
         // 05. 智能助手服务
         SubProduct subProduct5003 = new SubProduct();
         subProduct5003.setHasInner(0);
-        subProduct5003.setLinkPath("http://alinesno-infra-smart-assistant-admin.beta.smart.infra.linesno.com");
+        subProduct5003.setLinkPath("http://alinesno-infra-smart-assistant-ui.beta.smart.infra.linesno.com");
         subProduct5003.setProdStatus("normal");
         subProduct5003.setName("智能助手服务");
         subProduct5003.setId("c6fca12e348cccf97495b3aea33adcef");
