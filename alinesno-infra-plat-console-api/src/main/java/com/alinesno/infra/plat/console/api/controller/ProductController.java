@@ -383,7 +383,7 @@ public class ProductController {
         // 03. GPT推理服务
         SubProduct subProduct3003 = new SubProduct();
         subProduct3003.setHasInner(0);
-        subProduct3003.setLinkPath("http://alinesno-infra-smart-brain-admin.beta.smart.infra.linesno.com");
+        subProduct3003.setLinkPath("http://alinesno-infra-smart-brain-ui.beta.smart.infra.linesno.com");
         subProduct3003.setProdStatus("normal");
         subProduct3003.setName("GPT推理服务");
         subProduct3003.setId("c6fca12e348cccf97495b3aea33adcef");
