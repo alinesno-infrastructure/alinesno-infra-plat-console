@@ -10,7 +10,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>alinesno-infra-plat-console-api</artifactId>
+	<artifactId>alinesno-infra-plat-console-gateway</artifactId>
 	<packaging>jar</packaging>
 
 	<dependencies>

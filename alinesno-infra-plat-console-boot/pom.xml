@@ -67,7 +67,13 @@
 		</dependency>
 		<dependency>
 			<groupId>com.alinesno.infra.plat</groupId>
-			<artifactId>alinesno-infra-plat-console-api</artifactId>
+			<artifactId>alinesno-infra-plat-console-gateway</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alinesno.infra.common</groupId>
+			<artifactId>alinesno-infra-common-web-api-sso</artifactId>
 			<version>${revision}</version>
 		</dependency>
 

@@ -25,12 +25,12 @@
         <module>alinesno-infra-plat-console-facade</module>  <!-- 接口和引用 -->
         <module>alinesno-infra-plat-console-domain</module>  <!-- 领域服务 -->
         <module>alinesno-infra-plat-console-adapter</module> <!-- 适配层 -->
-        <module>alinesno-infra-plat-console-api</module>  <!-- 接口服务 -->
+        <module>alinesno-infra-plat-console-gateway</module>  <!-- 接口服务 -->
         <module>alinesno-infra-plat-console-client</module>  <!-- 对外引用 -->
         <module>alinesno-infra-plat-console-boot</module>  <!-- 启动服务 -->
 
         <!-- 前端服务
-        <module>alinesno-infra-plat-console-admin</module>
+        <module>alinesno-infra-plat-console-ui</module>
         -->
     </modules>
 
