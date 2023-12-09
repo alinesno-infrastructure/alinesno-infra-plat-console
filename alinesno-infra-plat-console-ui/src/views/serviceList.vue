@@ -210,7 +210,7 @@
                       "desc": "alinesno-infra-data-mdm"
                   },
               ],
-              "name": "技术团队",
+              "name": "工程师团队",
               "banner": "fab fa-angular",
               "id": "fbd5d9a8d5f84c50b12235363f7f8e8b"
           },
