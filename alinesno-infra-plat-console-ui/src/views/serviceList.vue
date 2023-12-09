@@ -19,7 +19,7 @@
                         {{ item.name }} 
                     </h1>
                     <div class="popular-item__desc"> 
-                        AI Agent是一个集成自动化能力的基础服务模块建设能力
+                        Agent是集成自动化能力的基础服务模块建设能力
                     </div>
                 </div>
             </div>
@@ -99,8 +99,16 @@
                       "id": "c6fca12e348cccf97495b3aea33adcef",
                       "desc": "alinesno-infra-base-authority"
                   },
+                  {
+                      "hasInner": 0,
+                      "linkPath": "http://alinesno-infra-base-authority-admin.beta.base.infra.linesno.com",
+                      "prodStatus": "normal",
+                      "name": "成员等级管理Agent",
+                      "id": "c6fca12e348cccf97495b3aea33adcef",
+                      "desc": "alinesno-infra-base-authority"
+                  },
               ],
-              "name": "研发培训团队",
+              "name": "团队管理专家",
               "banner": "fa-brands fa-slack",
               "id": "2"
           },
@@ -394,10 +402,11 @@
         margin-top: 24px;
   
         .popular-item {
-            width: calc(25% - 20px);
+            width: calc(20% - 20px);
             padding-right: 20px;
             cursor: pointer;
-            text-align: center;
+            text-align: left;
+            margin-left: 15px;
         }
   
         .popular-item__banner {
