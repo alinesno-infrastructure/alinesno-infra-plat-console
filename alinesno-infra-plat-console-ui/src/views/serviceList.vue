@@ -14,7 +14,7 @@
                     >
                     <img :alt="item.name" 
                         class="popular-item__banner" 
-                        :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (index+39)+ '.png'" />
+                        :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (index+55)+ '.png'" />
                     <h1 class="popular-item__title">
                         {{ item.name }} 
                     </h1>
