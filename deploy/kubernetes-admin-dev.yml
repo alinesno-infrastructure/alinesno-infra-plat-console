@@ -62,3 +62,25 @@ spec:
                 name: ${PROJECT_NAME}
                 port:
                   number: 80
+
+---
+# 创建域名服务(fix:处理域名重复的问题)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-${PROJECT_NAME}-admin
+  namespace: ${NAMESPACE}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: "alinesno-infra-plat-console-admin.${INFRA_DEV_DOMAIN}"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: ${PROJECT_NAME}
+                port:
+                  number: 80
