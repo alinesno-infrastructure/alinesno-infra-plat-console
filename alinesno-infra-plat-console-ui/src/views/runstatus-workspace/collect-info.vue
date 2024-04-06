@@ -117,7 +117,7 @@
           关闭
         </el-button> 
         -->
-        <el-button type="primary" @click="next" size="large">
+        <el-button type="primary" @click="nextStep" size="large">
           下一步 
         </el-button>
       </span>
@@ -135,8 +135,15 @@ const state = reactive({
   circleUrl: 'http://data.linesno.com/switch_header.png'
 })
 
-const next = () => {
-  if (active.value++ > 1) active.value = 0
+/** 进入下一步操作 */
+function nextStep(){
+
+  alert('this is a test') ;
+  console.log('active = ' + active.value) ;
+
+  if (active.value++ > 0) {
+    active.value = 0 ;
+  }
 }
 
 // do not use same name with ref

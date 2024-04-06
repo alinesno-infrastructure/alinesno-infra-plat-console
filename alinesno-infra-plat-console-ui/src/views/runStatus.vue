@@ -14,14 +14,14 @@
     <!-- <DashboardNotices /> -->
 
     <!-- 用户初始化信息 -->
-    <!-- <DashboardCollectInfo /> -->
+    <DashboardCollectInfo />
 
   </div>
 </template>
 
 <script setup name="Index">
 
-// import DashboardCollectInfo from './dashboard/collect-info'
+import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardService from './runstatus-workspace/service.vue'
 import DashboardApps from './runstatus-workspace/apps.vue'
 import DashboardNotices from './runstatus-workspace/notices.vue'

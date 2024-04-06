@@ -56,9 +56,6 @@ function goSsoAuthUrl() {
 function doLoginByTicket(ticket) {
     useUserStore().doLoginByTicket(ticket).then((res) => {
       console.log('/sso/getSsoAuthUrl 返回数据', res);
-
-      debugger
-
       localStorage.setItem('satoken', res.data);
       setToken(res.adminToken);
 

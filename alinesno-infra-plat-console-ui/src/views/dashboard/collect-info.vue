@@ -117,7 +117,7 @@
           关闭
         </el-button> 
         -->
-        <el-button type="primary" @click="next" size="large">
+        <el-button type="primary" @click="next" v-loading="loading" size="large">
           下一步 
         </el-button>
       </span>
@@ -128,15 +128,35 @@
 
 <script setup>
 
-const centerDialogVisible = ref(true)
+import { ElLoading } from 'element-plus'
 
+const centerDialogVisible = localStorage.getItem('info_login_count') == 1 ? ref(false) : ref(true) ;
 const active = ref(0)
 const state = reactive({
   circleUrl: 'http://data.linesno.com/switch_header.png'
 })
 
 const next = () => {
-  if (active.value++ > 1) active.value = 0
+  console.log('active = ' + active.value) ;
+
+  if (active.value++ > 0) {
+    active.value = 0 ;
+
+    const loading = ElLoading.service({
+      lock: true,
+      text: 'Loading',
+      background: 'rgba(0, 0, 0, 0.7)',
+    })
+
+    /** 模拟提交 */
+    setTimeout(() => {
+      localStorage.setItem('info_login_count',"1");
+      centerDialogVisible.value = false ;
+      loading.close()
+    }, 2000)
+
+  }
+
 }
 
 // do not use same name with ref

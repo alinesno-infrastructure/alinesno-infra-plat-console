@@ -1,8 +1,11 @@
 package com.alinesno.infra.plat.console.api.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.plat.console.api.dto.Product;
 import com.alinesno.infra.plat.console.api.dto.SubProduct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +14,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/product/")
 public class ProductController {
 
     @GetMapping("/getProduct")
     public AjaxResult genProduct() {
+
+        log.debug("--->>>>> = StpUtil = {}" , CurrentAccountJwt.isLogin());
+        log.debug("--->>>>> = StpUtil = {}" , CurrentAccountJwt.getUserId());
 
         List<Product> productList = new ArrayList<>();
 

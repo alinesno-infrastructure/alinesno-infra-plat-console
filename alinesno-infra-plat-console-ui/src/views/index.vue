@@ -41,9 +41,8 @@
     <!-- 通知服务 -->
     <!-- <DashboardNotices /> -->
 
-    <!-- 用户初始化信息 
+    <!-- 用户初始化信息 -->
     <DashboardCollectInfo />
-    -->
 
   </div>
 </template>
@@ -60,7 +59,7 @@ import HeadTypeTab from './headTypeTab.vue'
 
 const currentEnvClusterObj = ref({
   appName : '晚上好, 罗小东'  , 
-  clusterName: '集成多种能力的超自动化基础设施'  , 
+  clusterName: '集成多种能力的新型智能体基础设施'  , 
   apiServerUrl: 'http://portal.infra.linesno.com'
 }) 
 
