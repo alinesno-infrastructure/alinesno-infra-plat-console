@@ -317,7 +317,7 @@ public class ProductController {
         subProduct11002.setDesc("alinesno-infra-data-fastapi");
 
         // 将所有的SubProduct对象添加到数据服务的subList中
-        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, subProduct7002, subProduct8002, subProduct9002, subProduct10002 , subProduct11002));
+        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, /*subProduct7002,*/ subProduct8002, subProduct9002, subProduct10002 , subProduct11002));
 
         productList.add(dataService);
 
@@ -541,17 +541,8 @@ public class ProductController {
         subProduct4009.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct4009.setDesc("alinesno-infra-base-project");
 
-        // 21. 认证授权服务
-        SubProduct subProduct5009 = new SubProduct();
-        subProduct5009.setHasInner(0);
-        subProduct5009.setLinkPath("http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com");
-        subProduct5009.setProdStatus("normal");
-        subProduct5009.setName("认证授权服务");
-        subProduct5009.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct5009.setDesc("alinesno-infra-base-platform");
-
         // 将所有的SubProduct对象添加到运营服务的subList中
-        platService.setSubList(Arrays.asList(subProduct21 , subProduct2009, subProduct3009 , subProduct4009 , subProduct5009 ));
+        platService.setSubList(Arrays.asList(subProduct21 , subProduct2009, subProduct3009 , subProduct4009));
 
         productList.add(platService);
 

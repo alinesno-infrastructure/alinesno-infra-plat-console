@@ -833,7 +833,7 @@ $chartColor: #3b5998;
 .smart-container {
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   width: 80%;
 
   .robot-chat-help-container {
@@ -861,7 +861,7 @@ $chartColor: #3b5998;
       }
 
       .robot-chat-help-item-list-panel {
-        margin: 10px;
+        margin: 10px 0px;
         float: left;
         margin-bottom: 0px;
 
@@ -873,6 +873,9 @@ $chartColor: #3b5998;
         li.item-process {
           list-style: none;
           float: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           width: calc(50% - 10px);
           margin-right: 5px;
           margin-left: 5px;
@@ -918,7 +921,7 @@ $chartColor: #3b5998;
   }
 
   .robot-chat-body {
-    height: calc(100vh - 290px);
+    height: calc(100vh - 390px);
     background: #fff;
     border-bottom: 1px solid #e6e6e6;
   }

@@ -7,6 +7,23 @@
                 <span style="font-size: 13px;color: #a5a5a5;">这里包含所有需要运营的能力服务列表</span>
             </div>
 
+            <div class="popular border-bottom">
+                <div class="popular-item" 
+                    v-for="(item , index) in productList"
+                    :key="index"
+                    >
+                    <img :alt="item.name" 
+                        class="popular-item__banner" 
+                        :src="'http://data.linesno.com/banner/' + (index%4 + 1) + '.png'" />
+                    <h1 class="popular-item__title">
+                        {{ item.name }} 
+                    </h1>
+                    <div class="popular-item__desc"> 
+                        数字中台基础服务模块建设能力，包含基础的能力建设和配置
+                    </div>
+                </div>
+            </div>
+
             <section class="section" v-for="(type, index) in productList" :key="index">
                 <h2 class="section-title">
                     <i :class="type.banner" /> {{ type.name }}
