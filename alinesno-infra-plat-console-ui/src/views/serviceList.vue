@@ -19,7 +19,7 @@
                         {{ item.name }} 
                     </h1>
                     <div class="popular-item__desc"> 
-                        数字中台基础服务模块建设能力，包含基础的能力建设和配置
+                        数字AIP基础服务模块建设能力，包含基础的能力建设和配置
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@
                 </div>
               </el-col>
 
-              <!-- <el-col :span="6">
+              <el-col :span="6">
                 <div class="box">
                   <div class="circle-wave">
                     <div class="circle-wave-bg"></div>
@@ -31,14 +31,14 @@
                     </div>
                   </div>
                 </div>
-              </el-col> -->
+              </el-col>
 
-              <el-col :span="24">
+              <el-col :span="18">
                 <div class="acp-app-list">
                   <ul>
                     <li class="app-items" v-for="item in screenJsonList" :key="item">
                       <div class="app-icon">
-                        <img :src="item.icon" />
+                        <i :class="item.icon" />
                       </div>
                       <div class="app-info">
                         <div class="app-item-title">
@@ -90,13 +90,6 @@
                   <div class="item-health-outtime">过去14天</div>
                 </div>
               </li>
-              <li>
-                <div class="item-health-box">
-                  <div class="item-health-title">其它通知</div>
-                  <div class="item-health-count">12</div>
-                  <div class="item-health-outtime">过去7天</div>
-                </div>
-              </li>
             </ul>
           </div>
           <div class="panel-footer">
@@ -110,7 +103,7 @@
       <el-col :span="6">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入AIP能力</div>
+            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入中台能力</div>
           </div>
           <div class="panel-body">
             <ul class="panel-item-text">
@@ -143,8 +136,7 @@
 
 const acpProjectBuild = [
   {id:'1' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png' , title:'创建业务服务组件' , desc:'集成可视化监控和自动集成部署服务' , link:'/dashboard/build/business'} ,
-  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据AIP能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
-  {id:'3' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成自动运维能力' , desc:'业务运维管理和自动化运维管理能力' , link:'/dashboard/build/operation'} ,
+  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据中台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
 ] ;
 
 const screenJsonList = [
@@ -153,7 +145,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 7,
-    icon: fa-solid fa-charging-station',
+    icon: 'fa-solid fa-charging-station' , 
     "remark": "数据运营治理服务",
     "updateTime": null,
     "title": "数据运营治理服务",
@@ -186,7 +178,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 7,
-    icon: 'fa-solid fa-truck-fast',
+    icon: 'fa-solid fa-truck-fast' , 
     "remark": "技术研发组件服务",
     "updateTime": null,
     "title": "技术研发组件服务",
@@ -436,7 +428,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-ship', 
+    icon: 'fa-solid fa-ship' , 
     "remark": "一体化安全感知套件",
     "updateTime": null,
     "title": "一体化安全感知套件",
@@ -526,7 +518,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 3,
-    icon: 'fa-solid fa-helmet-un',
+    icon: 'fa-solid fa-helmet-un' , 
     "remark": "自动运维治理套件",
     "updateTime": null,
     "title": "自动运维治理套件",
@@ -648,7 +640,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 1,
-    icon: 'fa-solid fa-truck-fast',
+    icon: 'fa-solid fa-file-shield' , 
     "remark": "容器云运营套件",
     "updateTime": null,
     "title": "容器云运营套件",
@@ -706,7 +698,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-file-shield',
+    icon: 'fa-solid fa-feather-pointed' , 
     "remark": "DevOps自动化套件",
     "updateTime": null,
     "title": "DevOps自动化套件",
@@ -806,3 +798,9 @@ const apps = ref([
 ]);
 
 </script>
+
+<style lang="scss" scoped>
+.panel-body{
+  height: auto;
+}
+</style>

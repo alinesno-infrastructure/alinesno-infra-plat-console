@@ -137,10 +137,10 @@
 <script setup>
 
 const apps = ref([
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/9da5a168cf8194c8ee5ed192a443d563-674375b53bc8ae94f48cfdb5c81e8363.svg', name: '实时计算服务(Flink)', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/a5ffe5487f62ef75d8e5cf78c18525a5-d4867f9d4adcd749f0c5aff987232847.svg', name: '数据采集总线', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/6e9e16955bd76c1d3a9996e0d6d3ad15-04cfc8c62f597690680d948b366980cf.svg', name: '主数据服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/d88319dfa5d204f019b4284149886c59-7d586ea82f792b61a8c87de60565133d.svg', name: '数据计算服务', desc: 'With EC2 (2 分钟)' },
+  { icon: fa-solid fa-charging-station', name: '实时计算服务(Flink)', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-truck-fast', name: '数据采集总线', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-file-shield', name: '主数据服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-ship', name: '数据计算服务', desc: 'With EC2 (2 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '数据上报服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '数据资产服务', desc: 'With Route 53 (3 分钟)' },

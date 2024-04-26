@@ -29,7 +29,7 @@
         </el-form-item>
 
         <el-form-item label="工作台" prop="saasUrl">
-          <el-input v-model="form.saasUrl" placeholder="请输入中台工作台" />
+          <el-input v-model="form.saasUrl" placeholder="请输入AIP工作台" />
         </el-form-item>
 
         <el-form-item>

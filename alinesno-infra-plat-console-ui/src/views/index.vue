@@ -17,14 +17,13 @@
                 <span><i class="el-icon-monitor"></i>
                   {{ currentEnvClusterObj.clusterName }}
                 </span>
+                <!-- 
                 <span>
                   <i class="el-icon-link"></i> 
                   应用地址: {{ currentEnvClusterObj.apiServerUrl }}
-                </span>
+                </span> 
+                -->
               </div>
-            </div>
-            <div class="title-desc">
-              集群状态展示集群资源的概览和详情，您可以查看集群资源的监控数据和用量排行情况。
             </div>
           </div>
         </div>
@@ -33,10 +32,10 @@
 
 
     <!-- 面板服务 -->
-    <DashboardService />
+    <DashboardServiceStatus />
 
     <!-- 解决方案 -->
-    <DashboardApps />
+    <DashboardRunStatus />
 
     <!-- 通知服务 -->
     <!-- <DashboardNotices /> -->
@@ -51,7 +50,9 @@
 
 import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardService from './dashboard/service.vue'
+import DashboardServiceStatus from './dashboard/serviceStatus.vue'
 import DashboardApps from './dashboard/apps.vue'
+import DashboardRunStatus from './dashboard/runStatus.vue'
 import DashboardNotices from './dashboard/notices.vue'
 import HeadTypeTab from './headTypeTab.vue'
 
@@ -74,7 +75,7 @@ const currentEnvClusterObj = ref({
 
   .header-icon-banner {
     float: left;
-    font-size: 2.4rem;
+    font-size: 2.0rem;
     margin-right: 10px;
     color: #3b5998;
   }
@@ -133,7 +134,7 @@ const currentEnvClusterObj = ref({
     font-size: 24px;
     color: #242e42;
     text-shadow: 0 4px 8px rgba(36, 46, 66, 0.1);
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
 
   .title-desc {
