@@ -135,7 +135,7 @@
 <script setup>
 
 const apps = ref([
-  {icon:fa-solid fa-charging-station' , name:'权限资源引擎服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-charging-station' , name:'权限资源引擎服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg' , name:'网关配置服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg' , name:'分布式配置中心服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-ship' , name:'公共存储服务' , desc:'With EC2 (2 分钟)'},

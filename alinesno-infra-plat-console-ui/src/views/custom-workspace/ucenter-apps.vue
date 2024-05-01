@@ -107,7 +107,7 @@ const apps = ref([
   { icon: 'fa-solid fa-helmet-un', name: '注册域', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '启动开发项目', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '开始迁移到 AIP', desc: 'With Route 53 (3 分钟)' },
-  { icon: fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '在 AIP 上构建 SQL Server', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-file-shield', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
 ]);

@@ -71,7 +71,7 @@ const solutionList = ref([
   { icon: 'fa-solid fa-helmet-un', name: '信息孤岛解决方案', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '统一身份认证解决方案', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '微服务技术解决方案', desc: 'With Route 53 (3 分钟)' },
-  { icon: fa-solid fa-charging-station', name: '云原生云平台解决方案', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-charging-station', name: '云原生云平台解决方案', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '轻量级数据治理方案', desc: 'With Route 53 (3 分钟)' },
 ]);
 const apps = ref([
@@ -81,7 +81,7 @@ const apps = ref([
   { icon: 'fa-solid fa-ship', name: '数据集成服务', desc: 'With EC2 (2 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '实时数据服务(Flink)', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '数据网关服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: fa-solid fa-charging-station', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-charging-station', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '自动化操作服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-file-shield', name: '实时数据服务', desc: 'With Route 53 (3 分钟)' },
 ]);

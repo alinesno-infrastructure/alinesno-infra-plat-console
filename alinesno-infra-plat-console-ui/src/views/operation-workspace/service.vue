@@ -67,7 +67,7 @@ const opertionAssets = ref([
 
 const apps = ref([
   {icon:'fa-solid fa-ship' , name:'自动化操作服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:fa-solid fa-charging-station' , name:'分布式配置中心' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-charging-station' , name:'分布式配置中心' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-truck-fast' , name:'审计日志服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-file-shield' , name:'持续集成服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-ship' , name:'容器云管理服务' , desc:'With EC2 (2 分钟)'},

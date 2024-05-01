@@ -153,7 +153,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 7,
-    icon: fa-solid fa-charging-station',
+    icon: 'fa-solid fa-charging-station',
     "remark": "数据运营治理服务",
     "updateTime": null,
     "title": "数据运营治理服务",
@@ -794,7 +794,7 @@ const screenJsonList = [
 ];
 
 const apps = ref([
-  { icon: fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '在 AIP 上构建 SQL Server', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-file-shield', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-ship', name: '启动虚拟机', desc: 'With EC2 (2 分钟)' },

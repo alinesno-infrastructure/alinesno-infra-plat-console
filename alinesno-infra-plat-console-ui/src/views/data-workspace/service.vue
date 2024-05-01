@@ -137,7 +137,7 @@
 <script setup>
 
 const apps = ref([
-  { icon: fa-solid fa-charging-station', name: '实时计算服务(Flink)', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-charging-station', name: '实时计算服务(Flink)', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '数据采集总线', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-file-shield', name: '主数据服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-ship', name: '数据计算服务', desc: 'With EC2 (2 分钟)' },
