@@ -41,7 +41,8 @@
               <ul>
                 <li class="app-items" style="width:100%" v-for="item in apps" :key="item">
                   <div class="app-icon">
-                    <img :src="item.icon" />
+                    <!-- <img :src="item.icon" /> -->
+                    <i :class="item.icon"></i>
                   </div>
                   <div class="app-info">
                     <div class="app-item-title">{{ item.name }} <i class="fa-solid fa-arrow-up-right-from-square"></i>

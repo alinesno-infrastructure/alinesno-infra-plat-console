@@ -19,7 +19,8 @@
               <ul>
                 <li class="app-items" style="width:calc(33% - 10px)" v-for="item in apps" :key="item">
                   <div class="app-icon">
-                    <img :src="item.icon" />
+                    <!-- <img :src="item.icon" /> -->
+                    <i :class="item.icon"></i>
                   </div>
                   <div class="app-info">
                     <div class="app-item-title">{{ item.name }}</div>
@@ -139,12 +140,12 @@
 const apps = ref([
   { icon: 'fa-solid fa-charging-station', name: '实时计算服务(Flink)', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '数据采集总线', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-file-shield', name: '主数据服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-ship', name: '主数据服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-ship', name: '数据计算服务', desc: 'With EC2 (2 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '数据上报服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '数据资产服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg', name: '数据网关服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-tags', name: '数据上报服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-truck-fast', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-ship', name: '数据资产服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-hammer', name: '数据网关服务', desc: 'With Route 53 (3 分钟)' },
 ]);
 
 </script>

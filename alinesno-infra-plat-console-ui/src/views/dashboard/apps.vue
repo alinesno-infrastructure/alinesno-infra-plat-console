@@ -83,7 +83,7 @@ const apps = ref([
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '数据网关服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-charging-station', name: '数据集成服务', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '自动化操作服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-file-shield', name: '实时数据服务', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-ship', name: '实时数据服务', desc: 'With Route 53 (3 分钟)' },
 ]);
 
 </script>

@@ -11,7 +11,8 @@
               <ul>
                 <li class="app-items" v-for="item in apps" :key="item" style="width:calc(20% - 10px)">
                   <div class="app-icon">
-                    <img :src="item.icon" :alt="item.name" />
+                    <!-- <img :src="item.icon" :alt="item.name" /> -->
+                    <i :class="item.icon"></i>
                   </div>
                   <div class="app-info">
                     <div class="app-item-title">{{ item.name }}</div>
@@ -67,11 +68,11 @@ const opertionAssets = ref([
 
 const apps = ref([
   {icon:'fa-solid fa-ship' , name:'自动化操作服务' , desc:'With Route 53 (3 分钟)'},
-  {icon: 'fa-solid fa-charging-station' , name:'分布式配置中心' , desc:'With Route 53 (3 分钟)'},
+  {icon:'fa-solid fa-charging-station' , name:'分布式配置中心' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-truck-fast' , name:'审计日志服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-file-shield' , name:'持续集成服务' , desc:'With Route 53 (3 分钟)'},
+  {icon:'fa-solid fa-ship' , name:'持续集成服务' , desc:'With Route 53 (3 分钟)'},
   {icon:'fa-solid fa-ship' , name:'容器云管理服务' , desc:'With EC2 (2 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg' , name:'一体化安全感触服务' , desc:'With Route 53 (3 分钟)'},
+  {icon:'fa-solid fa-file-pdf' , name:'一体化安全感触服务' , desc:'With Route 53 (3 分钟)'},
 ]);
 
 </script>

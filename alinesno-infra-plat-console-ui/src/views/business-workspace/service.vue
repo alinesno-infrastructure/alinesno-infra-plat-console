@@ -19,7 +19,8 @@
               <ul>
                 <li class="app-items" style="width:calc(33% - 10px)" v-for="item in apps" :key="item">
                   <div class="app-icon">
-                    <img :src="item.icon" />
+                    <!-- <img :src="item.icon" /> -->
+                    <i :class="item.icon"></i>
                   </div>
                   <div class="app-info">
                     <div class="app-item-title">{{ item.name }}</div>
@@ -136,14 +137,14 @@
 
 const apps = ref([
   {icon: 'fa-solid fa-charging-station' , name:'权限资源引擎服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg' , name:'网关配置服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg' , name:'分布式配置中心服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-ship' , name:'公共存储服务' , desc:'With EC2 (2 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg' , name:'单点登陆管理服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg' , name:'安全验证码服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-truck-fast' , name:'分布式消息服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-file-shield' , name:'多渠道通知服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg' , name:'代码生成器服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-truck' , name:'网关配置服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-paper-plane' , name:'分布式配置中心服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-ship' , name:'公共存储服务' , desc:'With EC2 (2 分钟)'},
+  {icon: 'fa-solid fa-tags' , name:'单点登陆管理服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-file-export' , name:'安全验证码服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-truck-fast' , name:'分布式消息服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-ship' , name:'多渠道通知服务' , desc:'With Route 53 (3 分钟)'},
+  {icon: 'fa-solid fa-hammer' , name:'代码生成器服务' , desc:'With Route 53 (3 分钟)'},
 ]);
 
 </script>

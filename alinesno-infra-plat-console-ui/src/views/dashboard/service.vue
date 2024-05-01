@@ -38,7 +38,8 @@
                   <ul>
                     <li class="app-items" v-for="item in screenJsonList" :key="item">
                       <div class="app-icon">
-                        <img :src="item.icon" />
+                        <!-- <img :src="item.icon" /> -->
+                        <i :class="item.icon"></i>
                       </div>
                       <div class="app-info">
                         <div class="app-item-title">
@@ -436,7 +437,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-ship' , 
+    icon: 'fa-solid fa-file-shield' , 
     "remark": "一体化安全感知套件",
     "updateTime": null,
     "title": "一体化安全感知套件",
@@ -648,7 +649,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 1,
-    icon: 'fa-solid fa-file-shield' , 
+    icon: 'fa-solid fa-ship' , 
     "remark": "容器云运营套件",
     "updateTime": null,
     "title": "容器云运营套件",

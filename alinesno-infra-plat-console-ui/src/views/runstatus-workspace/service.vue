@@ -38,7 +38,8 @@
                   <ul>
                     <li class="app-items" v-for="item in screenJsonList" :key="item">
                       <div class="app-icon">
-                        <img :src="item.icon" />
+                        <!-- <img :src="item.icon" /> -->
+                        <i :class="item.icon"></i>
                       </div>
                       <div class="app-info">
                         <div class="app-item-title">
@@ -116,7 +117,8 @@
             <ul class="panel-item-text">
               <li v-for="item in acpProjectBuild" :key="item.id">
                 <div class="item-icon">
-                  <img :src="item.icon" alt="" />
+                  <!-- <img :src="item.icon" alt="" /> -->
+                  <i :class="item.icon"></i>
                 </div>
                 <div class="item-text">
                   <div class="item-text-main-title">
@@ -436,7 +438,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-ship', 
+    icon: 'fa-solid fa-file-shield', 
     "remark": "一体化安全感知套件",
     "updateTime": null,
     "title": "一体化安全感知套件",
@@ -706,7 +708,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-file-shield',
+    icon: 'fa-solid fa-ship',
     "remark": "DevOps自动化套件",
     "updateTime": null,
     "title": "DevOps自动化套件",
@@ -796,7 +798,7 @@ const screenJsonList = [
 const apps = ref([
   { icon: 'fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-truck-fast', name: '在 AIP 上构建 SQL Server', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-file-shield', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
+  { icon: 'fa-solid fa-ship', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fa-solid fa-ship', name: '启动虚拟机', desc: 'With EC2 (2 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '启动开发项目', desc: 'With Route 53 (3 分钟)' },
   { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg', name: '构建 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
