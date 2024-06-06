@@ -455,7 +455,7 @@ public class ProductController {
         subProduct6007.setDesc("alinesno-infra-ops-watcher");
 
         // 将所有的SubProduct对象添加到运维服务的subList中
-        opsService.setSubList(Arrays.asList(subProduct1007, subProduct2007, subProduct3007, subProduct4007, subProduct5007, subProduct6007));
+        opsService.setSubList(Arrays.asList(subProduct1007, subProduct2007, subProduct3007, /* subProduct4007,*/ subProduct5007, subProduct6007));
 
         productList.add(opsService);
 
