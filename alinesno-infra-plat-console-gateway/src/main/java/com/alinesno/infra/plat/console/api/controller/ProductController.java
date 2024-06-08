@@ -400,12 +400,12 @@ public class ProductController {
         opsService.setId("fbd5d9a8d5f84c50b12235363f7f8e8b");
         opsService.setBanner("fas fa-chalkboard-teacher");
 
-        // 01. 自动化任务服务
+        // 01. 自动化运维服务
         SubProduct subProduct1007 = new SubProduct();
         subProduct1007.setHasInner(0);
         subProduct1007.setLinkPath("http://alinesno-infra-ops-scheduler-ui.beta.base.infra.linesno.com");
         subProduct1007.setProdStatus("normal");
-        subProduct1007.setName("自动化任务服务");
+        subProduct1007.setName("自动化运维服务");
         subProduct1007.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct1007.setDesc("alinesno-infra-ops-scheduler");
 
