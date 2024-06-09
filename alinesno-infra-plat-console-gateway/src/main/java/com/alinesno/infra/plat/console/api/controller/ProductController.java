@@ -214,7 +214,7 @@ public class ProductController {
         subProduct20.setDesc("alinesno-infra-base-fileshow");
 
         // 将所有的SubProduct对象添加到基础服务的subList中
-        baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, subProduct10, subProduct11, subProduct12, subProduct13, subProduct14, subProduct15, subProduct17, subProduct20 ));
+        baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, /* subProduct10,*/ subProduct11, subProduct12, subProduct13, subProduct14, subProduct15, subProduct17, subProduct20 ));
 
         productList.add(baseService);
 
