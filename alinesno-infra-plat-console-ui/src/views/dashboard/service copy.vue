@@ -20,7 +20,7 @@
                 </div>
               </el-col>
 
-              <!-- <el-col :span="6">
+              <el-col :span="6">
                 <div class="box">
                   <div class="circle-wave">
                     <div class="circle-wave-bg"></div>
@@ -31,9 +31,9 @@
                     </div>
                   </div>
                 </div>
-              </el-col> -->
+              </el-col>
 
-              <el-col :span="24">
+              <el-col :span="18">
                 <div class="acp-app-list">
                   <ul>
                     <li class="app-items" v-for="item in screenJsonList" :key="item">
@@ -111,14 +111,13 @@
       <el-col :span="6">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入AIP能力</div>
+            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入平台能力</div>
           </div>
           <div class="panel-body">
             <ul class="panel-item-text">
               <li v-for="item in acpProjectBuild" :key="item.id">
                 <div class="item-icon">
-                  <!-- <img :src="item.icon" alt="" /> -->
-                  <i :class="item.icon"></i>
+                  <img :src="item.icon" alt="" />
                 </div>
                 <div class="item-text">
                   <div class="item-text-main-title">
@@ -145,7 +144,7 @@
 
 const acpProjectBuild = [
   {id:'1' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png' , title:'创建业务服务组件' , desc:'集成可视化监控和自动集成部署服务' , link:'/dashboard/build/business'} ,
-  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据AIP能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
+  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据平台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
   {id:'3' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成自动运维能力' , desc:'业务运维管理和自动化运维管理能力' , link:'/dashboard/build/operation'} ,
 ] ;
 
@@ -155,7 +154,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 7,
-    icon: 'fa-solid fa-charging-station',
+    icon: 'fa-solid fa-charging-station' , 
     "remark": "数据运营治理服务",
     "updateTime": null,
     "title": "数据运营治理服务",
@@ -188,7 +187,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 7,
-    icon: 'fa-solid fa-truck-fast',
+    icon: 'fa-solid fa-truck-fast' , 
     "remark": "技术研发组件服务",
     "updateTime": null,
     "title": "技术研发组件服务",
@@ -438,7 +437,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-file-shield', 
+    icon: 'fa-solid fa-file-shield' , 
     "remark": "一体化安全感知套件",
     "updateTime": null,
     "title": "一体化安全感知套件",
@@ -528,7 +527,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 3,
-    icon: 'fa-solid fa-helmet-un',
+    icon: 'fa-solid fa-helmet-un' , 
     "remark": "自动运维治理套件",
     "updateTime": null,
     "title": "自动运维治理套件",
@@ -627,7 +626,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 1,
-    icon: 'fa-solid fa-truck-fast',
+    icon: 'fa-solid fa-ship' , 
     "remark": "容器云运营套件",
     "updateTime": null,
     "title": "容器云运营套件",
@@ -685,7 +684,7 @@ const screenJsonList = [
     "departmentId": null,
     "lastUpdateOperatorId": null,
     "usage": 2,
-    icon: 'fa-solid fa-ship',
+    icon: 'fa-solid fa-feather-pointed' , 
     "remark": "DevOps自动化套件",
     "updateTime": null,
     "title": "DevOps自动化套件",
@@ -771,17 +770,5 @@ const screenJsonList = [
     "status": "1"
   }
 ];
-
-const apps = ref([
-  { icon: 'fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-truck-fast', name: '在 AIP 上构建 SQL Server', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '启动虚拟机', desc: 'With EC2 (2 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '启动开发项目', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg', name: '构建 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '部署无服务器微服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg', name: '使用虚拟服务器构建', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '开始迁移到 AIP', desc: 'With Route 53 (3 分钟)' },
-]);
 
 </script>

@@ -2,7 +2,7 @@
   <div>
     <el-row class="acp-dashboard-panel" :gutter="20">
 
-      <el-col :span="19">
+      <el-col :span="24">
 
         <div class="grid-content">
           <div class="panel-header">
@@ -32,7 +32,6 @@
                       <div class="item-text">{{ item.title }}</div>
                       <div class="item-num">
                         {{ item.usage }}
-                        <span class="total-num">{{ item.total }}</span>
                       </div>
                     </div>
                   </li>
@@ -54,7 +53,7 @@
 
       </el-col>
 
-      <el-col :span="5">
+      <!-- <el-col :span="5">
         <div class="grid-content">
           <div class="panel-header">
             <div class="header-title"><i class="fa-solid fa-user-nurse"></i> 词库管理统计</div>
@@ -70,7 +69,7 @@
             </ul>
           </div>
         </div>
-      </el-col>
+      </el-col> -->
 
     </el-row>
   </div>
@@ -100,24 +99,10 @@ const resources = ref([
           usagePre: "12%",
         },
         {
-          icon: "fas fa-memory",
-          title: "文本统计",
-          total: "7.68",
-          usage: "4.81",
-          usagePre: "12%",
-        },
-        {
           icon: "fas fa-hdd",
           title: "月统计",
           total: "21.57",
           usage: "207.71",
-          usagePre: "12%",
-        },
-        {
-          icon: "fab fa-docker",
-          title: "异常统计",
-          total: "220",
-          usage: "28",
           usagePre: "12%",
         },
       ]) ;

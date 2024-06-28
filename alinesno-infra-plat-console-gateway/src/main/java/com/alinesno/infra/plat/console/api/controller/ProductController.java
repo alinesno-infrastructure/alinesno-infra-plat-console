@@ -124,13 +124,13 @@ public class ProductController {
         subProduct10.setDesc("alinesno-infra-base-im");
 
         // 11. 邮箱管理服务
-        SubProduct subProduct11 = new SubProduct();
-        subProduct11.setHasInner(0);
-        subProduct11.setLinkPath("http://alinesno-infra-base-email-ui.beta.base.infra.linesno.com");
-        subProduct11.setProdStatus("normal");
-        subProduct11.setName("邮箱管理服务");
-        subProduct11.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct11.setDesc("alinesno-infra-base-email");
+//        SubProduct subProduct11 = new SubProduct();
+//        subProduct11.setHasInner(0);
+//        subProduct11.setLinkPath("http://alinesno-infra-base-email-ui.beta.base.infra.linesno.com");
+//        subProduct11.setProdStatus("normal");
+//        subProduct11.setName("邮箱管理服务");
+//        subProduct11.setId("c6fca12e348cccf97495b3aea33adcef");
+//        subProduct11.setDesc("alinesno-infra-base-email");
 
         // 12. 向量库搜索服务
         SubProduct subProduct12 = new SubProduct();
@@ -214,7 +214,7 @@ public class ProductController {
         subProduct20.setDesc("alinesno-infra-base-fileshow");
 
         // 将所有的SubProduct对象添加到基础服务的subList中
-        baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, /* subProduct10,*/ subProduct11, subProduct12, subProduct13, subProduct14, subProduct15, subProduct17, subProduct20 ));
+        baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, /* subProduct10, subProduct11,*/ subProduct12, subProduct13, subProduct14, subProduct15, subProduct17, subProduct20 ));
 
         productList.add(baseService);
 

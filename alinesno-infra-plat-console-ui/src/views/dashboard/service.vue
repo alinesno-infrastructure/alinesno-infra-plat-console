@@ -4,9 +4,9 @@
 
       <el-col class="panel-col" :span="13">
         <div class="grid-content">
-          <div class="panel-header">
+          <!-- <div class="panel-header">
             <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态</div>
-          </div>
+          </div> -->
           <div class="panel-body">
             <el-row>
               <el-col :span="24">
@@ -111,7 +111,7 @@
       <el-col :span="6">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入中台能力</div>
+            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入平台能力</div>
           </div>
           <div class="panel-body">
             <ul class="panel-item-text">
@@ -136,6 +136,7 @@
           </div>
         </div>
       </el-col>
+
     </el-row>
   </div>
 </template>
@@ -144,7 +145,7 @@
 
 const acpProjectBuild = [
   {id:'1' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png' , title:'创建业务服务组件' , desc:'集成可视化监控和自动集成部署服务' , link:'/dashboard/build/business'} ,
-  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据中台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
+  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据平台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
   {id:'3' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成自动运维能力' , desc:'业务运维管理和自动化运维管理能力' , link:'/dashboard/build/operation'} ,
 ] ;
 
@@ -565,32 +566,9 @@ const screenJsonList = [
         "shortName": null
       },
       {
-        "addTime": "2021-07-23 05:00:55",
-        "departmentId": null,
-        "sortNumber": 1,
-        "hasStatus": 0,
-        "productBrief": null,
+        
         "linkPath": "http://alinesno-watcher.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "569297434f090ac584cf615c333f6ecd",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-08-02 01:29:32",
-        "productDescribe": null,
-        "productTypeId": "793938687002935296",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
+        
         "name": "审计日志服务",
         "hasRecommend": 1,
         "applicationId": "0",

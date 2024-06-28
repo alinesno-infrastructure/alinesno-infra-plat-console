@@ -38,7 +38,7 @@
     <DashboardRunStatus />
 
     <!-- 通知服务 -->
-    <!-- <DashboardNotices /> -->
+    <DashboardNotices />
 
     <!-- 用户初始化信息 -->
     <DashboardCollectInfo />
@@ -52,7 +52,7 @@ import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardService from './dashboard/service.vue'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
 import DashboardApps from './dashboard/apps.vue'
-import DashboardRunStatus from './dashboard/runStatus.vue'
+// import DashboardRunStatus from './dashboard/dashboardRunStatus.vue'
 import DashboardNotices from './dashboard/notices.vue'
 import HeadTypeTab from './headTypeTab.vue'
 
@@ -70,7 +70,7 @@ const currentEnvClusterObj = ref({
 <style lang="scss" scoped>
 .aip-appinfo-header{
   position: relative;
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
 
   .header-icon-banner {

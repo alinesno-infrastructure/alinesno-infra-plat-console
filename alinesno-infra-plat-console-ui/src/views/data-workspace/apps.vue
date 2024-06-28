@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row class="acp-dashboard-panel" :gutter="20">
+    <el-row :gutter="20" style="float:left;width:100%;">
       <el-col class="panel-col" :span="19">
         <div class="grid-content">
           <div class="panel-header">

@@ -4,7 +4,7 @@
       <el-col class="panel-col" :span="6">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title">常见业务建议</div>
+            <div class="header-title">运行优化建议</div>
           </div>
           <div class="panel-body">
             <el-empty :image-size="100" description="这可能是因为您没有运行 Trusted Advisor 检查，或者您没有 AWS Business 或 AWS Enterprise Support 计划。" />

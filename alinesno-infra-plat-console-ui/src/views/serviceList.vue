@@ -94,6 +94,7 @@ getProductList() ;
     padding: 10px;
     margin: 10px;
     width: 90%;
+    max-width: 1416px;
     margin: auto;
 
     .header {

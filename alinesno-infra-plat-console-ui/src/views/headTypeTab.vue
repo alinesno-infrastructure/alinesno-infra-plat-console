@@ -52,12 +52,11 @@ const dialogVisible = false;
 
 const menuList = [
   { status: 0, icon: 'fa-brands fa-slack', name: '仪盘表', type: '0', path: '/index', desc: '运营自动化门户' },
-  { status: 0, icon: 'fa-brands fa-app-store-ios', name: '运营应用', type: '1', path: '/dashboard/runStatus', desc: '统一的AIP门户服务管理' },
-  { status: 0, icon: 'fa-solid fa-pen-ruler', name: '研发服务', type: '2', path: '/dashboard/businessWorkspace', desc: '公共的业务建设组件服务' },
-  { status: 0, icon: 'fa-solid fa-rocket', name: '数据治理', type: '3', path: '/dashboard/dataWorkspace', desc: '数据治理开发治理' },
+  { status: 0, icon: 'fa-solid fa-pen-ruler', name: '研发服务', type: '1', path: '/dashboard/businessWorkspace', desc: '公共的业务建设组件服务' },
+  { status: 0, icon: 'fa-solid fa-rocket', name: '数据治理', type: '2', path: '/dashboard/dataWorkspace', desc: '数据治理开发治理' },
+  { status: 0, icon: 'fa-solid fa-sailboat', name: '智能服务', type: '3', path: '/dashboard/smartWorkspace', desc: '智能化专家服务' },
   { status: 0, icon: 'fas fa-shipping-fast', name: '运维资产', type: '4', path: '/dashboard/operationWorkspace', desc: '整体服务的运营监控' },
-  { status: 0, icon: 'fa-solid fa-sailboat', name: '智能服务', type: '5', path: '/dashboard/smartWorkspace', desc: '智能化专家服务' },
-  { status: 0, icon: 'fas fa-feather fa-fw', name: '自定义视图', type: '6', path: '/dashboard/customWorkspace', desc: '个性化服务视图配置' },
+  { status: 0, icon: 'fas fa-feather fa-fw', name: '自定义视图', type: '5', path: '/dashboard/customWorkspace', desc: '个性化服务视图配置' },
 ];
 
 /** 选择类 */

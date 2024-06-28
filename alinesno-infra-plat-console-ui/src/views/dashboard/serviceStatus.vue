@@ -5,7 +5,8 @@
       <el-col class="panel-col" :span="13">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态</div>
+            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态
+            </div>
           </div>
           <div class="panel-body">
             <el-row>
@@ -62,117 +63,51 @@
         </div>
       </el-col>
 
-      <el-col :span="5">
+      <el-col :span="11">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-user-nurse"></i> AIP健康报告</div>
+            <div class="header-title"><i class="fa-solid fa-link"></i> 应用服务概览</div>
           </div>
-          <div class="panel-body">
-            <ul class="panel-item-text">
-              <li>
-                <div class="item-health-box">
-                  <div class="item-health-title">未解决问题</div>
-                  <div class="item-health-count">41</div>
-                  <div class="item-health-outtime">过去7天</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-health-box">
-                  <div class="item-health-title">预定更改</div>
-                  <div class="item-health-count">32</div>
-                  <div class="item-health-outtime">即将到来和过去 7 天</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-health-box">
-                  <div class="item-health-title">运行通知</div>
-                  <div class="item-health-count">32</div>
-                  <div class="item-health-outtime">过去14天</div>
-                </div>
+          <div class="data-card">
+            <ul class="count-list summary-panel">
+              <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
+                <i :class="item.icon"></i>
+                <span class="label-tip">
+                  <a target="_blank" :href="item.link">
+                    {{ item.name }}
+                  </a>
+                </span>
+                <span class="label">{{ item.count }}</span>
               </li>
             </ul>
-          </div>
-          <div class="panel-footer">
-            <div class="footer-link">
-            </div>
           </div>
         </div>
       </el-col>
 
-      <!-- 快捷方式 -->
-      <el-col :span="6">
-        <div class="grid-content">
-          <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-feather"></i> 快捷接入中台能力</div>
-          </div>
-          <div class="panel-body">
-            <ul class="panel-item-text">
-              <li v-for="item in acpProjectBuild" :key="item.id">
-                <div class="item-icon">
-                  <img :src="item.icon" alt="" />
-                </div>
-                <div class="item-text">
-                  <div class="item-text-main-title">
-                    <router-link :to="item.link">
-                     {{ item.title }}  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </router-link>
-                  </div>
-                  <div class="item-text-main-desc">{{ item.desc }}</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="panel-footer">
-            <div class="footer-link">
-            </div>
-          </div>
-        </div>
-      </el-col>
     </el-row>
   </div>
 </template>
 
 <script setup>
 
+import RightRunStatus from './rightRunStatus.vue';
+
 const acpProjectBuild = [
   {id:'1' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png' , title:'创建业务服务组件' , desc:'集成可视化监控和自动集成部署服务' , link:'/dashboard/build/business'} ,
-  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据中台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
+  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据平台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
 ] ;
 
+const runCountArr = ref([
+      {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'服务运行健康报告' , count:292 , icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
+      {name:'运行监控日志审计' , count:322 , icon:'fas fa-pencil-ruler' , link:"https://192.168.1.55:5601/app/discover#/view/ae40de50-d919-11ed-a141-51d122929855?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1y,to:now))&_a=(columns:!(message,'@timestamp',service,host),filters:!(),index:'32258160-bfb4-11ec-8af6-65a485b4d749',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))"} ,
+      {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'自动化任务管理' , count:932 , icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
+      {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
+      {name:'中间件运行统计' , count:312 , icon:'fas fa-pencil-ruler'} ,
+]) ;
+
 const screenJsonList = [
-  {
-    "addTime": "2023-05-02 05:15:12",
-    "departmentId": null,
-    "lastUpdateOperatorId": null,
-    "usage": 7,
-    icon: 'fa-solid fa-charging-station' ,
-    "remark": "数据运营治理服务",
-    "updateTime": null,
-    "title": "数据运营治理服务",
-    "productItem": [
-      {
-        "addTime": "2021-07-23 04:56:00",
-      },
-      {
-        "addTime": "2021-07-23 04:56:11",
-      },
-      {
-        "addTime": "2023-02-15 15:01:56",
-      },
-      {
-        "addTime": "2022-12-21 14:53:10",
-      },
-      {
-        "addTime": "2021-07-23 04:55:48",
-      },
-      {
-        "addTime": "2023-03-16 16:49:16",
-      },
-      {
-        "addTime": "2021-07-23 04:56:23",
-      }
-    ],
-  },
   {
     "addTime": "2023-05-02 05:14:31",
     "departmentId": null,
@@ -184,227 +119,24 @@ const screenJsonList = [
     "title": "技术研发组件服务",
     "productItem": [
       {
-        "addTime": "2021-07-23 04:53:46",
-        "departmentId": null,
-        "sortNumber": 8,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-notice.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "c230a72a7e1bb97c8d383a27327d7a77",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-07-23 13:12:21",
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": " 多渠道通知服务 ",
-        "hasRecommend": 1,
-        "applicationId": "0",
         "shortName": null
       },
       {
-        "addTime": "2022-04-18 23:08:30",
-        "departmentId": null,
-        "sortNumber": 10,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-message.beta.linesno.com/index",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "14d3deb5b6fcfdb950a9f1a0d1531abf",
-        "viewCount": null,
-        "operatorId": "784553886277959680",
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": null,
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "分布式消息服务",
-        "hasRecommend": 1,
-        "applicationId": null,
         "shortName": null
       },
       {
-        "addTime": "2023-02-15 14:59:52",
-        "departmentId": null,
-        "sortNumber": 1,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-captcha.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "71340e02f2c3a2da8adc69c93910ab1a",
-        "viewCount": null,
-        "operatorId": "784553886277959680",
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": null,
-        "banner": null,
-        "updateTime": null,
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "安全验证码服务",
-        "hasRecommend": 0,
-        "applicationId": null,
         "shortName": null
       },
       {
-        "addTime": "2022-02-21 14:26:50",
-        "departmentId": null,
-        "sortNumber": 4,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-gateway.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "053b9e440df2d3a2ddfc714b206c9731",
-        "viewCount": null,
-        "operatorId": "784553886277959680",
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": null,
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "网关配置服务",
-        "hasRecommend": 1,
-        "applicationId": null,
         "shortName": null
       },
       {
-        "addTime": "2021-07-23 04:53:05",
-        "departmentId": null,
-        "sortNumber": 14,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-authority.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "d35c6e325ebcbeeb2206cde013d0542e",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-07-23 13:16:01",
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "recommend",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "权限资源引擎服务",
-        "hasRecommend": 1,
-        "applicationId": "0",
         "shortName": null
       },
       {
-        "addTime": "2021-07-23 04:52:51",
-        "departmentId": null,
-        "sortNumber": 5,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-oauth-admin.beta.linesno.com/",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "e87772d81e3a2fb37e82c9cc97c050de",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-08-14 01:36:24",
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "单点登陆管理",
-        "hasRecommend": 1,
-        "applicationId": "0",
         "shortName": null
       },
       {
-        "addTime": "2021-07-23 04:54:48",
-        "departmentId": null,
-        "sortNumber": 7,
-        "hasStatus": 0,
-        "productBrief": null,
-        "linkPath": "http://alinesno-storage.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "ffb4d99c033cbacf52e9e0945c7fefd7",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-07-23 13:11:30",
-        "productDescribe": null,
-        "productTypeId": "787440246718464000",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
-        "name": "公共存储服务",
-        "hasRecommend": 1,
-        "applicationId": "0",
         "shortName": null
       }
     ],
@@ -556,32 +288,9 @@ const screenJsonList = [
         "shortName": null
       },
       {
-        "addTime": "2021-07-23 05:00:55",
-        "departmentId": null,
-        "sortNumber": 1,
-        "hasStatus": 0,
-        "productBrief": null,
+        
         "linkPath": "http://alinesno-watcher.beta.linesno.com",
-        "deleteManager": null,
-        "itemStatus": null,
-        "fieldProp": null,
-        "id": "569297434f090ac584cf615c333f6ecd",
-        "viewCount": null,
-        "operatorId": null,
-        "applicationName": null,
-        "fieldId": null,
-        "lastUpdateOperatorId": "784553886277959680",
-        "banner": null,
-        "updateTime": "2021-08-02 01:29:32",
-        "productDescribe": null,
-        "productTypeId": "793938687002935296",
-        "hasInner": 0,
-        "hasDelete": 0,
-        "deleteTime": null,
-        "subName": null,
-        "prodStatus": "normal",
-        "identityStatus": null,
-        "tenantId": "0",
+        
         "name": "审计日志服务",
         "hasRecommend": 1,
         "applicationId": "0",
@@ -785,22 +494,82 @@ const screenJsonList = [
   }
 ];
 
-const apps = ref([
-  { icon: 'fa-solid fa-charging-station', name: '托管静态 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-truck-fast', name: '在 AIP 上构建 SQL Server', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '部署 SAP on AIP', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '启动虚拟机', desc: 'With EC2 (2 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/3da5e8169d2f1426f99fbef54575fe96-6382cb2dfdd2f74c99bc8a64a338358e.svg', name: '启动开发项目', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/051de32597041e41f73b97d61c67a13b-9cbdaf85e3bcf29b656fdedd8e6d1305.svg', name: '构建 Web 应用程序', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '部署无服务器微服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/7177e919b32ad97825f95e902595014b-1594766d92813b5baeb706c453f91de0.svg', name: '使用虚拟服务器构建', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'https://d1by4p17n947rt.cloudfront.net/icon/fb0cde6228b21d89ec222b45efec54e7-0856e92285f4e7ed254b2588d1fe1829.svg', name: '开始迁移到 AIP', desc: 'With Route 53 (3 分钟)' },
-]);
-
 </script>
 
 <style lang="scss" scoped>
 .panel-body{
   height: auto;
 }
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+  ul.count-list {
+    list-style: none;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+
+    li.count-data {
+      float: left;
+      background: #f7f9fa;
+      border: 0px;
+      position: relative;
+      text-align: left;
+      margin-right: 8px;
+      padding: 10px 15px;
+      width: calc(33% - 18px);
+      text-decoration: none;
+      overflow: hidden;
+      border-width: 0px;
+      border-style: solid;
+      border-radius: 2px;
+      transition: all 0.1s linear;
+      height: 70px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      margin-left: 10px;
+
+      i{
+        float: right;
+        position: absolute;
+        right: 10px;
+        font-size: 30px;
+        opacity: .4;
+        top: 15px;
+        color: #005bd5;
+      }
+
+      span.label-tip {
+        width: 100%;
+        float: left;
+        font-size: 15px;
+        font-weight: 550;
+        color: #3b5998;
+      }
+
+      span.label {
+        color: #333;
+        // display: block;
+        background: none;
+        line-height: 36px;
+        font-size: 20px;
+      }
+    }
+  }
+
+.data-card {
+    float: left;
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.summary-panel {
+  .el-col {
+    border-radius: 5px;
+    border-width: 0px;
+  }
+}
+
 </style>
