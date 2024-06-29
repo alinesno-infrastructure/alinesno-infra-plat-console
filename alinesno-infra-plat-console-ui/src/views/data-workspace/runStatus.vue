@@ -700,7 +700,7 @@ li.product_list_li.count-li {
       text-align: left;
       margin-right: 8px;
       padding: 10px 15px;
-      width: calc(20% - 8px);
+      width: calc(20% - 20px);
       text-decoration: none;
       overflow: hidden;
       border-width: 0px;
@@ -709,6 +709,8 @@ li.product_list_li.count-li {
       transition: all 0.1s linear;
       height: 70px;
       margin-bottom: 10px;
+      margin-top: 5px;
+      margin-left: 10px;
 
       i{
         float: right;

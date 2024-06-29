@@ -686,6 +686,8 @@ li.product_list_li.count-li {
       transition: all 0.1s linear;
       height: 70px;
       margin-bottom: 10px;
+      margin-top: 5px;
+      margin-left: 10px;
 
       i{
         float: right;

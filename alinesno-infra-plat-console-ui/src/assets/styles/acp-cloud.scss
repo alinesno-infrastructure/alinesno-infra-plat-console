@@ -1,6 +1,6 @@
 @import "./variables.module.scss";
 
-$chartWidth: 150px;
+$chartWidth: 140px;
 $chartColor: #3b5998;
 
 .top-headers {
@@ -450,13 +450,13 @@ $chartColor: #3b5998;
 .box {
   text-align: center;
   margin: auto;
-  width: 200px;
+  width: 140px;
   margin-top: 10px;
   align-items: center;
   display: inline-flex;
   flex: 1 1 0;
   justify-content: center;
-  min-width: 200px;
+  min-width: 140px;
   overflow: hidden;
 }
 

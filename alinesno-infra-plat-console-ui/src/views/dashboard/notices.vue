@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row class="acp-dashboard-panel" :gutter="20">
-      <el-col class="panel-col" :span="13">
+      <el-col class="panel-col" :span="11">
         <div class="grid-content">
           <div class="panel-header">
             <div class="header-title">运行优化建议</div>
@@ -52,7 +52,7 @@
           </div>
         </div>
       </el-col>
-      <el-col :span="5">
+      <el-col :span="6">
         <div class="grid-content">
           <div class="panel-header">
             <div class="header-title">探索AIP使用</div>
@@ -99,7 +99,7 @@
       </el-col>
 
       <!-- 协助列表-->
-      <el-col :span="6">
+      <el-col :span="7">
         <div class="grid-content">
           <div class="panel-header">
             <div class="header-title">新最公告</div>

@@ -3,10 +3,25 @@
     <el-row :gutter="20" style="float:left;width:100%;margin-bottom:0px;">
       <el-col :span="24" style="padding:0px !important;border:0px;">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态</div>
+            <div class="header-title"><i class="fa-solid fa-link"></i> Agent运营团队</div>
           </div>
         <div class="data-card">
-          <ul class="count-list summary-panel">
+            <ul class="count-list summary-panel">
+              <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
+                <i :class="item.icon"></i>
+                <span class="label-tip">
+                  <a target="_blank" :href="item.link">
+                    <img :src="'http://data.linesno.com/icons/header/' + (index +1) + '.jpg'" style="width:40px;height:40px;float:left; border-radius: 8px" />
+                    <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
+                      {{ item.name }} (<span style="font-weight: 600;font-size:15px">8</span>/<span style="font-size:12px">{{ index }}</span>)
+                      <br/>
+                      <span class="label" style="font-size: 13px;line-height: 13px;font-weight: lighter;">{{ item.count }}</span>
+                    </div>
+                  </a>
+                </span>
+              </li>
+            </ul>
+          <!-- <ul class="count-list summary-panel">
             <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
               <i :class="item.icon"></i>
               <span class="label-tip">
@@ -16,7 +31,7 @@
               </span>
               <span class="label">{{ item.count }}</span>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </el-col>
     </el-row>
@@ -94,8 +109,6 @@ const directContent = ref([
   { icon: 'fa-solid fa-ship', name: '快速搭建网站', desc: 'With EC2 (2 分钟)' },
   { icon: 'fa-solid fa-helmet-un', name: '部署开发环境', desc: 'With Route 53 (3 分钟)' },
   { icon: 'fas fa-laptop-code', name: '搭建云上博客', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '搭建小程序', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-truck-fast', name: '云上高可用架构', desc: 'With Route 53 (3 分钟)' },
 ]);
 
 </script>
@@ -109,15 +122,14 @@ export default {
     return {
       appCount: 10,
       runCountArr:[
-        {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-        {name:'服务运行健康报告' , count:292 , icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
-        {name:'运行监控日志审计' , count:322 , icon:'fas fa-pencil-ruler' , link:"https://192.168.1.55:5601/app/discover#/view/ae40de50-d919-11ed-a141-51d122929855?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1y,to:now))&_a=(columns:!(message,'@timestamp',service,host),filters:!(),index:'32258160-bfb4-11ec-8af6-65a485b4d749',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))"} ,
-        {name:'审计日志监控统计' , count:932 , icon:'fas fa-laptop-code' , link:"https://192.168.1.55:5601/app/dashboards#/view/722b74f0-b882-11e8-a6d9-e546fe2bba5f?_g=(filters:!(),refreshInterval:(pause:!f,value:900000),time:(from:now-7d,to:now))&_a=(description:'Analyze%20mock%20eCommerce%20orders%20and%20revenue',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),tags:!(),timeRestore:!t,title:'%5BeCommerce%5D%20Revenue%20Dashboard',viewMode:edit)"} ,
-        {name:'容器云运行状态' , count:122 , icon:'fas fa-server' , link:"https://192.168.1.161:30080/kubernetes/default/cluster/overview"} ,
-        {name:'自动化任务管理' , count:932 , icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
-        {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
-        {name:'中间件运行统计' , count:312 , icon:'fas fa-pencil-ruler'} ,
-        {name:'系统访问统计' , count:192 , icon:'fas fa-shipping-fast'} ,
+        {name:'需求文档分析专家' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+        {name:'项目功能细化分析专家' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
+        {name:'K8S问题排查专家' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+        {name:'Ansible自动化工程师' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
+        {name:'产品客户服务专家' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
+        {name:'项目功能细化分析专家' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
+        {name:'K8S问题排查专家' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+        {name:'开发编码规范专家' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler'} ,
       ],
       functionCount: 123,
       accountCount: 1200,
@@ -138,17 +150,6 @@ export default {
           title: "服务器集成监控",
           status: "0",
           desc: "服务器和中间件集成监控，资源状态监控",
-          link: "#" , 
-        },
-        {
-          title: "分布式链路集成(APM)",
-          status: "0",
-          desc: "应用运行状态监控，集成Java应用运行状态",
-          link: "#" , 
-        },
-        {
-          title: "预警集成监控",
-          desc: "集成邮件、企业微信机器从通知预警",
           link: "#" , 
         },
       ],
@@ -700,7 +701,7 @@ li.product_list_li.count-li {
       text-align: left;
       margin-right: 8px;
       padding: 10px 15px;
-      width: calc(20% - 8px);
+      width: calc(33% - 16px);
       text-decoration: none;
       overflow: hidden;
       border-width: 0px;
@@ -709,6 +710,8 @@ li.product_list_li.count-li {
       transition: all 0.1s linear;
       height: 70px;
       margin-bottom: 10px;
+      margin-top: 5px;
+      margin-left: 10px;
 
       i{
         float: right;

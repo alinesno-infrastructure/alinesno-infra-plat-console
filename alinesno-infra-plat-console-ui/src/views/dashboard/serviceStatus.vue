@@ -2,7 +2,7 @@
   <div>
     <el-row class="acp-dashboard-panel" :gutter="20">
 
-      <el-col class="panel-col" :span="13">
+      <el-col class="panel-col" :span="11">
         <div class="grid-content">
           <div class="panel-header">
             <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态
@@ -16,7 +16,7 @@
                     <i class="fa-solid fa-laptop-code"></i>
                   </div>
                   <div class="app-status-text">
-                    <div class="app-status-text-desc">展示当前运行服务概览和详情，您可以查看了解目前集成的基础能力和平台能力。 演示环境为最新功能预览版</div>
+                    <div class="app-status-text-desc">展示当前运行服务概览和详情，您可以查看了解目前集成的基础能力和平台能力</div>
                   </div>
                 </div>
               </el-col>
@@ -63,10 +63,59 @@
         </div>
       </el-col>
 
-      <el-col :span="11">
+      <!-- <el-col class="panel-col" :span="13">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 应用服务概览</div>
+            <div class="header-title">Agent自动化团队</div>
+          </div>
+          <div class="panel-body" style="padding:5px;background-color: #fff;">
+            <el-empty v-if="tableData.length == 0" :image-size="100" description="这可能是因为您没有运行 Trusted Advisor 检查，或者您没有 Business 或 Enterprise Support 计划。" />
+
+            <el-table :data="tableData" stripe style="width: 100%">
+              <el-table-column label="图标" align="center" width="150px" prop="icon">
+                  <template #default="scope">
+                    <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (scope.$index +1) + '.png'" style="width:30px;height:30px;border-radius: 50%" />
+                    运行排查专家
+                  </template>
+              </el-table-column>
+              <el-table-column prop="projectName" label="应用名称" width="100" :show-overflow-tooltip="true" />
+              <el-table-column prop="content" label="优化建议" :show-overflow-tooltip="true" />
+              <el-table-column prop="level" align="center" label="建议级别" width="80">
+                <template #default="scope">
+                  <div class="role-icon">
+                    <span v-if="scope.row.level == 9">
+                      <el-button type="danger" bg link>
+                        <i class="fa-solid fa-bomb" style="font-size: 15px"></i>
+                      </el-button>
+                    </span>
+                    <span v-if="scope.row.level == 1">
+                      <el-button type="danger" bg link>
+                        <i class="fa-solid fa-bomb" style="font-size: 15px"></i>
+                      </el-button>
+                    </span>
+                    <span v-if="scope.row.level == 2">
+                      <el-button type="danger" bg link>
+                        <i class="fa-solid fa-bomb" style="font-size: 15px"></i>
+                      </el-button>
+                    </span>
+                    <span v-if="scope.row.level == 3">
+                      <el-button type="warning" bg link>
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 15px"></i>
+                      </el-button>
+                    </span>
+                  </div>
+              </template>
+              </el-table-column>
+            </el-table>
+
+          </div>
+        </div>
+      </el-col> -->
+
+      <el-col :span="13">
+        <div class="grid-content">
+          <div class="panel-header">
+            <div class="header-title"><i class="fa-solid fa-link"></i> Agent运营团队 </div>
           </div>
           <div class="data-card">
             <ul class="count-list summary-panel">
@@ -74,15 +123,19 @@
                 <i :class="item.icon"></i>
                 <span class="label-tip">
                   <a target="_blank" :href="item.link">
-                    {{ item.name }}
+                    <img :src="'http://data.linesno.com/icons/header/' + (index +1) + '.jpg'" style="width:40px;height:40px;float:left; border-radius: 8px" />
+                    <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
+                      {{ item.name }} (<span style="font-weight: 600;font-size:15px">8</span>/<span style="font-size:12px">{{ index }}</span>)
+                      <br/>
+                      <span class="label" style="font-size: 13px;line-height: 13px;font-weight: lighter;">{{ item.count }}</span>
+                    </div>
                   </a>
                 </span>
-                <span class="label">{{ item.count }}</span>
               </li>
             </ul>
           </div>
         </div>
-      </el-col>
+      </el-col> 
 
     </el-row>
   </div>
@@ -97,14 +150,20 @@ const acpProjectBuild = [
   {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据平台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
 ] ;
 
+const tableData = [
+  { inde2x: 1, busType: '在线支付', projectName: '支付宝', content: '优化支付流程，提升用户体验，包括简化支付步骤，增加支付方式选择，提高支付成功率', level: '9' },
+  { inde2x: 2, busType: '电商平台', projectName: '淘宝', content: '增加推荐算法，提高用户购买转化率，包括个性化推荐，热门商品推荐，购买引导等方面', level: '2' },
+  { inde2x: 5, busType: '出行服务', projectName: '滴滴打车', content: '提高司机端APP稳定性，减少崩溃情况，改善司机使用体验，优化内存管理和异常处理机制', level: '9' },
+  { inde2x: 6, busType: '餐饮外卖', projectName: '美团外卖', content: '优化订单配送算法，减少配送时间，提高用户满意度，优化骑手调度和路线规划', level: '2' },
+]
+
 const runCountArr = ref([
-      {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-      {name:'服务运行健康报告' , count:292 , icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
-      {name:'运行监控日志审计' , count:322 , icon:'fas fa-pencil-ruler' , link:"https://192.168.1.55:5601/app/discover#/view/ae40de50-d919-11ed-a141-51d122929855?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1y,to:now))&_a=(columns:!(message,'@timestamp',service,host),filters:!(),index:'32258160-bfb4-11ec-8af6-65a485b4d749',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))"} ,
-      {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-      {name:'自动化任务管理' , count:932 , icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
-      {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
-      {name:'中间件运行统计' , count:312 , icon:'fas fa-pencil-ruler'} ,
+      {name:'需求文档分析专家' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'项目功能细化分析专家' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
+      {name:'K8S问题排查专家' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'Ansible自动化工程师' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
+      {name:'产品客户服务专家' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
+      {name:'开发编码规范专家' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler'} ,
 ]) ;
 
 const screenJsonList = [
@@ -519,7 +578,7 @@ const screenJsonList = [
       text-align: left;
       margin-right: 8px;
       padding: 10px 15px;
-      width: calc(33% - 18px);
+      width: calc(50% - 18px);
       text-decoration: none;
       overflow: hidden;
       border-width: 0px;
