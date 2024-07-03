@@ -1,17 +1,25 @@
 <template>
   <div class="siderbar">
     <el-menu default-active="1" class="el-menu-vertical" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
-      <el-menu-item index="1" @click="jumpTo">
-        <i class="fa-solid fa-desktop"></i>
-      </el-menu-item>
 
-      <el-menu-item index="2" @click="openServiceList">
-        <i class="fa-solid fa-sailboat"></i>
-      </el-menu-item>
+      <el-tooltip content="平台监控" placement="right">
+        <el-menu-item index="1" @click="jumpTo">
+          <i class="fa-solid fa-desktop"></i>
+        </el-menu-item>
+      </el-tooltip>
 
-      <el-menu-item index="3" @click="openSmartService">
-        <i class="fa-solid fa-user-shield"></i>
-      </el-menu-item>
+      <el-tooltip content="Agent智能体" placement="right">
+        <el-menu-item index="3" @click="openSmartService">
+          <i class="fa-solid fa-user-shield"></i>
+        </el-menu-item>
+      </el-tooltip>
+
+      <el-tooltip content="支撑平台" placement="right">
+        <el-menu-item index="2" @click="openServiceList">
+          <i class="fa-solid fa-sailboat"></i>
+        </el-menu-item>
+      </el-tooltip>
+
     </el-menu>
 
     <el-menu style="" class="el-menu-vertical acp-suggest" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
@@ -71,7 +79,7 @@ function jumpTo() {
 
 // 打开智能客服
 function openSmartService() {
-  router.push({ path: "/dashboard/smartService" });
+  router.push({ path: "/chat" });
 }
 
 </script>

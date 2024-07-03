@@ -89,12 +89,15 @@ export const constantRoutes = [
         name: '/dashboard/build/business',
         meta: { title: '创建业务服务', icon: 'dashboard', affix: true }
       },
-
       {
         path: '/dashboard/smartService',
-        component: () => import('@/views/smartService'),
-        name: '/dashboard/smartService',
-        meta: { title: '智能客服', icon: 'dashboard', affix: true }
+        redirect: '/chat',
+      },
+      {
+        path: '/chat',
+        component: () => import('@/views/specialist/index'),
+        name: '/chat',
+        meta: { title: '聊天', icon: 'dashboard', affix: true }
       },
       {
         path: '/dashboard/dashboardTheme',

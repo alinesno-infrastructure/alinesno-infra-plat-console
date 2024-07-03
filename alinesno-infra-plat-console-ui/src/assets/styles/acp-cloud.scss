@@ -835,12 +835,12 @@ $chartColor: #3b5998;
   }
 }
 
+
 // 专家体系
 .smart-container {
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 0px;
-  width: 80%;
+  width: 100%;
+  max-width: 1300px;
 
   .robot-chat-help-container {
     margin-left: 10px;
@@ -857,11 +857,9 @@ $chartColor: #3b5998;
         height: 45px;
         width: 100%;
         padding: 0 10px;
-        font-family: PingFangSC-Medium;
         font-weight: 600;
-        border-bottom: 1px solid #e5e5e5;
-        font-size: 16px;
-        color: #000;
+        border-bottom: 1px solid #fafafa ;
+        font-size: 14px;
         display: flex;
         align-items: center;
       }
@@ -876,13 +874,19 @@ $chartColor: #3b5998;
           margin: 0px;
         }
 
+        // li.item-process:hover {
+        //   color: #409EFF;
+        //   background-color: #eaeaea;
+        // }
+
         li.item-process {
           list-style: none;
           float: left;
+          cursor: pointer;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          width: calc(50% - 10px);
+          width: calc(100% - 10px);
           margin-right: 5px;
           margin-left: 5px;
           height: 50px;
@@ -900,16 +904,17 @@ $chartColor: #3b5998;
   .robot-chat-windows {
     float: left;
     width: 100%;
-    border: 1px solid rgba(230, 231, 235, 0.3);
+    border-left: 1px solid #e6e6e6 ; 
+    border-right: 1px solid #e6e6e6 ; 
   }
 
   .robot-chat-header {
-    border-top: 2px solid #0064c8;
+    // border-top: 2px solid #3b5998;
     padding: 15px;
     float: left;
     width: 100%;
     background: #fff;
-    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #fafafa;
 
     .chat-header-title {
       float: left;
@@ -927,9 +932,8 @@ $chartColor: #3b5998;
   }
 
   .robot-chat-body {
-    height: calc(100vh - 390px);
+    height: calc(100vh - 135px);
     background: #fff;
-    border-bottom: 1px solid #e6e6e6;
   }
 
   .robot-chat-footer {
@@ -941,7 +945,7 @@ $chartColor: #3b5998;
         border: 0px;
         background: #fff;
         padding: 10px;
-        height: 100px;
+        // height: 100px;
         border: 0px;
         outline: none;
       }
