@@ -137,7 +137,191 @@ public class ChannelController {
                 "            \"channelKey\": null\n" +
                 "        },\n" +
                 "        {\n" +
-                "            \"id\": \"1808350827032711169\",\n" +
+                "            \"id\": \"18083508272032711169\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-02-06 21:29:26\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"解决方案编写频道\",\n" +
+                "            \"icon\": \"1808350773008064514\",\n" +
+                "            \"channelId\": \"8k2lePUJqU2mkfbydsKCo\",\n" +
+                "            \"channelName\": \"解决方案编写频道\",\n" +
+                "            \"channelType\": \"2\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"17466703243599959553\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-01-14 10:09:41\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"公共频道服务，用于公共交流\",\n" +
+                "            \"icon\": \"1746473582053335042\",\n" +
+                "            \"channelId\": \"21WElQLlNLUPrg0RWASHp\",\n" +
+                "            \"channelName\": \"个人公共频道\",\n" +
+                "            \"channelType\": \"1\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"18083540827032711169\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-02-06 21:29:26\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"解决方案编写频道\",\n" +
+                "            \"icon\": \"1808350773008064514\",\n" +
+                "            \"channelId\": \"8k2lePUJqU2mkfbydsKCo\",\n" +
+                "            \"channelName\": \"解决方案编写频道\",\n" +
+                "            \"channelType\": \"2\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"17466750324519959553\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-01-14 10:09:41\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"公共频道服务，用于公共交流\",\n" +
+                "            \"icon\": \"1746473582053335042\",\n" +
+                "            \"channelId\": \"21WElQLlNLUPrg0RWASHp\",\n" +
+                "            \"channelName\": \"个人公共频道\",\n" +
+                "            \"channelType\": \"1\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"18083550827032711169\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-02-06 21:29:26\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"解决方案编写频道\",\n" +
+                "            \"icon\": \"1808350773008064514\",\n" +
+                "            \"channelId\": \"8k2lePUJqU2mkfbydsKCo\",\n" +
+                "            \"channelName\": \"解决方案编写频道\",\n" +
+                "            \"channelType\": \"2\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"17466706324599959553\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-01-14 10:09:41\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"公共频道服务，用于公共交流\",\n" +
+                "            \"icon\": \"1746473582053335042\",\n" +
+                "            \"channelId\": \"21WElQLlNLUPrg0RWASHp\",\n" +
+                "            \"channelName\": \"个人公共频道\",\n" +
+                "            \"channelType\": \"1\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"18083508276032711169\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-02-06 21:29:26\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"解决方案编写频道\",\n" +
+                "            \"icon\": \"1808350773008064514\",\n" +
+                "            \"channelId\": \"8k2lePUJqU2mkfbydsKCo\",\n" +
+                "            \"channelName\": \"解决方案编写频道\",\n" +
+                "            \"channelType\": \"2\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"17466703245499959553\",\n" +
+                "            \"fieldProp\": null,\n" +
+                "            \"addTime\": \"2024-01-14 10:09:41\",\n" +
+                "            \"deleteTime\": null,\n" +
+                "            \"hasStatus\": 0,\n" +
+                "            \"updateTime\": null,\n" +
+                "            \"operatorId\": null,\n" +
+                "            \"lastUpdateOperatorId\": null,\n" +
+                "            \"hasDelete\": 0,\n" +
+                "            \"deleteManager\": null,\n" +
+                "            \"applicationId\": null,\n" +
+                "            \"applicationName\": null,\n" +
+                "            \"tenantId\": \"0\",\n" +
+                "            \"fieldId\": null,\n" +
+                "            \"departmentId\": null,\n" +
+                "            \"channelDesc\": \"公共频道服务，用于公共交流\",\n" +
+                "            \"icon\": \"1746473582053335042\",\n" +
+                "            \"channelId\": \"21WElQLlNLUPrg0RWASHp\",\n" +
+                "            \"channelName\": \"个人公共频道\",\n" +
+                "            \"channelType\": \"1\",\n" +
+                "            \"channelKey\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"id\": \"18083508270327111169\",\n" +
                 "            \"fieldProp\": null,\n" +
                 "            \"addTime\": \"2024-02-06 21:29:26\",\n" +
                 "            \"deleteTime\": null,\n" +

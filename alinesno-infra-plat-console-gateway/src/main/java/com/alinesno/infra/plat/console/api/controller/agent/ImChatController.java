@@ -36,7 +36,7 @@ public class ImChatController extends SuperController {
                 "        {\n" +
                 "            \"channelId\": 0,\n" +
                 "            \"roleType\": \"person\",\n" +
-                "            \"icon\": \"1746465675916124161\",\n" +
+                "            \"icon\": \"1808349924122877953\",\n" +
                 "            \"name\": \"软件工程师罗小东\",\n" +
                 "            \"dateTime\": \"2024-07-03 12:04:03\",\n" +
                 "            \"chatText\": \"<span class=\\\"mention\\\">@软文编辑(目录大纲)</span><span class=\\\"mention-text\\\">编写一份解决方案目录\\n</span>\",\n" +
@@ -206,7 +206,7 @@ public class ImChatController extends SuperController {
     @GetMapping("/displayImage/{imageId}")
     public ResponseEntity<byte[]> displayImage(@PathVariable("imageId") String imageId) throws IOException {
 
-        URL httpUrl = new URL("http://alinesno-infra-base-im-ui.beta.base.infra.linesno.com/prod-api/v1/api/infra/base/im/chat/displayImage/1808350773008064514");
+        URL httpUrl = new URL("http://alinesno-infra-base-im-ui.beta.base.infra.linesno.com/prod-api/v1/api/infra/base/im/chat/displayImage/" + imageId);
         HttpURLConnection conn = (HttpURLConnection)httpUrl.openConnection();
         byte[] byteBody = IOUtils.toByteArray(conn) ;
 

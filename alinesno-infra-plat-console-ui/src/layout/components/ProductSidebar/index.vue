@@ -79,7 +79,7 @@ function jumpTo() {
 
 // 打开智能客服
 function openSmartService() {
-  router.push({ path: "/chat" });
+  router.push({ path: "/dashboard/channelHome" });
 }
 
 </script>

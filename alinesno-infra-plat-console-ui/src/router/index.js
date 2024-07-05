@@ -100,6 +100,12 @@ export const constantRoutes = [
         meta: { title: '聊天', icon: 'dashboard', affix: true }
       },
       {
+        path: '/dashboard/channelHome',
+        component: () => import('@/views/specialist/channelHome'),
+        name: '/dashboard/channelHome',
+        meta: { title: '服务列表', icon: 'dashboard', affix: true }
+      },
+      {
         path: '/dashboard/dashboardTheme',
         component: () => import('@/views/dashboardTheme'),
         name: '/dashboard/dashboardTheme',

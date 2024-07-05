@@ -90,7 +90,7 @@ const pushMessageList = (mess) => {
     businessId: '1733452663532019712' ,  
     dateTime: '2023-12-11 16:32:10' ,  
     readerType:'html', 
-    icon:'1746465675916124161' , 
+    icon:'1808349924122877953' , 
     name: '软件工程师罗小东', 
     date: '12-10 13:58:21', 
     chatText: chatText });
