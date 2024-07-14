@@ -69,15 +69,6 @@ public class ProductController {
         subProduct4.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct4.setDesc("alinesno-infra-base-message");
 
-        // 05. 通知管理服务
-        SubProduct subProduct5 = new SubProduct();
-        subProduct5.setHasInner(0);
-        subProduct5.setLinkPath("http://alinesno-infra-base-notice-ui.beta.base.infra.linesno.com");
-        subProduct5.setProdStatus("normal");
-        subProduct5.setName("通知管理服务");
-        subProduct5.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct5.setDesc("alinesno-infra-base-notices");
-
         // 存储管理服务
         SubProduct subProduct6 = new SubProduct();
         subProduct6.setHasInner(0);
@@ -86,15 +77,6 @@ public class ProductController {
         subProduct6.setName("存储管理服务");
         subProduct6.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct6.setDesc("alinesno-infra-base-storage");
-
-        // 07. 单点登陆服务
-        SubProduct subProduct7 = new SubProduct();
-        subProduct7.setHasInner(0);
-        subProduct7.setLinkPath("http://alinesno-infra-base-identity-ui.beta.base.infra.linesno.com");
-        subProduct7.setProdStatus("normal");
-        subProduct7.setName("单点登陆服务");
-        subProduct7.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct7.setDesc("alinesno-infra-base-identity");
 
         // 08. 网关配置服务
         SubProduct subProduct8 = new SubProduct();
@@ -105,32 +87,14 @@ public class ProductController {
         subProduct8.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct8.setDesc("alinesno-infra-base-gateway");
 
-        // 09. 安全验证码服务
-        SubProduct subProduct9 = new SubProduct();
-        subProduct9.setHasInner(0);
-        subProduct9.setLinkPath("http://alinesno-infra-base-validate-ui.beta.base.infra.linesno.com");
-        subProduct9.setProdStatus("normal");
-        subProduct9.setName("安全验证码服务");
-        subProduct9.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct9.setDesc("alinesno-infra-base-validate");
-
         // 10. IM消息服务
         SubProduct subProduct10 = new SubProduct();
         subProduct10.setHasInner(0);
         subProduct10.setLinkPath("http://alinesno-infra-base-im-ui.beta.base.infra.linesno.com");
         subProduct10.setProdStatus("normal");
-        subProduct10.setName("IM消息服务");
+        subProduct10.setName("智能体交互服务");
         subProduct10.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct10.setDesc("alinesno-infra-base-im");
-
-        // 11. 邮箱管理服务
-//        SubProduct subProduct11 = new SubProduct();
-//        subProduct11.setHasInner(0);
-//        subProduct11.setLinkPath("http://alinesno-infra-base-email-ui.beta.base.infra.linesno.com");
-//        subProduct11.setProdStatus("normal");
-//        subProduct11.setName("邮箱管理服务");
-//        subProduct11.setId("c6fca12e348cccf97495b3aea33adcef");
-//        subProduct11.setDesc("alinesno-infra-base-email");
 
         // 12. 向量库搜索服务
         SubProduct subProduct12 = new SubProduct();
@@ -168,15 +132,6 @@ public class ProductController {
         subProduct15.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct15.setDesc("alinesno-infra-base-pay");
 
-        // 16. 会员服务
-        // SubProduct subProduct16 = new SubProduct();
-        // subProduct16.setHasInner(0);
-        // subProduct16.setLinkPath("http://alinesno-infra-base-member-ui.beta.base.infra.linesno.com");
-        // subProduct16.setProdStatus("normal");
-        // subProduct16.setName("会员服务");
-        // subProduct16.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct16.setDesc("alinesno-infra-base-member");
-
         // 17. 内容服务
         SubProduct subProduct17 = new SubProduct();
         subProduct17.setHasInner(0);
@@ -185,24 +140,6 @@ public class ProductController {
         subProduct17.setName("内容管理系统服务");
         subProduct17.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct17.setDesc("alinesno-infra-base-cms");
-
-        // 18. 商城服务
-        // SubProduct subProduct18 = new SubProduct();
-        // subProduct18.setHasInner(0);
-        // subProduct18.setLinkPath("http://alinesno-infra-base-shop-ui.beta.base.infra.linesno.com");
-        // subProduct18.setProdStatus("normal");
-        // subProduct18.setName("基础商品管理服务");
-        // subProduct18.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct18.setDesc("alinesno-infra-base-shop");
-
-        // 19. 流程中心服务
-        // SubProduct subProduct19 = new SubProduct();
-        // subProduct19.setHasInner(0);
-        // subProduct19.setLinkPath("http://alinesno-infra-base-workflow-ui.beta.base.infra.linesno.com");
-        // subProduct19.setProdStatus("normal");
-        // subProduct19.setName("流程中心服务");
-        // subProduct19.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct19.setDesc("alinesno-infra-base-workflow");
 
         // 20. 文档查看服务
         SubProduct subProduct20 = new SubProduct();
@@ -214,7 +151,20 @@ public class ProductController {
         subProduct20.setDesc("alinesno-infra-base-fileshow");
 
         // 将所有的SubProduct对象添加到基础服务的subList中
-        baseService.setSubList(Arrays.asList(subProduct10001, subProduct20001, subProduct30001, subProduct4, subProduct5, subProduct6, subProduct7, subProduct8, subProduct9, /* subProduct10, subProduct11,*/ subProduct12, subProduct13, subProduct14, subProduct15, subProduct17, subProduct20 ));
+        baseService.setSubList(Arrays.asList(
+                subProduct10001,
+                subProduct20001,
+                subProduct30001,
+                subProduct4,
+                subProduct6,
+                subProduct8,
+                subProduct10 ,
+                subProduct12,
+                subProduct13,
+                subProduct14,
+                subProduct15,
+                subProduct17,
+                subProduct20 ));
 
         productList.add(baseService);
 
@@ -278,24 +228,6 @@ public class ProductController {
         subProduct6002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct6002.setDesc("alinesno-infra-data-security");
 
-        // 07. 数据质量服务
-        // SubProduct subProduct7002 = new SubProduct();
-        // subProduct7002.setHasInner(0);
-        // subProduct7002.setLinkPath("http://alinesno-infra-data-quality-ui.beta.data.infra.linesno.com");
-        // subProduct7002.setProdStatus("normal");
-        // subProduct7002.setName("数据质量服务");
-        // subProduct7002.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct7002.setDesc("alinesno-infra-data-quality");
-
-        // 08. 数据总线服务
-        SubProduct subProduct8002 = new SubProduct();
-        subProduct8002.setHasInner(0);
-        subProduct8002.setLinkPath("http://alinesno-infra-data-bus-ui.beta.data.infra.linesno.com");
-        subProduct8002.setProdStatus("normal");
-        subProduct8002.setName("数据总线服务");
-        subProduct8002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct8002.setDesc("alinesno-infra-data-bus");
-
         // 09. 数据资产服务
         SubProduct subProduct9002 = new SubProduct();
         subProduct9002.setHasInner(0);
@@ -305,26 +237,15 @@ public class ProductController {
         subProduct9002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct9002.setDesc("alinesno-infra-data-assets");
 
-        // 10. 数据算法服务
-        // SubProduct subProduct10002 = new SubProduct();
-        // subProduct10002.setHasInner(0);
-        // subProduct10002.setLinkPath("http://alinesno-infra-data-algorithm-ui.beta.data.infra.linesno.com");
-        // subProduct10002.setProdStatus("normal");
-        // subProduct10002.setName("数据算法服务");
-        // subProduct10002.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct10002.setDesc("alinesno-infra-data-algorithm");
-
-        // 10. 数据算法服务
-        SubProduct subProduct11002 = new SubProduct();
-        subProduct11002.setHasInner(0);
-        subProduct11002.setLinkPath("http://alinesno-infra-data-fastapi-ui.beta.data.infra.linesno.com");
-        subProduct11002.setProdStatus("normal");
-        subProduct11002.setName("数据接口服务");
-        subProduct11002.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct11002.setDesc("alinesno-infra-data-fastapi");
-
         // 将所有的SubProduct对象添加到数据服务的subList中
-        dataService.setSubList(Arrays.asList(subProduct1002, subProduct2002, subProduct3002, subProduct4002, subProduct51, subProduct6002, /*subProduct7002,*/ subProduct8002, subProduct9002, /* subProduct10002 ,*/ subProduct11002));
+        dataService.setSubList(Arrays.asList(subProduct1002,
+                subProduct2002,
+                subProduct3002,
+                subProduct4002,
+                subProduct51,
+                subProduct6002,
+                subProduct9002
+        ));
 
         productList.add(dataService);
 
@@ -362,15 +283,6 @@ public class ProductController {
         subProduct3003.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct3003.setDesc("alinesno-infra-smart-brain");
 
-        // 04. 流媒体识别服务
-        SubProduct subProduct4003 = new SubProduct();
-        subProduct4003.setHasInner(0);
-        subProduct4003.setLinkPath("http://alinesno-infra-smart-media-ui.beta.smart.infra.linesno.com");
-        subProduct4003.setProdStatus("normal");
-        subProduct4003.setName("流媒体识别服务");
-        subProduct4003.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct4003.setDesc("alinesno-infra-smart-media");
-
         // 05. 智能助手服务
         SubProduct subProduct5003 = new SubProduct();
         subProduct5003.setHasInner(0);
@@ -390,7 +302,12 @@ public class ProductController {
         subProduct6003.setDesc("alinesno-infra-smart-detection");
 
         // 将所有的SubProduct对象添加到智能服务的subList中
-        smartService.setSubList(Arrays.asList(subProduct1003, subProduct2003, subProduct3003, subProduct4003, subProduct5003, subProduct6003));
+        smartService.setSubList(Arrays.asList(
+                subProduct1003,
+                subProduct2003,
+                subProduct3003,
+                subProduct5003,
+                subProduct6003));
 
         productList.add(smartService);
 
@@ -418,24 +335,6 @@ public class ProductController {
         subProduct2007.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct2007.setDesc("alinesno-infra-ops-logback");
 
-        // 03. 分布式链路跟踪服务
-        SubProduct subProduct3007 = new SubProduct();
-        subProduct3007.setHasInner(0);
-        subProduct3007.setLinkPath("http://alinesno-infra-ops-telemetry-ui.beta.base.infra.linesno.com");
-        subProduct3007.setProdStatus("normal");
-        subProduct3007.setName("分布式链路跟踪服务");
-        subProduct3007.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct3007.setDesc("alinesno-infra-ops-telemetry");
-
-        // 04. 持续集成服务
-        SubProduct subProduct4007 = new SubProduct();
-        subProduct4007.setHasInner(0);
-        subProduct4007.setLinkPath("http://alinesno-infra-ops-pipeline-ui.beta.base.infra.linesno.com");
-        subProduct4007.setProdStatus("normal");
-        subProduct4007.setName("持续集成服务");
-        subProduct4007.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct4007.setDesc("alinesno-infra-ops-pipeline");
-
         // 05. 容器管理服务
         SubProduct subProduct5007 = new SubProduct();
         subProduct5007.setHasInner(0);
@@ -455,7 +354,11 @@ public class ProductController {
         subProduct6007.setDesc("alinesno-infra-ops-watcher");
 
         // 将所有的SubProduct对象添加到运维服务的subList中
-        opsService.setSubList(Arrays.asList(subProduct1007, subProduct2007, subProduct3007, /* subProduct4007,*/ subProduct5007, subProduct6007));
+        opsService.setSubList(Arrays.asList(
+                subProduct1007,
+                subProduct2007,
+                subProduct5007,
+                subProduct6007));
 
         productList.add(opsService);
 
@@ -464,15 +367,6 @@ public class ProductController {
         busService.setName("业务服务");
         busService.setId("fbd5d9a8d5f84c50b12235363f7f8e8b");
         busService.setBanner("fas fa-chalkboard-teacher");
-
-        // 01. 商品秒杀服务
-        // SubProduct subProduct1008 = new SubProduct();
-        // subProduct1008.setHasInner(0);
-        // subProduct1008.setLinkPath("http://alinesno-infra-bus-limit-ui.beta.data.infra.linesno.com");
-        // subProduct1008.setProdStatus("normal");
-        // subProduct1008.setName("商品秒杀服务");
-        // subProduct1008.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct1008.setDesc("alinesno-infra-bus-limit");
 
         // 02. 实时推荐服务
         SubProduct subProduct2008 = new SubProduct();
@@ -492,17 +386,7 @@ public class ProductController {
         subProduct3008.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct3008.setDesc("alinesno-infra-bus-profiling");
 
-        // 04. 无代码开发服务
-        // SubProduct subProduct4008 = new SubProduct();
-        // subProduct4008.setHasInner(0);
-        // subProduct4008.setLinkPath("http://alinesno-infra-bus-nocode-ui.beta.data.infra.linesno.com");
-        // subProduct4008.setProdStatus("normal");
-        // subProduct4008.setName("无代码开发服务");
-        // subProduct4008.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct4008.setDesc("alinesno-infra-bus-nocode");
-
         // 将所有的SubProduct对象添加到业务服务的subList中
-        // busService.setSubList(Arrays.asList(subProduct1008, subProduct2008, subProduct3008, subProduct4008));
         busService.setSubList(Arrays.asList(subProduct2008, subProduct3008));
 
         productList.add(busService);
@@ -522,15 +406,6 @@ public class ProductController {
         subProduct2009.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct2009.setDesc("alinesno-infra-plat-security");
 
-        // 03. 智能运营大脑服务
-        // SubProduct subProduct3009 = new SubProduct();
-        // subProduct3009.setHasInner(0);
-        // subProduct3009.setLinkPath("http://alinesno-infra-plat-security-ui.beta.plat.infra.linesno.com");
-        // subProduct3009.setProdStatus("normal");
-        // subProduct3009.setName("智能运营大脑服务");
-        // subProduct3009.setId("c6fca12e348cccf97495b3aea33adcef");
-        // subProduct3009.setDesc("alinesno-infra-plat-brain");
-
         // 21. 基设平台管理服务
         SubProduct subProduct21 = new SubProduct();
         subProduct21.setHasInner(0);
@@ -540,17 +415,8 @@ public class ProductController {
         subProduct21.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct21.setDesc("alinesno-infra-base-platform");
 
-        // 21. 项目管理服务
-        SubProduct subProduct4009 = new SubProduct();
-        subProduct4009.setHasInner(0);
-        subProduct4009.setLinkPath("http://alinesno-infra-plat-project-ui.beta.plat.infra.linesno.com");
-        subProduct4009.setProdStatus("normal");
-        subProduct4009.setName("项目管理服务");
-        subProduct4009.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct4009.setDesc("alinesno-infra-base-project");
-
         // 将所有的SubProduct对象添加到运营服务的subList中
-        platService.setSubList(Arrays.asList(subProduct21 , subProduct2009, subProduct4009));
+        platService.setSubList(Arrays.asList(subProduct21 , subProduct2009));
 
         productList.add(platService);
 
