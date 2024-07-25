@@ -104,15 +104,7 @@ public class ProductController {
         subProduct12.setName("向量库搜索服务");
         subProduct12.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct12.setDesc("alinesno-infra-base-document");
-
-        // 13. 分布式ID服务
-        SubProduct subProduct13 = new SubProduct();
-        subProduct13.setHasInner(0);
-        subProduct13.setLinkPath("http://alinesno-infra-base-id-ui.beta.base.infra.linesno.com");
-        subProduct13.setProdStatus("normal");
-        subProduct13.setName("分布式ID服务");
-        subProduct13.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct13.setDesc("alinesno-infra-base-id");
+ 
 
         // 14. 敏感词过滤服务
         SubProduct subProduct14 = new SubProduct();
@@ -140,15 +132,7 @@ public class ProductController {
         subProduct17.setName("内容管理系统服务");
         subProduct17.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct17.setDesc("alinesno-infra-base-cms");
-
-        // 20. 文档查看服务
-        SubProduct subProduct20 = new SubProduct();
-        subProduct20.setHasInner(0);
-        subProduct20.setLinkPath("http://alinesno-infra-base-fileshow-ui.beta.base.infra.linesno.com");
-        subProduct20.setProdStatus("normal");
-        subProduct20.setName("文档查看服务");
-        subProduct20.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct20.setDesc("alinesno-infra-base-fileshow");
+ 
 
         // 将所有的SubProduct对象添加到基础服务的subList中
         baseService.setSubList(Arrays.asList(
@@ -159,12 +143,10 @@ public class ProductController {
                 subProduct6,
                 subProduct8,
                 subProduct10 ,
-                subProduct12,
-                subProduct13,
+                subProduct12, 
                 subProduct14,
                 subProduct15,
-                subProduct17,
-                subProduct20 ));
+                subProduct17  ));
 
         productList.add(baseService);
 
@@ -219,12 +201,12 @@ public class ProductController {
         subProduct51.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct51.setDesc("alinesno-infra-data-flink");
 
-        // 数据安全服务
+        // 数据接口服务
         SubProduct subProduct6002 = new SubProduct();
         subProduct6002.setHasInner(0);
-        subProduct6002.setLinkPath("http://alinesno-infra-data-security-ui.beta.data.infra.linesno.com");
+        subProduct6002.setLinkPath("http://alinesno-infra-data-fastapi-ui.beta.data.infra.linesno.com");
         subProduct6002.setProdStatus("normal");
-        subProduct6002.setName("数据安全服务");
+        subProduct6002.setName("数据接口服务");
         subProduct6002.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct6002.setDesc("alinesno-infra-data-security");
 
