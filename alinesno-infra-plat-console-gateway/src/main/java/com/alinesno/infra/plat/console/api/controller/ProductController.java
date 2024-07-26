@@ -104,7 +104,7 @@ public class ProductController {
         subProduct12.setName("向量库搜索服务");
         subProduct12.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct12.setDesc("alinesno-infra-base-document");
- 
+
 
         // 14. 敏感词过滤服务
         SubProduct subProduct14 = new SubProduct();
@@ -132,7 +132,7 @@ public class ProductController {
         subProduct17.setName("内容管理系统服务");
         subProduct17.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct17.setDesc("alinesno-infra-base-cms");
- 
+
 
         // 将所有的SubProduct对象添加到基础服务的subList中
         baseService.setSubList(Arrays.asList(
@@ -143,7 +143,7 @@ public class ProductController {
                 subProduct6,
                 subProduct8,
                 subProduct10 ,
-                subProduct12, 
+                subProduct12,
                 subProduct14,
                 subProduct15,
                 subProduct17  ));
@@ -265,15 +265,6 @@ public class ProductController {
         subProduct3003.setId("c6fca12e348cccf97495b3aea33adcef");
         subProduct3003.setDesc("alinesno-infra-smart-brain");
 
-        // 05. 智能助手服务
-        SubProduct subProduct5003 = new SubProduct();
-        subProduct5003.setHasInner(0);
-        subProduct5003.setLinkPath("http://alinesno-infra-smart-assistant-ui.beta.smart.infra.linesno.com");
-        subProduct5003.setProdStatus("normal");
-        subProduct5003.setName("智能助手服务");
-        subProduct5003.setId("c6fca12e348cccf97495b3aea33adcef");
-        subProduct5003.setDesc("alinesno-infra-smart-assistant");
-
         // 目标检测识别服务
         SubProduct subProduct6003 = new SubProduct();
         subProduct6003.setHasInner(0);
@@ -288,7 +279,6 @@ public class ProductController {
                 subProduct1003,
                 subProduct2003,
                 subProduct3003,
-                subProduct5003,
                 subProduct6003));
 
         productList.add(smartService);
