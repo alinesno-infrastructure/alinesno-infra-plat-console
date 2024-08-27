@@ -12,8 +12,9 @@
 
 <script setup name="Index">
 
+/**  导入组件 */
 import HeadTypeTab from './headTypeTab.vue'
-
-import CustomApps from './custom-workspace/ucenter-apps.vue'
+// import CustomApps from './custom-workspace/ucenter-apps.vue'
+import CustomApps from './custom-workspace/service.vue'
 
 </script>
