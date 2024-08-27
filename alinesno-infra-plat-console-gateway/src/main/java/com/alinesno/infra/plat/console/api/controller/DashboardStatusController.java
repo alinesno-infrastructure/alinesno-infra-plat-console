@@ -2,15 +2,15 @@ package com.alinesno.infra.plat.console.api.controller;
 
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
+import com.alinesno.infra.plat.console.api.MenuItem;
 import com.alinesno.infra.plat.console.api.tools.CheckinUtils;
 import com.alinesno.infra.plat.console.api.tools.TimePeriodTool;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,9 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 /**
  * 处理与AccountSiteEntity相关的请求的Controller。
@@ -37,9 +39,40 @@ import java.util.Base64;
 public class DashboardStatusController extends SuperController {
 
     /**
+     * 生成视图列表
+     */
+    @GetMapping("/viewList")
+    public AjaxResult getViewList() {
+
+        log.debug("--->>>>> = StpUtil = {}" , CurrentAccountJwt.isLogin());
+        long currentId = 1L ;
+
+        List<MenuItem> menuList = new ArrayList<>();
+
+        menuList.add(new MenuItem(0, "fa-brands fa-slack", "仪盘表", "0", "/index", "运营自动化门户"));
+        menuList.add(new MenuItem(0, "fa-solid fa-pen-ruler", "研发服务", "1", "/dashboard/businessWorkspace", "公共的业务建设组件服务"));
+        menuList.add(new MenuItem(0, "fa-solid fa-rocket", "数据治理", "2", "/dashboard/dataWorkspace", "数据治理开发治理"));
+        menuList.add(new MenuItem(0, "fa-solid fa-sailboat", "智能服务", "3", "/dashboard/smartWorkspace", "智能化专家服务"));
+        menuList.add(new MenuItem(0, "fas fa-shipping-fast", "运维资产", "4", "/dashboard/operationWorkspace", "整体服务的运营监控"));
+        menuList.add(new MenuItem(0, "fas fa-feather fa-fw", "自定义服务", "5", "/dashboard/customWorkspace", "个性化服务视图配置"));
+
+        return AjaxResult.success(menuList);
+    }
+
+    /**
+     * 更新用户视图
+     */
+    @PostMapping("/updateViewList")
+    public AjaxResult updateViewList(@RequestBody List<MenuItem> menuList) {
+        log.debug("--->>>>> = newMenusList = {}", menuList);
+
+        return AjaxResult.success("更新视图成功");
+    }
+
+    /**
      * 获取当前时间段
      */
-    @RequestMapping("/current-time-period")
+    @GetMapping("/current-time-period")
     public AjaxResult getCurrentTimePeriod() {
         String timePeriod = TimePeriodTool.getTimePeriod();
         return AjaxResult.success("当前时间段是：" + timePeriod);
