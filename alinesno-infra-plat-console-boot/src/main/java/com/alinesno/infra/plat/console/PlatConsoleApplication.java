@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * 集成一个Java开发示例工具
- * @author LuoAnDong
- * @since 2023年8月3日 上午6:23:43
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
  */
-@EnableInfraSsoApi
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class PlatConsoleApplication {
 
