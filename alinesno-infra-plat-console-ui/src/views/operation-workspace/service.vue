@@ -13,20 +13,27 @@
                     <i class="fa-brands fa-dashcube"></i>
                   </div>
                 <div class="app-status-text-desc">
-                  展示当前运行服务概览和详情为最新功能预览版</div>
+                  展示当前运行服务概览预览版</div>
               </div>
             </div>
             <div class="acp-app-list">
               <ul>
                 <li class="app-items" style="width:calc(100% - 10px)" v-for="item in apps" :key="item">
                   <div class="app-icon">
-                    <!-- <img :src="item.icon" /> -->
                     <i :class="item.icon"></i>
                   </div>
+
                   <div class="app-info">
-                    <div class="app-item-title">{{ item.name }}</div>
-                    <div class="app-item desc">{{ item.desc }}</div>
+                    <div class="app-item-title">
+                      <el-link class="app-item-title" :underline="false" :href="item.linkPath" target="_blank">
+                        {{ item.name }}
+                      </el-link>
+                    </div>
+                    <div class="app-item desc">
+                      {{ truncateString(item.productDescribe , 15) }}
+                    </div>
                   </div>
+
                   <div class="app-tip" style="float: right;font-size: 0.8rem;color:#a5a5a5">
                     <i class="fas fa-tools"></i> <span class="counter issues-label">1</span>
                   </div>
@@ -52,14 +59,19 @@
 
 import RunStatus from './runStatus.vue'
 
-const apps = ref([
-  {icon:'fa-solid fa-ship' , name:'自动化操作服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-charging-station' , name:'分布式日志服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-truck-fast' , name:'分布式链路跟踪服务' , desc:'With Route 53 (3 分钟)'},
-  { icon: 'fa-brands fa-slack', name: '容器管理服务', desc: 'With Route 53 (3 分钟)' },
-  {icon:'fa-solid fa-ship' , name:'监控预警服务' , desc:'With EC2 (2 分钟)'},
-  {icon:'fa-solid fa-file-pdf' , name:'一体化安全感触服务' , desc:'With Route 53 (3 分钟)'},
-  {icon:'fa-solid fa-charging-station' , name:'项目管理服务' , desc:'With Route 53 (3 分钟)'},
-]);
+import { getProductByTypeCode } from '@/api/console/product'
+
+const apps = ref([])
+
+function handleProductByTypeCode(){
+  getProductByTypeCode('alinesno-infra-operation').then(response => {
+    console.log(response) ; 
+    apps.value = response.data ;
+  })
+}
+
+nextTick(() => {
+  handleProductByTypeCode();
+})
 
 </script>
