@@ -1,14 +1,19 @@
 package com.alinesno.infra.plat.console.api;
 
+import com.alinesno.infra.common.facade.base.BaseDto;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
  * 表示控制台界面中的菜单项，封装了菜单项的基本属性。
  */
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @ToString
 @Data
-public class MenuItem {
+public class MenuItem extends BaseDto {
 
     /**
      * 菜单项的状态，用于指示菜单项是否可用。
