@@ -13,7 +13,7 @@
                     <i class="fa-brands fa-dashcube"></i>
                   </div>
                 <div class="app-status-text-desc">
-                  展示当前运行服务概览和详情为最新功能预览版</div>
+                  展示当前运行服务概览预览版</div>
               </div>
             </div>
             <div class="acp-app-list">
@@ -23,10 +23,18 @@
                     <!-- <img :src="item.icon" /> -->
                     <i :class="item.icon"></i>
                   </div>
+
                   <div class="app-info">
-                    <div class="app-item-title">{{ item.name }}</div>
-                    <div class="app-item desc">{{ item.desc }}</div>
+                    <div class="app-item-title">
+                      <el-link class="app-item-title" :underline="false" :href="item.linkPath" target="_blank">
+                        {{ item.name }}
+                      </el-link>
+                    </div>
+                    <div class="app-item desc">
+                      {{ truncateString(item.productDescribe , 15) }}
+                    </div>
                   </div>
+
                   <div class="app-tip" style="float: right;font-size: 0.8rem;color:#a5a5a5">
                     <i class="fas fa-tools"></i> <span class="counter issues-label">1</span>
                   </div>
@@ -52,15 +60,19 @@
 
 import RunStatus from './runStatus.vue'
 
-const apps = ref([
-  { icon: 'fa-solid fa-charging-station', name: 'OCR视觉识别服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-brands fa-slack', name: '自然语言识别服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-ship', name: '大模型推理服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fab fa-github-square', name: '智能助手服务', desc: 'With EC2 (2 分钟)' },
-  { icon: 'fa-solid fa-tags', name: '流媒体识别服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-truck-fast', name: '目标检测识别服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fas fa-paper-plane', name: '实时推荐服务', desc: 'With Route 53 (3 分钟)' },
-  { icon: 'fa-solid fa-hammer', name: '实时用户画像服务', desc: 'With Route 53 (3 分钟)' },
-]);
+import { getProductByTypeCode } from '@/api/console/product'
+
+const apps = ref([])
+
+function handleProductByTypeCode(){
+  getProductByTypeCode('alinesno-infra-brain').then(response => {
+    console.log(response) ; 
+    apps.value = response.data ;
+  })
+}
+
+nextTick(() => {
+  handleProductByTypeCode();
+})
 
 </script>
