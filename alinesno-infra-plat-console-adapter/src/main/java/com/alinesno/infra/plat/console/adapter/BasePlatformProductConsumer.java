@@ -4,7 +4,6 @@ import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import com.dtflys.forest.annotation.*;
 import com.alinesno.infra.common.facade.response.R;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -33,12 +32,12 @@ public interface BasePlatformProductConsumer {
      * 查询组织产品分类
      */
     @Get("/api/infra/base/platform/provider/product/queryOrgProductCategory")
-    R<List<ProductTypeDto>> queryOrgProductCategory(@Param("orgId") long orgId);
+    R<List<ProductTypeDto>> queryOrgProductCategory(@Query("orgId") long orgId);
 
     /**
      * 通过分类标识查询产品列表
      */
     @Get("/api/infra/base/platform/provider/product/queryProductByTypeCode")
-    R<List<ProductItemDto>> queryProductByTypeCode(@Param("typeCode") String typeCode);
+    R<List<ProductItemDto>> queryProductByTypeCode(@Query("typeCode") String typeCode);
 
 }
