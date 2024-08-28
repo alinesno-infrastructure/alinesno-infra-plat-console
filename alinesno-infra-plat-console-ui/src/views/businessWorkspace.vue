@@ -7,17 +7,12 @@
     <!-- 应用套件和状态 -->
     <BusinessWorkspaceService />
 
-    <!-- 运行应用列表 -->
-    <!-- <BusinessWorkspaceApps /> -->
-
   </div>
 </template>
 
 <script setup name="Index">
 
-// import BusinessWorkspaceApps from './business-workspace/apps.vue'
 import BusinessWorkspaceService from './business-workspace/service.vue'
-
 import HeadTypeTab from './headTypeTab.vue'
 
 </script>
