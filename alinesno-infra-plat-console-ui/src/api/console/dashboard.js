@@ -1,9 +1,11 @@
 import request from '@/utils/request'
 
+const prefix = '/api/infra/plat/console/status'
+
 // 获取到视图列表 
 export function getViewList() {
   return request({
-    url: '/api/infra/plat/console/status/viewList' , 
+    url: prefix + '/viewList' , 
     method: 'get'
   })
 }
@@ -11,7 +13,32 @@ export function getViewList() {
 // 更新保存视图
 export function updateViewList(data) {
   return request({
-    url: '/api/infra/plat/console/status/updateViewList' , 
+    url: prefix + '/updateViewList' , 
+    method: 'post',
+    data: data
+  })
+}
+
+// 用户签到
+export function daySignIn(){
+  return request({
+    url: prefix + '/daySignIn' , 
+    method: 'get'
+  })
+}
+
+// 打招呼信息
+export function getGreeting(){
+  return request({
+    url: prefix + '/getGreeting' , 
+    method: 'get'
+  })
+}
+
+// 建议与反馈
+export function addFeedback(data){
+  return request({
+    url: prefix + '/feedback' , 
     method: 'post',
     data: data
   })
