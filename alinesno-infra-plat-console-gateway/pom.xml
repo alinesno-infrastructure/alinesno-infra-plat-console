@@ -21,6 +21,11 @@
 			<artifactId>alinesno-infra-plat-console-facade</artifactId>
 			<version>${revision}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alinesno.infra.plat</groupId>
+			<artifactId>alinesno-infra-plat-console-adapter</artifactId>
+			<version>${revision}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.alinesno.infra.common</groupId>
@@ -33,7 +38,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 		</dependency>
-		<!-- fastjson_end -->
+        <!-- fastjson_end -->
 
 	</dependencies>
 
