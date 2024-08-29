@@ -360,6 +360,7 @@ $chartColor: #3b5998;
       .app-status-text-desc {
         font-size: 14px;
         margin-top: 5px;
+        min-width: 250px;
       }
     }
   }
@@ -690,7 +691,7 @@ $chartColor: #3b5998;
       margin-top: 10px;
       margin-left: 10px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 20px;
     }
 
@@ -717,9 +718,10 @@ $chartColor: #3b5998;
         text-decoration: none;
         transform: translateZ(0);
         transition: box-shadow 0.2s ease-in-out;
-        border: 1px solid rgb(218, 220, 224);
+        border: 0px solid rgb(218, 220, 224);
         margin-right: 3%;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
         padding: 20px;
 
         .setion-li-label {
@@ -762,6 +764,8 @@ $chartColor: #3b5998;
       font-weight: 400;
       letter-spacing: normal;
       line-height: 28px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 }
