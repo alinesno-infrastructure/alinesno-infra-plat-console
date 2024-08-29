@@ -2,21 +2,9 @@
   <div class="siderbar">
     <el-menu default-active="1" class="el-menu-vertical" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
 
-      <el-tooltip content="平台监控" placement="right">
-        <el-menu-item index="1" @click="jumpTo">
-          <i class="fa-solid fa-desktop"></i>
-        </el-menu-item>
-      </el-tooltip>
-
-      <el-tooltip content="Agent智能体" placement="right">
-        <el-menu-item index="3" @click="openSmartService">
-          <i class="fa-solid fa-user-shield"></i>
-        </el-menu-item>
-      </el-tooltip>
-
-      <el-tooltip content="支撑平台" placement="right">
-        <el-menu-item index="2" @click="openServiceList">
-          <i class="fa-solid fa-sailboat"></i>
+      <el-tooltip :content="item.content" placement="right" v-for="item in menuItems">
+        <el-menu-item :index="item.index" @click="jumpTo(item.link)">
+          <i :class="item.icon"></i>
         </el-menu-item>
       </el-tooltip>
 
@@ -34,20 +22,19 @@
     <!-- 建议和反馈 -->
     <el-dialog v-model="dialogVisible" title="使用建议和反馈" width="30%" :append-to-body="true" :before-close="handleClose">
 
-      <el-form ref="ruleFormRef" label-position="top" :model="ruleForm" :rules="rules" label-width="120px"
-        class="demo-ruleForm" :size="formSize" status-icon>
+      <el-form ref="databaseRef" label-position="top" :model="form" :rules="rules" label-width="120px" status-icon>
 
-        <el-form-item label="您对控制台首页满意吗？" prop="name">
-          <el-rate v-model="value2" :colors="colors" />
+        <el-form-item label="您对控制台首页满意吗？" prop="desc">
+          <el-input type="textarea" :rows="4" resize="none" v-model="form.desc"  placeholder="请输入您的建议或者反馈" maxlength="128" />
         </el-form-item>
 
-        <el-form-item label="您对控制台首页满意吗？" prop="name">
-          <el-input type="textarea" />
+        <el-form-item label="使用等级" prop="grade">
+          <el-rate v-model="form.grade" :colors="colors" />
         </el-form-item>
 
         <el-form-item style="margin-top:30px">
-          <el-button type="primary" @click="submitForm(ruleFormRef)">保存</el-button>
-          <el-button @click="resetForm(ruleFormRef)">重置</el-button>
+          <el-button type="primary" @click="submitForm()">保存</el-button>
+          <el-button @click="resetForm()">重置</el-button>
         </el-form-item>
 
       </el-form>
@@ -60,27 +47,50 @@
 <script setup>
 
 const dialogVisible = ref(false)
+
+import { addFeedback } from '@/api/console/dashboard'
+
 const router = useRouter();
+const { proxy } = getCurrentInstance();
+
+const data = reactive({
+  form: {
+  },
+  rules: {
+     name: [{ required: true, message: "类型名称不能为空", trigger: "blur" }] , 
+     grade: [{ required: true, message: "类型描述不能为空", trigger: "blur" }],
+  }
+});
+
+const { form, rules } = toRefs(data);
+
+const menuItems = ref([
+  {"index": "1","content": "平台监控","icon": "fa-solid fa-desktop","onClick": "jumpTo" , "link":"/index"},
+  {"index": "3","content": "Agent智能体","icon": "fa-solid fa-user-shield","onClick": "openSmartService" , "link":"/dashboard/channelHome"},
+  {"index": "2", "content": "支撑平台", "icon": "fa-solid fa-sailboat", "onClick": "openServiceList" , "link":"/dashboard/serviceList"}
+]);
 
 // 打开客户配置
 function jumpToConstomTheme() {
   router.push({ path: "/dashboard/dashboardTheme" });
 }
 
-// 打开服务市场
-function openServiceList() {
-  router.push({ path: "/dashboard/serviceList" });
-}
-
 // 打开首页
-function jumpTo() {
-  router.push({ path: "/index" });
+function jumpTo(path) {
+  router.push({ path: path });
 }
 
-// 打开智能客服
-function openSmartService() {
-  router.push({ path: "/dashboard/channelHome" });
-}
+/** 提交按钮 */
+function submitForm() {
+   proxy.$refs["databaseRef"].validate(valid => {
+      if (valid) {
+          addFeedback(form.value).then(response => {
+              proxy.$modal.msgSuccess("反馈成功，非常有帮助！");
+              dialogVisible.value = false;
+          });
+      }
+   });
+};
 
 </script>
 
