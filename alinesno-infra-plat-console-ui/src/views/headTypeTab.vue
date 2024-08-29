@@ -21,7 +21,7 @@
 
         <div class="acp-sign-day-box">
           <i class="fa-solid fa-computer"></i> 
-          你已经签到 <span class="sign-number">402</span> 天
+          你已经签到 <span class="sign-number">{{ signDay }}</span> 天
         </div>
 
         <button class="next-btn next-medium next-btn-normal" @click="dialogVisible = true">
@@ -32,7 +32,7 @@
 
     </div>
 
-    <el-dialog v-model="dialogVisible" title="视图配置" width="500" :before-close="handleClose">
+    <el-dialog v-model="dialogVisible" title="视图配置" width="500" >
 
       <!-- 实现 viewList 上下排序的配置 -->
        <draggable v-model="menuList" :options="{ group: 'items', animation: 200 }" @end="onSortEnd">
@@ -47,7 +47,7 @@
         </template>
       </draggable>
 
-      <span>双击可自定义名称.</span>
+      <div style="margin-top: 10px;">双击可自定义名称.</div>
 
       <template #footer>
         <div class="dialog-footer">
@@ -66,11 +66,14 @@
 
 import {
   getViewList ,
+  daySignIn , 
   updateViewList
 } from '@/api/console/dashboard';
+import { ref } from 'vue';
 
 import draggable from "vuedraggable";
 
+const { proxy } = getCurrentInstance();
 const router = useRouter();
 const route = useRoute() //获取到值
 
@@ -84,15 +87,9 @@ const props = defineProps({
 let type = ref(-1);
 
 const dialogVisible = ref(false)
+const signDay = ref(0);
 
-const menuList = ref([
-  // { status: 0, icon: 'fa-brands fa-slack', name: '仪盘表', type: '0', path: '/index', desc: '运营自动化门户' },
-  // { status: 0, icon: 'fa-solid fa-pen-ruler', name: '研发服务', type: '1', path: '/dashboard/businessWorkspace', desc: '公共的业务建设组件服务' },
-  // { status: 0, icon: 'fa-solid fa-rocket', name: '数据治理', type: '2', path: '/dashboard/dataWorkspace', desc: '数据治理开发治理' },
-  // { status: 0, icon: 'fa-solid fa-sailboat', name: '智能服务', type: '3', path: '/dashboard/smartWorkspace', desc: '智能化专家服务' },
-  // { status: 0, icon: 'fas fa-shipping-fast', name: '运维资产', type: '4', path: '/dashboard/operationWorkspace', desc: '整体服务的运营监控' },
-  // { status: 0, icon: 'fas fa-feather fa-fw', name: '业务服务', type: '5', path: '/dashboard/customWorkspace', desc: '个性化服务视图配置' },
-]);
+const menuList = ref([]);
 
 /** 选择类 */
 function addSelectClass(t) {
@@ -141,6 +138,7 @@ function handleConfirmViewList(){
   dialogVisible.value = false ;
   updateViewList(menuList.value).then(res => {
     console.log(res);
+    proxy.$modal.msgSuccess("修改成功");
   });
 }
 
@@ -156,6 +154,14 @@ function jumpTo(item, index) {
   router.push({ name : item.path, params: { type: index } });
 }
 
+/** 签到 */
+function handleDaySignIn(){
+  daySignIn().then(res => {
+    signDay.value = res.data ;
+  });
+}
+
 handleViewList() ;
+handleDaySignIn() ;
 
 </script>
