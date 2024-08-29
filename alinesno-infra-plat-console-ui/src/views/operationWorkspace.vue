@@ -19,9 +19,6 @@
 <script setup name="Index">
 
 import HeadTypeTab from './headTypeTab.vue'
-
-import OperationWorkspaceCountStaitcs from './operation-workspace/countStatics.vue'
-import OperationWorkspaceApps from './operation-workspace/apps.vue'
 import OperationWorkspaceService from './operation-workspace/service.vue'
 
 </script>
