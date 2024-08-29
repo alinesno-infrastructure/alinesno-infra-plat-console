@@ -15,9 +15,6 @@
 <script setup name="Index">
 
 import HeadTypeTab from './headTypeTab.vue'
-
-// import SmartWorkspaceApps from './smart-workspace/apps.vue'
 import SmartWorkspaceService from './smart-workspace/service.vue'
-
 
 </script>
