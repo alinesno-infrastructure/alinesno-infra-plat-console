@@ -4,11 +4,15 @@ import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
 import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
+import com.alinesno.infra.plat.console.adapter.BasePlatformConsoleConsumer;
+import com.alinesno.infra.plat.console.api.FeedbackDto;
 import com.alinesno.infra.plat.console.api.MenuItem;
 import com.alinesno.infra.plat.console.api.tools.CheckinUtils;
 import com.alinesno.infra.plat.console.api.tools.TimePeriodTool;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +42,19 @@ import java.util.List;
 @RequestMapping("/api/infra/plat/console/status")
 public class DashboardStatusController extends SuperController {
 
+    @Autowired
+    private BasePlatformConsoleConsumer platformConsoleConsumer ;
+
+    /**
+     * 保存用户反馈记录
+     */
+    @PostMapping("/feedback")
+    public AjaxResult feedback(@RequestBody FeedbackDto feedback) {
+        log.debug("--->>>>> = feedback = {}" , feedback);
+
+        return AjaxResult.success("反馈成功");
+    }
+
     /**
      * 生成视图列表
      */
@@ -45,18 +62,32 @@ public class DashboardStatusController extends SuperController {
     public AjaxResult getViewList() {
 
         log.debug("--->>>>> = StpUtil = {}" , CurrentAccountJwt.isLogin());
-        long currentId = 1L ;
+        long orgId = 1L ;
 
-        List<MenuItem> menuList = new ArrayList<>();
+        List<MenuItem> menuList = platformConsoleConsumer.customView(orgId).getData() ;
 
-        menuList.add(new MenuItem(0, "fa-brands fa-slack", "仪盘表", "0", "/index", "运营自动化门户"));
-        menuList.add(new MenuItem(0, "fa-solid fa-pen-ruler", "研发服务", "1", "/dashboard/businessWorkspace", "公共的业务建设组件服务"));
-        menuList.add(new MenuItem(0, "fa-solid fa-rocket", "数据治理", "2", "/dashboard/dataWorkspace", "数据治理开发治理"));
-        menuList.add(new MenuItem(0, "fa-solid fa-sailboat", "智能服务", "3", "/dashboard/smartWorkspace", "智能化专家服务"));
-        menuList.add(new MenuItem(0, "fas fa-shipping-fast", "运维资产", "4", "/dashboard/operationWorkspace", "整体服务的运营监控"));
-        menuList.add(new MenuItem(0, "fas fa-feather fa-fw", "自定义服务", "5", "/dashboard/customWorkspace", "个性化服务视图配置"));
+        if(menuList == null || menuList.isEmpty()){
+            menuList = new ArrayList<>();
+
+            menuList.add(new MenuItem(0, "fa-brands fa-slack", "仪盘表", "0", "/index", "运营自动化门户"));
+            menuList.add(new MenuItem(0, "fa-solid fa-pen-ruler", "研发服务", "1", "/dashboard/businessWorkspace", "公共的业务建设组件服务"));
+            menuList.add(new MenuItem(0, "fa-solid fa-rocket", "数据治理", "2", "/dashboard/dataWorkspace", "数据治理开发治理"));
+            menuList.add(new MenuItem(0, "fa-solid fa-sailboat", "智能服务", "3", "/dashboard/smartWorkspace", "智能化专家服务"));
+            menuList.add(new MenuItem(0, "fas fa-shipping-fast", "运营服务", "4", "/dashboard/operationWorkspace", "整体服务的运营监控"));
+            menuList.add(new MenuItem(0, "fas fa-feather fa-fw", "自定义服务", "5", "/dashboard/customWorkspace", "个性化服务视图配置"));
+        }
 
         return AjaxResult.success(menuList);
+    }
+
+    /**
+     * 打招呼方法
+     */
+    @GetMapping("/getGreeting")
+    public AjaxResult getGreeting() {
+        long accountId = 1L ;
+        String greeting = platformConsoleConsumer.getGreeting(accountId).getData() ;
+        return AjaxResult.success("操作成功." , greeting);
     }
 
     /**
@@ -65,6 +96,9 @@ public class DashboardStatusController extends SuperController {
     @PostMapping("/updateViewList")
     public AjaxResult updateViewList(@RequestBody List<MenuItem> menuList) {
         log.debug("--->>>>> = newMenusList = {}", menuList);
+
+        long orgId = 1L ;
+        Boolean b =  platformConsoleConsumer.saveCustomView(menuList , orgId).getData();
 
         return AjaxResult.success("更新视图成功");
     }
@@ -77,7 +111,6 @@ public class DashboardStatusController extends SuperController {
         String timePeriod = TimePeriodTool.getTimePeriod();
         return AjaxResult.success("当前时间段是：" + timePeriod);
     }
-
 
     /**
      * 获取 logo 图片的 Base64 位
@@ -108,103 +141,11 @@ public class DashboardStatusController extends SuperController {
     /**
      * 返回签到天数
      */
-    @RequestMapping("/checkin-days")
-    public AjaxResult getCheckinDays() {
-        // 在此处编写获取签到天数的逻辑，可以从工具类中获取
-        return AjaxResult.success(CheckinUtils.getCheckinDays());
+    @RequestMapping("/daySignIn")
+    public AjaxResult daySignIn() {
+        long accountId = 1L ;
+        int signInDay = platformConsoleConsumer.signIn(accountId).getData() ;
+        return AjaxResult.success("签到成功." , signInDay);
     }
-
-    /**
-     * 获取应用列表
-     * @return
-     */
-    @GetMapping("/screenJsonList")
-    public AjaxResult getScreenJsonList() {
-        String screenJsonList = "[\n" +
-                "  {\n" +
-                "    \"addTime\": \"2023-05-02 05:15:12\",\n" +
-                "    \"departmentId\": null,\n" +
-                "    \"lastUpdateOperatorId\": null,\n" +
-                "    \"usage\": 7,\n" +
-                "    \"icon\": 'https://d1by4p17n947rt.cloudfront.net/icon/9da5a168cf8194c8ee5ed192a443d563-674375b53bc8ae94f48cfdb5c81e8363.svg',\n" +
-                "    \"remark\": \"数据运营治理服务\",\n" +
-                "    \"updateTime\": null,\n" +
-                "    \"title\": \"数据运营治理服务\",\n" +
-                "    \"productItem\": [\n" +
-                "      {\n" +
-                "        \"addTime\": \"2021-07-23 04:56:00\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2021-07-23 04:56:11\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2023-02-15 15:01:56\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2022-12-21 14:53:10\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2021-07-23 04:55:48\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2023-03-16 16:49:16\"\n" +
-                "      },\n" +
-                "      {\n" +
-                "        \"addTime\": \"2021-07-23 04:56:23\"\n" +
-                "      }\n" +
-                "    ]\n" +
-                "  },\n" +
-                "  {\n" +
-                "    \"addTime\": \"2023-05-02 05:14:31\",\n" +
-                "    \"departmentId\": null,\n" +
-                "    \"lastUpdateOperatorId\": null,\n" +
-                "    \"usage\": 7,\n" +
-                "    \"icon\": 'https://d1by4p17n947rt.cloudfront.net/icon/a5ffe5487f62ef75d8e5cf78c18525a5-d4867f9d4adcd749f0c5aff987232847.svg',\n" +
-                "    \"remark\": \"技术研发组件服务\",\n" +
-                "    \"updateTime\": null,\n" +
-                "    \"title\": \"技术研发组件服务\",\n" +
-                "    \"productItem\": [\n" +
-                "      {\n" +
-                "        \"addTime\": \"2021-07-23 04:53:46\",\n" +
-                "        \"departmentId\": null,\n" +
-                "        \"sortNumber\": 8,\n" +
-                "        \"hasStatus\": 0,\n" +
-                "        \"productBrief\": null,\n" +
-                "        \"linkPath\": \"http://alinesno-notice.beta.linesno.com\",\n" +
-                "        \"deleteManager\": null,\n" +
-                "        \"itemStatus\": null,\n" +
-                "        \"fieldProp\": null,\n" +
-                "        \"id\": \"c230a72a7e1bb97c8d383a27327d7a77\",\n" +
-                "        \"viewCount\": null,\n" +
-                "        \"operatorId\": null,\n" +
-                "        \"applicationName\": null,\n" +
-                "        \"fieldId\": null,\n" +
-                "        \"lastUpdateOperatorId\": \"784553886277959680\",\n" +
-                "        \"banner\": null,\n" +
-                "        \"updateTime\": \"2021-07-23 13:12:21\",\n" +
-                "        \"productDescribe\": null,\n" +
-                "        \"productTypeId\": \"787440246718464000\",\n" +
-                "        \"hasInner\": 0,\n" +
-                "        \"hasDelete\": 0,\n" +
-                "        \"deleteTime\": null,\n" +
-                "        \"subName\": null,\n" +
-                "        \"prodStatus\": \"normal\",\n" +
-                "        \"identityStatus\": null,\n" +
-                "        \"tenantId\": \"0\",\n" +
-                "        \"name\": \" 多渠道通知服务 \",\n" +
-                "        \"hasRecommend\": 1,\n" +
-                "        \"applicationId\": \"0\",\n" +
-                "        \"shortName\": null\n" +
-                "      },\n" +
-                "      ...\n" + // 省略其他 productItem 的内容
-                "    ],\n" +
-                "    ...\n" + // 省略其他字段内容
-                "  },\n" +
-                "  ...\n" + // 省略其他 screenJsonList 的内容
-                "]";
-
-        return AjaxResult.success(screenJsonList);
-    }
-
 
 }
