@@ -17,19 +17,12 @@
                 <span><i class="el-icon-monitor"></i>
                   {{ currentEnvClusterObj.clusterName }}
                 </span>
-                <!-- 
-                <span>
-                  <i class="el-icon-link"></i> 
-                  应用地址: {{ currentEnvClusterObj.apiServerUrl }}
-                </span> 
-                -->
               </div>
             </div>
           </div>
         </div>
       </el-col>
     </el-row>
-
 
     <!-- 面板服务 -->
     <DashboardServiceStatus />
@@ -48,21 +41,25 @@
 
 <script setup name="Index">
 
+import {
+  getGreeting
+} from '@/api/console/dashboard'
+
 import DashboardCollectInfo from './dashboard/collect-info'
-import DashboardService from './dashboard/service.vue'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
-import DashboardApps from './dashboard/apps.vue'
-// import DashboardRunStatus from './dashboard/dashboardRunStatus.vue'
 import DashboardNotices from './dashboard/notices.vue'
 import HeadTypeTab from './headTypeTab.vue'
-
-
 
 const currentEnvClusterObj = ref({
   appName : '晚上好, 罗小东'  , 
   clusterName: '集成多种能力的新型智能体基础设施'  , 
-  apiServerUrl: 'http://portal.infra.linesno.com'
 }) 
+
+onMounted(() => {
+  getGreeting().then(res => {
+    currentEnvClusterObj.value.appName = res.data;
+  })
+})
 
 </script>
 
