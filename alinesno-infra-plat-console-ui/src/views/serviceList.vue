@@ -19,7 +19,7 @@
                         {{ item.name }} 
                     </h1>
                     <div class="popular-item__desc"> 
-                        数字AIP基础服务模块建设能力，包含基础的能力建设和配置
+                        {{ item.typeDescribe }}
                     </div>
                 </div>
             </div>
@@ -29,12 +29,13 @@
                     <i :class="type.banner" /> {{ type.name }}
                 </h2>
                 <div class="section-body">
-                    <div class="app-item border-bottom" v-for="(item, index) in type.subList" :key="index">
+                    <div class="app-item border-bottom" v-for="(item, index) in type.productItem" :key="index">
                         <div class="app-item__icon wk wk-icon-user">
-                            <i v-if="index % 4 == 1" style="color:#3b5998;" class="icon-img fa-brands fa-slack" />
+                            <!-- <i v-if="index % 4 == 1" style="color:#3b5998;" class="icon-img fa-brands fa-slack" />
                             <i v-if="index % 4 == 0" style="color:#3b5998;" class="fab fa-pinterest-p fa-fw" />
                             <i v-if="index % 4 == 2" style="color:#3b5998;" class="icon-img fas fa-feather fa-fw" />
-                            <i v-if="index % 4 == 3" style="color:#3b5998;" class="icon-img fa-brands fa-slack" />
+                            <i v-if="index % 4 == 3" style="color:#3b5998;" class="icon-img fa-brands fa-slack" /> -->
+                            <i  style="color:#3b5998;" :class="item.icon" />
                         </div>
                         <div class="content">
                             <h3 class="app-item__title">
@@ -46,7 +47,7 @@
 
                             </h3>
                             <div class="app-item__desc">
-                                业务基础服务规划和建设，描述待补充
+                                详细描述信息，{{ item.productDescribe }}
                             </div>
                         </div>
                         <div class="app-item__control">
@@ -77,7 +78,7 @@ function getProductList() {
 function openService(item){
     var link = item.linkPath ;
     // 使用 window.open 在当前窗口打开链接
-    window.open(link, '_self');
+    window.open(link, '_blank');
 }
 
 // 获取产品列表
@@ -94,7 +95,7 @@ getProductList() ;
     padding: 10px;
     margin: 10px;
     width: 90%;
-    max-width: 1416px;
+    max-width: 1240px;
     margin: auto;
 
     .header {
