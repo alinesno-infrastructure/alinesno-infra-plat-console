@@ -12,9 +12,6 @@
             这是我们推出的在线学习、技能提升和技能方面的统一平台
           </div>
         </div>
-        <div class="learn-img">
-          <img :src="learnLogo" alt="" />
-        </div>
       </div>
     </div>
 
@@ -56,7 +53,6 @@
 
 <script setup name="Index">
 
-import learnLogo from '@/assets/icons/data_03.svg';
 const learnPanel = [
   {
     'title': '业务建设集成',
