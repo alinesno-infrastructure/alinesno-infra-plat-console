@@ -15,7 +15,6 @@
 <script setup name="Index">
 
 import HeadTypeTab from './headTypeTab.vue'
-
 import DataWorkspaceService from './data-workspace/service.vue'
 
 
