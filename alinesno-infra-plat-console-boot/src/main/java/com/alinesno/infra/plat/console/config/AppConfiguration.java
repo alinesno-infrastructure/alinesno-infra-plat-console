@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @EnableInfraSsoApi
-@ForestScan(basePackages = "com.alinesno.infra.smart.assistant.adapter")
+@ForestScan(basePackages = "com.alinesno.infra.plat.console.adapter")
 @Configuration
 public class AppConfiguration implements CommandLineRunner {
 
