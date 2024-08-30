@@ -3,7 +3,7 @@
     <el-row class="acp-dashboard-panel" :gutter="20">
 
       <el-col :span="19">
-        <UcenterApps ref="ucenterAppRef" :types="apps" />
+        <UcenterApps ref="ucenterAppRef" :types="apps" @refresh="getList" />
       </el-col>
 
       <el-col class="panel-col" :span="5">
@@ -24,7 +24,7 @@
                   </div>
                   <div class="app-info">
                     <div class="app-item-title">{{ item.name }}</div>
-                    <div class="app-item desc">{{ item.desc }}</div>
+                    <div class="app-item desc">{{ item.typeDescribe }}</div>
                   </div>
                   <div class="app-tip" @click="handleUpdate(item)" style="float: right;font-size: 0.8rem;color:#a5a5a5">
                     <i class="fas fa-tools"></i> <span class="counter issues-label">编辑</span>
@@ -37,7 +37,7 @@
             <div class="footer-link">
               <el-button type="primary" size="large" @click="handleAddProduct()" text bg style="width:100%"><i class="fa-solid fa-server"></i> &nbsp; 添加业务应用</el-button>
               <br/><br/>
-              <el-button type="warning" size="large" @click="dialogVisible = true" text bg style="width:100%"><i class="fas fa-credit-card"></i> &nbsp; 添加服务类型</el-button>
+              <el-button type="warning" size="large" @click="handleAddType()" text bg style="width:100%"><i class="fas fa-credit-card"></i> &nbsp; 添加服务类型</el-button>
             </div>
           </div>
         </div>
@@ -52,11 +52,25 @@
           :rules="rules"
           label-width="auto"
           status-icon>
+          <el-form-item label="图标" prop="icon">
+            <el-radio-group v-model="form.icon">
+              <el-radio v-for="item in icons"
+                :value="item.icon"
+                :key="item.icon"
+                :label="item.icon"
+                >
+                <i :class="item.icon"></i>
+              </el-radio>
+            </el-radio-group>
+          </el-form-item>
           <el-form-item label="类型名称" prop="name">
             <el-input v-model="form.name" placeholder="请输入类型名称" maxlength="128" />
           </el-form-item>
-          <el-form-item label="类型描述" prop="desc">
-            <el-input v-model="form.desc" placeholder="请输入类型描述" maxlength="128" />
+          <el-form-item label="排序" prop="sortNumber">
+            <el-input-number v-model="form.sortNumber" class="mx-4" :min="1" :max="100" controls-position="right" @change="handleChange" />
+          </el-form-item>
+          <el-form-item label="类型描述" prop="typeDescribe">
+            <el-input v-model="form.typeDescribe" placeholder="请输入类型描述" maxlength="128" />
           </el-form-item>
       </el-form>
       <template #footer>
@@ -90,18 +104,29 @@ const ucenterAppRef = ref(null)
 const dialogVisible = ref(false)
 const title = ref("添加应用类型")
 
-const apps = ref([
-  {icon: 'fa-solid fa-charging-station' , name:'权限资源引擎服务' , desc:'With Route 53 (3 分钟)'},
-  {icon: 'fa-solid fa-truck' , name:'网关配置服务' , desc:'With Route 53 (3 分钟)'},
-  {icon: 'fa-solid fa-paper-plane' , name:'分布式配置中心服务' , desc:'With Route 53 (3 分钟)'},
-  {icon: 'fa-solid fa-ship' , name:'公共存储服务' , desc:'With EC2 (2 分钟)'},
+const icons = ref([
+  { id: 1, icon: 'fa-solid fa-charging-station'} ,
+  { id: 1, icon: 'fa-solid fa-truck'} ,
+  { id: 2, icon: 'fa-solid fa-paper-plane'} ,
+  { id: 2, icon: 'fa-solid fa-ship'} ,
+  { id: 3, icon: 'fa-solid fa-chart-column'},
+  { id: 4, icon: 'fa-solid fa-server'}, 
+  { id: 5, icon: 'fa-solid fa-box-open'}, 
+  { id: 8, icon: 'fa-solid fa-file-invoice-dollar'}, 
+  { id: 9, icon: 'fa-solid fa-user-tie'},
 ]);
 
+const apps = ref([]);
+
 const data = reactive({
-  form: {},
+  form: {
+    sortNumber: 1,
+    typeDescribe: ''
+  },
   rules: {
+     icon: [{ required: true, message: "请选择图标", trigger: "blur" }] , 
      name: [{ required: true, message: "类型名称不能为空", trigger: "blur" }] , 
-     desc: [{ required: true, message: "类型描述不能为空", trigger: "blur" }],
+     typeDescribe: [{ required: true, message: "类型描述不能为空", trigger: "blur" }],
   }
 });
 
@@ -114,13 +139,13 @@ function submitForm() {
          if (form.value.id != undefined) {
             updateProductType(form.value).then(response => {
                proxy.$modal.msgSuccess("修改成功");
-               open.value = false;
+               dialogVisible.value = false;
                getList();
             });
          } else {
             addProductType(form.value).then(response => {
                proxy.$modal.msgSuccess("新增成功");
-               open.value = false;
+               dialogVisible.value = false;
                getList();
             });
          }
@@ -130,13 +155,21 @@ function submitForm() {
 
 /** 查询类型列表 */
 function getList() {
-   loading.value = true;
-   listProductType(proxy.addDateRange(queryParams.value, dateRange.value)).then(res => {
-      loading.value = false;
-      ProductTypeList.value = res.rows;
-      total.value = res.total;
+   listProductType().then(res => {
+      apps.value = res.data;
+      ucenterAppRef.value.refreshApps(apps.value);
    });
-};
+}
+
+/** 重置按钮操作 */
+function resetForm(){
+  form.value = {
+    icon: '' , 
+    name: '' , 
+    typeDescribe: '' , 
+    sortNumber: 1,
+  };
+}
 
 /** 修改按钮操作 */
 function handleUpdate(row) {
@@ -146,7 +179,7 @@ function handleUpdate(row) {
       dialogVisible.value = true;
       title.value = "修改业务类型";
    });
-};
+}
 
 /** 删除按钮操作 */
 function handleDelete(row) {
@@ -160,8 +193,16 @@ function handleDelete(row) {
 };
 
 /** 新增业务类型 */
+function handleAddType() {
+   resetForm();
+   dialogVisible.value = true;
+}
+
+/** 新增业务类型 */
 function handleAddProduct(){
   ucenterAppRef.value.handleAdd()
 }
+
+getList();
 
 </script>
