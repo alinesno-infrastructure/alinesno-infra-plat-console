@@ -43,3 +43,20 @@ export function addFeedback(data){
     data: data
   })
 }
+
+// 查询组织信息
+export function findOrg(){
+  return request({
+    url: prefix + '/findOrg' , 
+    method: 'get'
+  })
+}
+
+// 更新用户组织信息
+export function updateOrgCustomTheme(data) {
+  return request({
+    url: prefix + '/updateOrgCustomTheme' , 
+    method: 'post',
+    data: data
+  })
+}
