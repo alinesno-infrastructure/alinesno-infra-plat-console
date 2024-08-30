@@ -7,7 +7,7 @@
           <div class="react-grid-item static cssTransforms react-resizable-hide react-resizable"
             v-for="(item, index) in menuList" :key="index" :style="'transform: translate(' + (150 * index) + 'px, 0px);'">
 
-            <button class="next-btn next-large next-btn-normal grid-tab" @click="jumpTo(item, index)" :class="addSelectClass(index)">
+            <button class="next-btn next-large next-btn-normal grid-tab" @click="jumpTo(item, index)" :class="addSelectClass(item)">
               <span class="title">
                 <i :class="item.icon"></i> {{ item.name }}
               </span>
@@ -93,15 +93,15 @@ const menuList = ref([]);
 
 /** 选择类 */
 function addSelectClass(t) {
-  console.log('props.currentTab= ' + props.currentTab) ; 
-  console.log('t = ' + t) ; 
 
   if(props.currentTab == null){
     props.currentTab = 0 ; 
   }
 
+  console.log('item = ' + t.type);
+  console.log('currentTab = ' + props.currentTab);
 
-  return props.currentTab == t? 'select' : '';
+  return props.currentTab == t.type? 'select' : '';
 };
 
 /** 获取视图列表 */
