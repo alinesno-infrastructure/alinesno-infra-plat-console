@@ -34,7 +34,7 @@
     <el-dialog
       v-model="dialogVisible"
       title="预览"
-      width="800px"
+      width="500px"
       append-to-body
     >
       <img
@@ -94,7 +94,8 @@ watch(() => props.modelValue, val => {
     fileList.value = list.map(item => {
       if (typeof item === "string") {
         if (item.indexOf(baseUrl) === -1) {
-          item = { name: baseUrl + item, url: baseUrl + item };
+          // item = { name: baseUrl + item, url: baseUrl + item };
+          item = { name: baseUrl + item, url: 'data:image/gif;base64,'+ item };
         } else {
           item = { name: item, url: item };
         }
@@ -148,7 +149,7 @@ function handleExceed() {
 // 上传成功回调
 function handleUploadSuccess(res, file) {
   if (res.code === 200) {
-    uploadList.value.push({ name: res.fileName, url: res.fileName });
+    uploadList.value.push({ name: res.fileName, url: res.fileName , type:res.type });
     uploadedSuccessfully();
   } else {
     number.value--;
