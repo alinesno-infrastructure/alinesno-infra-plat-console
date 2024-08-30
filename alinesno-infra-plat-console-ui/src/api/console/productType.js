@@ -25,11 +25,10 @@ var managerUrl = {
 }
 
 // 查询数据库列表
-export function listProductType(query) {
+export function listProductType() {
   return request({
     url: managerUrl.datatables ,
-    method: 'post',
-    params: query
+    method: 'get',
   })
 }
 
