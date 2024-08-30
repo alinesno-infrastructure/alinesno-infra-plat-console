@@ -21,49 +21,6 @@
       </el-col>
     </el-row>
 
-    <!-- <el-row :gutter="20" style="float:left;width:100%;">
-
-      <el-col :span="12" style="border:0px;">
-        <div id="echarts-bar-chart-41" :style="{ width: '100%', height: '280px' }"></div>
-      </el-col>
-
-      <el-col :span="12" style="border:0px;">
-        <div id="echarts-bar-chart-42" :style="{ width: '100%', height: '280px' }"></div>
-      </el-col>
-
-    </el-row> -->
-
-    <!-- <el-row :gutter="20" style="float:left;width:100%;">
-      <el-col :span="24" style="padding:0px !important;border:0px;">
-        <div class="grid-content">
-          <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态</div>
-          </div>
-          <div class="panel-body" style="height: auto;position: relative;">
-
-              <div class="direct-box">
-                <ul>
-                  <li class="box-item" v-for="item in directContent" :key="item">
-                    <div class="dire-panel">
-                      <div class="panel-title">
-                        <i :class="item.icon" /> {{ item.name }} 
-                      </div>
-                      <div class="panel-describe">通过简单几步，图中7种主流开发环境轻松部署，摆脱海量文档搜索之苦。</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-          </div>
-          <div class="panel-footer">
-            <div class="footer-link">
-            </div>
-          </div>
-        </div>
-
-      </el-col>
-    </el-row> -->
-
   </div>
 </template>
 
