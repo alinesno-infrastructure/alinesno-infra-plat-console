@@ -2,38 +2,44 @@
   <div class="app-container">
 
     <div class="acp-group-header">
-      <div class="group-title">自定义主题配置</div>
-      <div class="group-body">根据客户需求提出面向构件的应用解决方案的建议</div>
+      <div class="group-title">自定义组织配置</div>
+      <div class="group-body">自定义组织色调和管理配置，形成组织组织风格</div>
     </div>
 
     <div class="form-container">
-      <el-form :model="form" :rules="rules" v-loading="loading" ref="form" label-width="180px" class="demo-ruleForm">
-        <el-form-item label="团队名称" prop="name">
-          <el-input v-model="form.name" placeholder="请输入企业名称" />
+      <el-form
+          ref="databaseRef" 
+          :model="form"
+          :rules="rules"
+          label-width="auto"
+          status-icon>
+        <el-form-item label="组织名称" prop="orgName">
+          <el-input v-model="form.orgName" placeholder="请输入企业名称，如AIP研发团队" />
         </el-form-item>
 
-        <el-form-item label="团队Logo" prop="logo">
-          <ImageUpload v-model="form.logo" class="navLogo" :limit="1" :fileSize="20" />
+        <el-form-item label="组织Logo" prop="logoUrl">
+          <ImageUpload v-model="form.logoUrl" class="navLogo" :limit="1" :fileSize="1" />
         </el-form-item>
 
-        <el-form-item label="团队描述" prop="enDesc">
-          <el-input v-model="form.enDesc" placeholder="请输入企业描述" />
+        <el-form-item label="组织描述" prop="remark">
+          <el-input v-model="form.remark" placeholder="请输入企业描述，如AIP研发团队是一个小型的研发团队。" />
         </el-form-item>
 
-        <el-form-item label="团队官网" prop="domainName">
-          <el-input v-model="form.domainName" placeholder="请输入企业官网地址" />
+        <el-form-item label="组织官网" prop="subdomain">
+          <el-input v-model="form.subdomain" placeholder="请输入企业官网地址" />
         </el-form-item>
 
-        <el-form-item label="团队代码" prop="creditCode">
-          <el-input v-model="form.creditCode" placeholder="请输入企业信用代码&或者输入唯一值" />
+
+        <el-form-item label="负责人" prop="orgPhone">
+          <el-input v-model="form.orgPhone" placeholder="请输入负责人信息，如 张三，15578942583" />
         </el-form-item>
 
-        <el-form-item label="工作台" prop="saasUrl">
-          <el-input v-model="form.saasUrl" placeholder="请输入AIP工作台" />
+        <el-form-item label="组织地址" prop="orgAddress">
+          <el-input v-model="form.orgAddress" placeholder="请输入组织工作地址信息，如 南宁" />
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')">
+          <el-button type="primary" @click="submitForm()">
             保存
           </el-button>
         </el-form-item>
@@ -42,109 +48,57 @@
   </div>
 </template>
 
-
 <script setup>
+import { reactive, toRefs } from 'vue';
 
-const form = ref({
-  name: null,
-  logo: null,
-  enDesc: null,
-  creditCode: null,
+import { 
+  findOrg , 
+  updateOrgCustomTheme
+} from "@/api/console/dashboard";
+
+const { proxy } = getCurrentInstance();
+
+const data = reactive({
+  form: {
+    orgName: '',
+    logoUrl: '',
+    remark: '',
+    subdomain: '',
+    orgPhone: '',
+    orgAddress: ''
+  },
+  rules: {
+    orgName: [{ required: true, message: '组织名称不能为空', trigger: 'blur' }],
+    logoUrl: [{ required: true, message: '请上传组织Logo', trigger: 'change' }],
+    remark: [{ required: true, message: '组织描述不能为空', trigger: 'blur' }],
+    subdomain: [{ required: true, message: '组织官网地址不能为空', trigger: 'blur' }],
+    orgPhone: [{ required: true, message: '负责人信息不能为空', trigger: 'blur' }],
+    orgAddress: [{ required: true, message: '组织地址不能为空', trigger: 'blur' }]
+  }
 });
 
-// import {
-//   getCurrentEnterprise,
-//   registerEnterprise,
-//   modifyEnterprise,
-// } from "@/api/saasCloud";
+const { form, rules } = toRefs(data);
 
-// import ImageUpload from "alinesno-ui/packages/ImageUpload"
+// 加载组织信息的方法
+const handleFindOrg = () => {
+  findOrg().then((res) => {
+    form.value = res.data ;
+  });
+};
 
-// export default {
+// 在组件挂载完成后自动加载组织信息
+onMounted(handleFindOrg);
 
-//   // components: {
-//   //   ImageUpload
-//   // },
-
-//   data() {
-//     return {
-//       form: {
-//         name: null,
-//         logo: null,
-//         enDesc: null,
-//         creditCode: null,
-//       },
-//       rules: {
-//         name: [
-//           { required: true, message: "请输入企业名称", trigger: "blur" },
-//         ],
-//         logo: [
-//           { required: true, message: "请至少上传一张Logo图", trigger: "blur" },
-//         ],
-//         enDesc: [
-//           { required: true, message: "请输入企业描述", trigger: "blur" },
-//         ],
-//         creditCode: [
-//           { required: true, message: "请输入企业信用代码", trigger: "blur" },
-//         ]
-//       },
-//       currentSiteId: null,
-//       // 遮罩层
-//       loading: false,
-//     };
-//   },
-
-//   created() {
-//     this.getSetting();
-//   },
-
-//   methods: {
-//     getSetting() {
-
-//       this.loading = true;
-//       getCurrentEnterprise().then(res => {
-//         debugger
-//         this.loading = false;
-//         if (res.code == 200) {
-//           if (res.data != null) {
-//             this.currentSiteId = res.data.id;
-//             this.form = res.data;
-//           }
-//         } else {
-//           alert("获取失败");
-//         }
-//       }).catch(() => { this.loading = false; });
-
-//     },
-//     submitForm(formName) {
-//       this.$refs[formName].validate((valid) => {
-//         if (valid) {
-//           this.loading = true;
-//           if (this.form.id) {
-//             // 修改
-//             modifyEnterprise(this.form).then(res => {
-//               this.msgSuccess("保存成功");
-//               this.loading = false;
-//               this.getSetting();
-//             }).catch(() => { this.loading = false; });
-
-//           } else {
-//             // 新增
-//             registerEnterprise(this.form).then(res => {
-//               this.msgSuccess("保存成功");
-//               this.loading = false;
-//               this.getSetting();
-//             }).catch(() => { this.loading = false; });
-//           }
-//         }
-//       });
-//     },
-//     resetForm() {
-//       this.$refs["ruleForm"].resetFields();
-//       this.getSetting();
-//     }
-//   },
-// };
+// 提交表单的方法
+const submitForm = () => {
+   proxy.$refs["databaseRef"].validate(valid => {
+    if (valid) {
+      updateOrgCustomTheme(form.value).then(response => {
+        proxy.$modal.msgSuccess("修改成功");
+      });
+    } 
+  });
+};
 </script>
 
 <style scoped lang="scss">
