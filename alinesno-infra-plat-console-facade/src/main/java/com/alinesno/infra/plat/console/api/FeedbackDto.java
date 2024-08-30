@@ -22,5 +22,7 @@ public class FeedbackDto implements Serializable {
     private String problemDesc; // 建议内容
     private String proposedSolution;
     private String productItemId;
-    private long accountId;
+
+    private long accountId; // 用户ID
+    private long orgId ; // 机构ID
 }
