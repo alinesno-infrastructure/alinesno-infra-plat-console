@@ -20,13 +20,13 @@ public interface BasePlatformProductConsumer {
      * 保存组织业务产品
      */
     @Post("/api/infra/base/platform/provider/product/saveOrgProduct")
-    R<String> saveOrgProduct(@Body ProductItemDto productItemDto);
+    R<String> saveOrgProduct(@JSONBody ProductItemDto productItemDto);
 
     /**
      * 保存组织产品分类
      */
     @Post("/api/infra/base/platform/provider/product/saveOrgProductCategory")
-    R<String> saveOrgProductCategory(@Body ProductTypeDto productTypeDto);
+    R<String> saveOrgProductCategory(@JSONBody ProductTypeDto productTypeDto);
 
     /**
      * 查询组织产品分类
