@@ -14,7 +14,7 @@
       <el-menu-item index="11" @click="jumpToConstomTheme">
         <i class="fa-solid fa-file-pen"></i>
       </el-menu-item>
-      <el-menu-item index="12" @click="dialogVisible = true">
+      <el-menu-item index="12" @click="openFeekback()">
         <i class="fa-solid fa-paper-plane"></i>
       </el-menu-item>
     </el-menu>
@@ -24,8 +24,8 @@
 
       <el-form ref="databaseRef" label-position="top" :model="form" :rules="rules" label-width="120px" status-icon>
 
-        <el-form-item label="您对控制台首页满意吗？" prop="desc">
-          <el-input type="textarea" :rows="4" resize="none" v-model="form.desc"  placeholder="请输入您的建议或者反馈" maxlength="128" />
+        <el-form-item label="您对控制台首页满意吗？" prop="problemDesc">
+          <el-input type="textarea" :rows="4" resize="none" v-model="form.problemDesc"  placeholder="请输入您的建议或者反馈" maxlength="128" />
         </el-form-item>
 
         <el-form-item label="使用等级" prop="grade">
@@ -55,6 +55,8 @@ const { proxy } = getCurrentInstance();
 
 const data = reactive({
   form: {
+    grade: '' , 
+    problemDesc: ''
   },
   rules: {
      name: [{ required: true, message: "类型名称不能为空", trigger: "blur" }] , 
@@ -73,6 +75,13 @@ const menuItems = ref([
 // 打开客户配置
 function jumpToConstomTheme() {
   router.push({ path: "/dashboard/dashboardTheme" });
+}
+
+function openFeekback(){
+  dialogVisible.value = true ; 
+
+  form.value.grade = '' ; 
+  form.value.problemDesc= '' ;
 }
 
 // 打开首页
