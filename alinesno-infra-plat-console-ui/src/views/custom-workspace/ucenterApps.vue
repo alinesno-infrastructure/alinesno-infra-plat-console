@@ -12,7 +12,7 @@
             <div class="acp-app-list">
               <ul>
                 <li class="app-items ucenter-app-item" 
-                    v-for="i in item.children" 
+                    v-for="i in item.productItem" 
                     :key="i">
 
                   <div class="app-icon">
@@ -21,15 +21,15 @@
 
                   <div class="app-info">
                     <div class="app-item-title">
-                      <el-link class="app-item-title" :underline="false" :href="item.linkPath" target="_blank">
+                      <el-linkPath class="app-item-title" :underline="false" :href="item.linkPath" target="_blank">
                         {{ item.name }}
-                      </el-link>
+                      </el-linkPath>
                     </div>
-                    <div class="app-item desc">{{ i.desc }}</div>
+                    <div class="app-item desc">{{ i.productDescribe }}</div>
                   </div>
 
                   <div style="float:right">
-                    <el-button type="primary" text class="app-item-btn" size="small" @click="handleUpdate(i)">修改</el-button>
+                    <el-button productTypeId="primary" text class="app-item-btn" size="small" @click="handleUpdate(i)">修改</el-button>
 
                     <el-popconfirm
                         confirm-button-text="确认"
@@ -40,7 +40,7 @@
                         @confirm="confirmEvent(i)"
                       >
                         <template #reference>
-                          <el-button type="danger" text class="app-item-btn" size="small">删除</el-button>
+                          <el-button productTypeId="danger" text class="app-item-btn" size="small">删除</el-button>
                         </template>
                       </el-popconfirm>
 
@@ -62,12 +62,23 @@
           :rules="rules"
           label-width="auto"
           status-icon>
-          <el-form-item label="产品类型" prop="type">
-            <el-radio-group v-model="form.type">
-              <el-radio v-for="item in props.types"
+          <el-form-item label="图标" prop="icon">
+            <el-radio-group v-model="form.icon">
+              <el-radio v-for="item in icons"
+                :value="item.icon"
+                :key="item.icon"
+                :label="item.icon"
+                >
+                <i :class="item.icon"></i>
+              </el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <el-form-item label="产品类型" prop="productTypeId">
+            <el-radio-group v-model="form.productTypeId">
+              <el-radio v-for="item in apps"
                 :value="item.id"
                 :key="item.id"
-                :label="item.name"
+                :label="item.id"
                 >
                 <i :class="item.icon"></i>{{ item.name }}
               </el-radio>
@@ -76,19 +87,19 @@
           <el-form-item label="产品名称" prop="name">
             <el-input v-model="form.name" placeholder="请输入类型名称" maxlength="128" />
           </el-form-item>
-          <el-form-item label="产品描述" prop="desc">
-            <el-input v-model="form.desc" placeholder="请输入类型描述" maxlength="128" />
+          <el-form-item label="产品描述" prop="productDescribe">
+            <el-input v-model="form.productDescribe" placeholder="请输入类型描述" maxlength="128" />
           </el-form-item>
-          <el-form-item label="排序" prop="order">
-            <el-input-number v-model="form.order" class="mx-4" :min="1" :max="100" controls-position="right" @change="handleChange" />
+          <el-form-item label="排序" prop="sortNumber">
+            <el-input-number v-model="form.sortNumber" class="mx-4" :min="1" :max="100" controls-position="right" @change="handleChange" />
           </el-form-item>
-          <el-form-item label="产品链接" prop="link">
-            <el-input v-model="form.link" placeholder="请输入产品链接" maxlength="128" />
+          <el-form-item label="产品链接" prop="linkPath">
+            <el-input v-model="form.linkPath" placeholder="请输入产品链接" maxlength="128" />
           </el-form-item>
       </el-form>
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="submitForm()">
+          <el-button productTypeId="primary" @click="submitForm()">
            确认 
           </el-button>
         </div>
@@ -108,60 +119,22 @@ import {
    addProduct
 } from "@/api/console/product";
 
-const props = defineProps({
-  // 当前选中的节点
-  types: {
-    type: Object,
-    default: () => {}
-  }
-})
+import {defineEmits} from 'vue'
+const emit = defineEmits(['refresh'])
 
-const apps = ref([
-  {
-    id: 1, // 添加 id 字段
-    icon: 'fa-solid fa-laptop-code',
-    name: '核心业务应用',
-    desc: '直接服务于主营业务的应用程序集合',
-    children: [
-      { id: 2, icon: 'fa-solid fa-chart-column', name: '业务管理系统', desc: '用于管理日常业务操作' }, // 添加 id 字段
-      { id: 3, icon: 'fa-solid fa-chart-column', name: '业务管理系统', desc: '用于管理日常业务操作' }, // 添加 id 字段
-      { id: 4, icon: 'fa-solid fa-server', name: '资源管理系统', desc: '管理组织的IT资源' }, // 添加 id 字段
-      { id: 5, icon: 'fa-solid fa-box-open', name: '供应链管理系统', desc: '供应链管理和优化' }, // 添加 id 字段
-      { id: 6, icon: 'fa-solid fa-user-tie', name: '客户关系管理系统', desc: '管理客户关系和销售过程' }, // 添加 id 字段
-      { id: 7, icon: 'fa-solid fa-file-invoice-dollar', name: '财务管理系统', desc: '财务记录和报告' }, // 添加 id 字段
-      { id: 8, icon: 'fa-solid fa-file-invoice-dollar', name: '财务管理系统', desc: '财务记录和报告' }, // 添加 id 字段
-      { id: 9, icon: 'fa-solid fa-user-tie', name: '客户关系管理系统', desc: '管理客户关系和销售过程' }, // 添加 id 字段
-    ]
-  },
-  {
-    id: 10, // 添加 id 字段
-    icon: 'fa-solid fa-server',
-    name: '辅助管理应用',
-    desc: '用于内部管理和服务支持的应用程序',
-    children: [
-      { id: 11, icon: 'fa-solid fa-server', name: '资源管理系统', desc: '管理组织的IT资源' }, // 添加 id 字段
-      { id: 12, icon: 'fa-solid fa-building', name: '人力资源管理系统', desc: '人力资源管理和招聘流程' }, // 添加 id 字段
-      { id: 13, icon: 'fa-solid fa-shield-alt', name: '安全管理子系统', desc: '网络安全和风险管理' }, // 添加 id 字段
-      { id: 14, icon: 'fa-solid fa-file-invoice-dollar', name: '财务管理系统', desc: '财务记录和报告' }, // 添加 id 字段
-      { id: 15, icon: 'fa-solid fa-warehouse', name: '库存管理系统', desc: '管理库存和订单' }, // 添加 id 字段
-    ]
-  },
-  {
-    id: 16, // 添加 id 字段
-    icon: 'fa-solid fa-chart-line',
-    name: '分析决策应用',
-    desc: '提供数据分析和决策支持的应用程序',
-    children: [
-      { id: 17, icon: 'fa-solid fa-chart-line', name: '数据分析平台', desc: '数据分析和报表生成' }, // 添加 id 字段
-      { id: 18, icon: 'fa-solid fa-chart-column', name: '业务管理系统', desc: '用于管理日常业务操作' }, // 添加 id 字段
-      { id: 19, icon: 'fa-solid fa-warehouse', name: '库存管理系统', desc: '管理库存和订单' }, // 添加 id 字段
-      { id: 20, icon: 'fa-solid fa-user-tie', name: '客户关系管理系统', desc: '管理客户关系和销售过程' }, // 添加 id 字段
-      { id: 21, icon: 'fa-solid fa-file-invoice-dollar', name: '财务管理系统', desc: '财务记录和报告' }, // 添加 id 字段
-      { id: 22, icon: 'fa-solid fa-chart-column', name: '业务管理系统', desc: '用于管理日常业务操作' }, // 添加 id 字段
-      { id: 23, icon: 'fa-solid fa-truck-fast', name: '物流管理子系统', desc: '物流跟踪和管理' }, // 添加 id 字段
-    ]
-  }
+const icons = ref([
+  { id: 1, icon: 'fa-solid fa-charging-station'} ,
+  { id: 1, icon: 'fa-solid fa-truck'} ,
+  { id: 2, icon: 'fa-solid fa-paper-plane'} ,
+  { id: 2, icon: 'fa-solid fa-ship'} ,
+  { id: 3, icon: 'fa-solid fa-chart-column'},
+  { id: 4, icon: 'fa-solid fa-server'}, 
+  { id: 5, icon: 'fa-solid fa-box-open'}, 
+  { id: 8, icon: 'fa-solid fa-file-invoice-dollar'}, 
+  { id: 9, icon: 'fa-solid fa-user-tie'},
 ]);
+
+const apps = ref([]);
 
 const router = useRouter();
 const { proxy } = getCurrentInstance();
@@ -171,13 +144,14 @@ const title = ref("添加应用类型")
 
 const data = reactive({
   form: {
-    order: 1
+    sortNumber: 1
   },
   rules: {
+     icon: [{ required: true, message: "请选择图标", trigger: "blur" }] , 
      name: [{ required: true, message: "类型名称不能为空", trigger: "blur" }] , 
-     desc: [{ required: true, message: "类型描述不能为空", trigger: "blur" }],
-     type: [{ required: true, message: "产品类型不能为空", trigger: "blur" }],
-     link: [{ required: true, message: "产品链接不能为空", trigger: "blur" }],
+     productDescribe: [{ required: true, message: "类型描述不能为空", trigger: "blur" }],
+     productTypeId: [{ required: true, message: "产品类型不能为空", trigger: "blur" }],
+     linkPath: [{ required: true, message: "产品链接不能为空", trigger: "blur" }],
   }
 });
 
@@ -190,14 +164,16 @@ function submitForm() {
          if (form.value.id != undefined) {
             updateProduct(form.value).then(response => {
                proxy.$modal.msgSuccess("修改成功");
-               open.value = false;
-               getList();
+               dialogVisible.value = false;
+               emit('refresh');
+               //  getList();
             });
          } else {
             addProduct(form.value).then(response => {
                proxy.$modal.msgSuccess("新增成功");
-               open.value = false;
-               getList();
+               dialogVisible.value = false;
+               emit('refresh');
+               //  getList();
             });
          }
       }
@@ -254,18 +230,13 @@ function handleDelete(row) {
    }).catch(() => { });
 };
 
-/** 鼠标移入事件 */
-function handleMouseEnter() {
-  console.log('鼠标移入');
-}
-
-/** 鼠标移出事件 */
-function handleMouseLeave() {
-  console.log('鼠标移出');
+/** 刷新应用列表 */
+function refreshApps(types){
+  apps.value = types ;
 }
 
 // 主动暴露方法
-defineExpose({ handleAdd , handleUpdate , handleDelete , submitForm })
+defineExpose({ handleAdd , refreshApps , handleUpdate , handleDelete , submitForm })
 
 </script>
 
