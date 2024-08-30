@@ -2,16 +2,17 @@ package com.alinesno.infra.plat.console.api.controller;
 
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.facade.response.R;
 import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
+import com.alinesno.infra.plat.console.adapter.BaseAuthorityConsumer;
 import com.alinesno.infra.plat.console.adapter.BasePlatformConsoleConsumer;
+import com.alinesno.infra.plat.console.adapter.dto.OrganizationDto;
 import com.alinesno.infra.plat.console.api.FeedbackDto;
 import com.alinesno.infra.plat.console.api.MenuItem;
-import com.alinesno.infra.plat.console.api.tools.CheckinUtils;
 import com.alinesno.infra.plat.console.api.tools.TimePeriodTool;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +21,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 处理与AccountSiteEntity相关的请求的Controller。
@@ -45,14 +44,26 @@ public class DashboardStatusController extends SuperController {
     @Autowired
     private BasePlatformConsoleConsumer platformConsoleConsumer ;
 
+    @Autowired
+    private BaseAuthorityConsumer authorityConsumer;
+
     /**
      * 保存用户反馈记录
      */
     @PostMapping("/feedback")
     public AjaxResult feedback(@RequestBody FeedbackDto feedback) {
+
+        long accountId = 0L ;
+        long orgId = 1L ;
+
+        feedback.setAccountId(accountId);
+        feedback.setOrgId(orgId);
+
         log.debug("--->>>>> = feedback = {}" , feedback);
 
-        return AjaxResult.success("反馈成功");
+        boolean r = platformConsoleConsumer.saveFeedback(feedback).getData() ;
+
+        return r?AjaxResult.success():AjaxResult.error();
     }
 
     /**
@@ -147,5 +158,33 @@ public class DashboardStatusController extends SuperController {
         int signInDay = platformConsoleConsumer.signIn(accountId).getData() ;
         return AjaxResult.success("签到成功." , signInDay);
     }
+
+    /**
+     * 保存组织自定义主题
+     */
+    @PostMapping("/updateOrgCustomTheme")
+    public AjaxResult updateOrgCustomTheme(@RequestBody OrganizationDto dto) {
+
+        long orgId = 9527L ;
+
+        dto.setId(orgId);
+        boolean b = authorityConsumer.updateOrg(dto).getData();
+
+        log.debug("result = {}" , b);
+        return AjaxResult.success() ;
+    }
+
+    /**
+     * 查询用户所在组织信息
+     */
+    @GetMapping("/findOrg")
+    public AjaxResult findOrg() {
+
+        long orgId = 9527L ;
+
+        OrganizationDto dto = authorityConsumer.findOrg(orgId).getData() ;
+        return AjaxResult.success(dto);
+    }
+
 
 }
