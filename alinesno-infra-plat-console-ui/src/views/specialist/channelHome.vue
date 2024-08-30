@@ -12,7 +12,7 @@
       </div>
       <div class="channel-panel-body" v-loading="loading">
         <el-row>
-          <el-col class="channel-item-box" :span="3" v-for="(item,index) in chatChannel" :key="item">
+          <el-col class="channel-item-box" :span="4" v-for="(item,index) in chatChannel" :key="item">
             <div class="img-bannel">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (1 + (index+1) * 1)+ '.png'" />
             </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="channel-panel-body" v-loading="loading">
         <el-row>
-          <el-col class="channel-item-box" :span="3" v-for="(item,index) in chatChannel" :key="item">
+          <el-col class="channel-item-box" :span="4" v-for="(item,index) in chatChannel" :key="item">
             <div class="img-bannel">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (11 + (index+1) * 1)+ '.png'" />
             </div>
@@ -103,7 +103,8 @@ handleAllMyChannel();
   }
 
   .channel-item-box{
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 10px;
   }
 
   .title {
@@ -124,7 +125,7 @@ handleAllMyChannel();
 
   .img-bannel {
     margin: 10px;
-    height: 80px;
+    height: 120px;
     overflow: hidden;
     border-radius: 5px;
 
