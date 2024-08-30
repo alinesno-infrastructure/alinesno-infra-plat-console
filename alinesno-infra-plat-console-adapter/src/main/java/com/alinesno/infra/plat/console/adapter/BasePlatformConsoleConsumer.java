@@ -1,6 +1,7 @@
 package com.alinesno.infra.plat.console.adapter;
 
 import com.alinesno.infra.common.facade.response.R;
+import com.alinesno.infra.plat.console.api.FeedbackDto;
 import com.alinesno.infra.plat.console.api.MenuItem;
 import com.dtflys.forest.annotation.*;
 
@@ -44,5 +45,11 @@ public interface BasePlatformConsoleConsumer {
      */
     @Post("/api/infra/base/platform/provider/account/saveCustomView")
     R<Boolean> saveCustomView(@JSONBody List<MenuItem> menuList , @Query("orgId") long orgId);
+
+    /**
+     * 用户建立及反馈
+     */
+    @Post("/api/infra/base/platform/provider/account/saveFeedback")
+    R<Boolean> saveFeedback(@JSONBody FeedbackDto dto);
 
 }
