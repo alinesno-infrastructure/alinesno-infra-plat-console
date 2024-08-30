@@ -95,27 +95,14 @@
 <script setup>
 
 import { getProduct } from "@/api/console/product";
-import RightRunStatus from './rightRunStatus.vue';
-
-const acpProjectBuild = [
-  {id:'1' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png' , title:'创建业务服务组件' , desc:'集成可视化监控和自动集成部署服务' , link:'/dashboard/build/business'} ,
-  {id:'2' , icon:'https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png' , title:'集成数据平台能力' , desc:'集成数据治理套件集成数据分析输出' , link:'/dashboard/build/data'} ,
-] ;
-
-const tableData = [
-  { inde2x: 1, busType: '在线支付', projectName: '支付宝', content: '优化支付流程，提升用户体验，包括简化支付步骤，增加支付方式选择，提高支付成功率', level: '9' },
-  { inde2x: 2, busType: '电商平台', projectName: '淘宝', content: '增加推荐算法，提高用户购买转化率，包括个性化推荐，热门商品推荐，购买引导等方面', level: '2' },
-  { inde2x: 5, busType: '出行服务', projectName: '滴滴打车', content: '提高司机端APP稳定性，减少崩溃情况，改善司机使用体验，优化内存管理和异常处理机制', level: '9' },
-  { inde2x: 6, busType: '餐饮外卖', projectName: '美团外卖', content: '优化订单配送算法，减少配送时间，提高用户满意度，优化骑手调度和路线规划', level: '2' },
-]
 
 const runCountArr = ref([
-      {name:'需求文档分析专家' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-      {name:'项目功能细化分析专家' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
-      {name:'K8S问题排查专家' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'需求文档分析频道' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
+      {name:'项目功能细化分析频道' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
+      {name:'K8S问题排查频道' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
       {name:'Ansible自动化工程师' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
-      {name:'产品客户服务专家' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
-      {name:'开发编码规范专家' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler'} ,
+      {name:'产品客户服务频道' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
+      {name:'开发编码规范频道' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler'} ,
 ]) ;
 
 const screenJsonList = ref([]);
