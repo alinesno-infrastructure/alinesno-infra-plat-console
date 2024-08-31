@@ -3,7 +3,6 @@ package com.alinesno.infra.plat.console.api.controller;
 import cn.hutool.core.util.IdUtil;
 import com.alinesno.infra.common.facade.response.AjaxResult;
 import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
-import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
