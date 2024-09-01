@@ -1,6 +1,5 @@
 package com.alinesno.infra.plat.console;
 
-import com.alinesno.infra.common.web.adapter.sso.enable.EnableInfraSsoApi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
