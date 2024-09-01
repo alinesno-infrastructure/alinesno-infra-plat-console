@@ -28,6 +28,10 @@
 			<artifactId>forest-spring-boot3-starter</artifactId>
 			<version>${forest.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
 		<!-- 引入forest_starter_end -->
 
 	</dependencies>
