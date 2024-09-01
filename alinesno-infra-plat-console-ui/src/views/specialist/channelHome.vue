@@ -1,49 +1,47 @@
 <template>
-  <el-scrollbar height="100vh">
     <div class="acp-dashboard" style="max-width:1240px;width:80%;margin:auto;margin-bottom: 80px; padding: 0px 10px !important;background: #fff;">
 
       <div class="flex justify-space-between mb-4 flex-wrap gap-4" style="padding:10px;">
-        <el-button v-for="button in buttons" icon="Search" :key="button.text" :type="button.type" text bg>{{ button.text }}</el-button>
+        <!-- <el-button v-for="button in buttons" icon="Search" :key="button.text" :type="button.type" text bg>{{ button.text }}</el-button> -->
       </div>
 
       <div class="channel-panel-header">
-          常用智能体频道 
-          <span style="font-size: 13px;color: #a5a5a5;">这里包含所有需要运营的Agent频道服务列表，你可以理解成一个Agent就是一个员工</span>
+          推荐频道 
+          <span style="font-size: 13px;color: #a5a5a5;">常用和好评推荐频道列表</span>
       </div>
       <div class="channel-panel-body" v-loading="loading">
         <el-row>
-          <el-col class="channel-item-box" :span="4" v-for="(item,index) in chatChannel" :key="item">
+          <el-col class="channel-item-box" :span="3" v-for="(item,index) in recomondChatChannel" :key="item">
             <div class="img-bannel">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (1 + (index+1) * 1)+ '.png'" />
             </div>
             <div class="channel-info-box">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (10 + (index+1) * 1)+ '.png'" style="width: 30px;height: 30px;border-radius: 50%;margin-left: -40px;position: absolute;margin-top: 5px;" />
-              <div class="title" style="cursor: pointer;" @click="enterChannel">{{ item.channelName }}</div>
-              <div class="title-desc">{{ item.channelDesc }}</div>
+              <div class="title" style="cursor: pointer;" @click="enterChannel">{{ item.name }}</div>
+              <div class="title-desc">{{ item.description }}</div>
             </div>
           </el-col>
         </el-row> 
       </div>
       <div class="channel-panel-header">
-          智能体频道市场
-          <span style="font-size: 13px;color: #a5a5a5;">这里包含所有需要运营的Agent服务列表，你可以理解成一个Agent就是一个员工</span>
+          频道市场
+          <span style="font-size: 13px;color: #a5a5a5;">这里包含所有需要运营的Agent服务列表</span>
       </div>
       <div class="channel-panel-body" v-loading="loading">
         <el-row>
-          <el-col class="channel-item-box" :span="4" v-for="(item,index) in chatChannel" :key="item">
+          <el-col class="channel-item-box" :span="3" v-for="(item,index) in publicChatChannel" :key="item">
             <div class="img-bannel">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (11 + (index+1) * 1)+ '.png'" />
             </div>
             <div class="channel-info-box">
               <img :src="'http://data.linesno.com/icons/sepcialist/dataset_' + (10 + (index+1) * 1)+ '.png'" style="width: 25px;height: 25px;border-radius: 50%;margin-left: -30px;position: absolute;margin-top: 5px;" />
-              <div class="title" style="cursor: pointer;" @click="enterChannel">{{ item.channelName }}</div>
-              <div class="title-desc">{{ item.channelDesc }}</div>
+              <div class="title" style="cursor: pointer;" @click="enterChannel">{{ item.name }}</div>
+              <div class="title-desc">{{ item.description }}</div>
             </div>
           </el-col>
         </el-row> 
       </div>
     </div>
-  </el-scrollbar>
 </template>
 
 <script setup>
@@ -55,9 +53,9 @@ import {
 const loading = ref(false)
 const router = useRouter();
 
-const chatChannel = ref([
-  { id: '1', channelName: '公共频道', channelDesc: '这是公共讨论服务频道', icon: '' },
-]);
+const recomondChatChannel = ref([]);
+const publicChatChannel = ref([]);
+
 const buttons = ref([
   { type: '', text: '最新' },
   { type: 'primary', text: '需求讨论' },
@@ -74,7 +72,8 @@ const buttons = ref([
 function handleAllMyChannel() {
   loading.value = true ; 
   allMyChannel().then(response => {
-    chatChannel.value = response.data;
+    recomondChatChannel.value = response.recommend ;
+    publicChatChannel.value = response.public;
     loading.value = false; 
   })
 }
@@ -105,6 +104,7 @@ handleAllMyChannel();
   .channel-item-box{
     margin-bottom: 30px;
     margin-top: 10px;
+    margin-right: 10px;
   }
 
   .title {
@@ -125,7 +125,7 @@ handleAllMyChannel();
 
   .img-bannel {
     margin: 10px;
-    height: 120px;
+    height: 90px;
     overflow: hidden;
     border-radius: 5px;
 
