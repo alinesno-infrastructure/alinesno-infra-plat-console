@@ -46,7 +46,7 @@
                           {{ item.name }}
                           (<span style="font-weight: 600;font-size:15px">{{ item.productItem.length}}</span>/<span style="font-size:12px">{{ item.productItem.length }}</span>)
                         </div>
-                        <div class="app-item desc">{{ truncateString(item.typeDescribe,15) }}</div>
+                        <div class="app-item desc">{{ truncateString(item.typeDescribe,11) }}</div>
                       </div>
                     </li>
                   </ul>
