@@ -1,6 +1,5 @@
 package com.alinesno.infra.plat.console.api;
 
-import com.alinesno.infra.common.facade.base.BaseDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
