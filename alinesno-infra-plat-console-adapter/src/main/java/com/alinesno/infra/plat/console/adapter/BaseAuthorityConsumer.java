@@ -2,12 +2,7 @@ package com.alinesno.infra.plat.console.adapter;
 
 import com.alinesno.infra.common.facade.response.R;
 import com.alinesno.infra.plat.console.adapter.dto.OrganizationDto;
-import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
-import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import com.dtflys.forest.annotation.*;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * 权限服务消费者基类
