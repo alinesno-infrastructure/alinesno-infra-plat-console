@@ -2,7 +2,6 @@ package com.alinesno.infra.plat.console.api.controller;
 
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
-import com.alinesno.infra.common.facade.response.R;
 import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
 import com.alinesno.infra.plat.console.adapter.BaseAuthorityConsumer;
@@ -24,7 +23,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 处理与AccountSiteEntity相关的请求的Controller。
@@ -168,9 +166,8 @@ public class DashboardStatusController extends SuperController {
         long orgId = 9527L ;
 
         dto.setId(orgId);
-        boolean b = authorityConsumer.updateOrg(dto).getData();
+        authorityConsumer.updateOrg(dto);
 
-        log.debug("result = {}" , b);
         return AjaxResult.success() ;
     }
 
