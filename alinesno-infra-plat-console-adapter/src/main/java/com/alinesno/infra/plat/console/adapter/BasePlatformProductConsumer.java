@@ -1,9 +1,11 @@
 package com.alinesno.infra.plat.console.adapter;
 
+import com.alinesno.infra.common.facade.response.R;
+import com.alinesno.infra.plat.console.adapter.dto.AgentChannelDto;
+import com.alinesno.infra.plat.console.adapter.dto.AgentChannelResponse;
 import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import com.dtflys.forest.annotation.*;
-import com.alinesno.infra.common.facade.response.R;
 
 import java.util.List;
 
@@ -39,5 +41,11 @@ public interface BasePlatformProductConsumer {
      */
     @Get("/api/infra/base/platform/provider/product/queryProductByTypeCode")
     R<List<ProductItemDto>> queryProductByTypeCode(@Query("typeCode") String typeCode);
+
+    /**
+     * 获取到频道列表
+     */
+    @Get("/api/infra/base/platform/provider/agentChannel/findAll")
+    R<AgentChannelResponse> queryAllAgentChannel();
 
 }
