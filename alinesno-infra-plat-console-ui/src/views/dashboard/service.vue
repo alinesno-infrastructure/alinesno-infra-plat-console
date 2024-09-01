@@ -43,7 +43,7 @@
                       </div>
                       <div class="app-info">
                         <div class="app-item-title">
-                          {{ item.title }}  
+                          {{ item.title }}
                           (<span style="font-weight: 600;font-size:15px">{{ item.productItem.length}}</span>/<span style="font-size:12px">{{ item.productItem.length }}</span>)
                         </div>
                         <div class="app-item desc">{{ item.remark }}</div>
