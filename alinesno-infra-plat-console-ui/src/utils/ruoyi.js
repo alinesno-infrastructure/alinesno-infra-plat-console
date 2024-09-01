@@ -53,12 +53,12 @@ export function resetForm(refName) {
   }
 }
 
-// 字符长度截取 
+// 字符长度截取
 export function truncateString(str, maxLength) {
    if (!str || str.length <= maxLength) {
         return str;
     }
-    return str.substring(0, maxLength) + '...'; 
+    return str.substring(0, maxLength) + '...';
 }
 
 // 添加日期范围
