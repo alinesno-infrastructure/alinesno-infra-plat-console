@@ -25,16 +25,21 @@
     </el-row>
 
     <!-- 面板服务 -->
-    <DashboardServiceStatus />
+    <DashboardServiceStatus @handleChannelChat="handleChannelChat" />
 
     <!-- 解决方案 -->
-    <DashboardRunStatus />
+    <!-- <DashboardRunStatus /> -->
 
     <!-- 通知服务 -->
-    <DashboardNotices />
+    <DashboardNotices @handleChannelChat="handleChannelChat"/>
 
     <!-- 用户初始化信息 -->
     <DashboardCollectInfo />
+
+    <!-- 频道聊天 -->
+    <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
+      <iframe :src="roleChatUri" class="role-chat-iframe"></iframe>
+    </el-dialog>
 
   </div>
 </template>
@@ -50,10 +55,22 @@ import DashboardServiceStatus from './dashboard/serviceStatus.vue'
 import DashboardNotices from './dashboard/notices.vue'
 import HeadTypeTab from './headTypeTab.vue'
 
+const chatTitle = ref("")
+const dialogVisible = ref(false)
+const roleChatUri = ref("")
+
 const currentEnvClusterObj = ref({
   appName : '晚上好, 罗小东'  , 
   clusterName: '集成多种能力的新型智能体基础设施'  , 
 }) 
+
+/** 与单个频道发信息 */
+function handleChannelChat(item){
+    // roleChatUri.value = "/channelChat?channel=" + item.id;
+    roleChatUri.value = "http://alinesno-infra-smart-im-ui.beta.smart.infra.linesno.com/channelChat?channel=1"
+    chatTitle.value = item.channelName;
+    dialogVisible.value = true ;
+}
 
 onMounted(() => {
   getGreeting().then(res => {
