@@ -1,13 +1,11 @@
 package com.alinesno.infra.plat.console.api.controller.agent;
 
 import cn.hutool.core.io.resource.ResourceUtil;
-import com.alibaba.fastjson.JSONArray;
 import com.alinesno.infra.common.facade.response.AjaxResult;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
+import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
 import com.alinesno.infra.plat.console.adapter.CloudStorageConsumer;
-import com.alinesno.infra.plat.console.adapter.SmartBrainConsumer;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,18 +15,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-
 @Slf4j
 @RestController
 @RequestMapping(value = "/v1/api/infra/base/im/chat/")
 public class ImChatController extends SuperController {
 
     @Autowired
-    private SmartBrainConsumer smartBrainConsumer;
+    private BasePlatformProductConsumer platformProductConsumer ;
 
     @Autowired
     private CloudStorageConsumer storageConsumer ;
@@ -57,7 +50,7 @@ public class ImChatController extends SuperController {
      */
     @GetMapping("/getAllCatalog")
     public AjaxResult getAllCatalog(){
-        return AjaxResult.success(smartBrainConsumer.getAllCatalog().getData()) ;
+        return AjaxResult.success(platformProductConsumer.queryAgentRole().getData()) ;
     }
 
 }
