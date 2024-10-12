@@ -100,6 +100,12 @@ export const constantRoutes = [
         meta: { title: '聊天', icon: 'dashboard', affix: true }
       },
       {
+        path: '/dashboard/agentList',
+        component: () => import('@/views/specialist/agentList'),
+        name: '/dashboard/agentList',
+        meta: { title: '智能体列表', icon: 'dashboard', affix: true }
+      },
+      {
         path: '/dashboard/channelHome',
         component: () => import('@/views/specialist/channelHome'),
         name: '/dashboard/channelHome',
@@ -118,9 +124,9 @@ export const constantRoutes = [
         meta: { title: '服务列表', icon: 'dashboard', affix: true }
       },
       {
-        path: '/dashboard/suportTechnique',
-        component: () => import('@/views/suportTechnique'),
-        name: '/dashboard/suportTechnique',
+        path: '/dashboard/supportTechnique',
+        component: () => import('@/views/supportTechnique'),
+        name: '/dashboard/supportTechnique',
         meta: { title: '支持管理', icon: 'dashboard', affix: true }
       },
       {
