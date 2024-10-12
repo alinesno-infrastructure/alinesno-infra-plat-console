@@ -5,7 +5,8 @@
       <el-col class="panel-col" :span="11">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态
+            <div class="header-title">
+              <i class="fa-solid fa-computer"></i> 服务运行状态
             </div>
           </div>
           <div class="panel-body">
@@ -66,14 +67,16 @@
       <el-col :span="13">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> Agent运营团队 </div>
+            <div class="header-title">
+              <i class="fa-solid fa-users-gear"></i> 最近使用 
+            </div>
           </div>
           <div class="data-card">
             <ul class="count-list summary-panel">
               <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
                 <i :class="item.icon"></i>
                 <span class="label-tip">
-                  <a target="_blank" :href="item.link">
+                  <a @click="handleChannelChat(item)">
                     <img :src="'http://data.linesno.com/icons/header/' + (index +1) + '.jpg'" style="width:40px;height:40px;float:left; border-radius: 8px" />
                     <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
                       {{ item.name }} (<span style="font-weight: 600;font-size:15px">8</span>/<span style="font-size:12px">{{ index }}</span>)
@@ -94,6 +97,9 @@
 
 <script setup>
 
+import {defineEmits} from 'vue'
+const emit = defineEmits(['handleChannelChat'])
+
 import { getProduct } from "@/api/console/product";
 
 const runCountArr = ref([
@@ -113,6 +119,11 @@ function handleProductList() {
         screenJsonList.value = response.data ;
     });
 };
+
+/** 与单个频道发信息 */
+function handleChannelChat(item){
+  emit('handleChannelChat' , item)
+}
 
 handleProductList();
 
