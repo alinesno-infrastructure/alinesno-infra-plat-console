@@ -1,8 +1,8 @@
 package com.alinesno.infra.plat.console.adapter;
 
 import com.alinesno.infra.common.facade.response.R;
-import com.alinesno.infra.plat.console.adapter.dto.AgentChannelDto;
 import com.alinesno.infra.plat.console.adapter.dto.AgentChannelResponse;
+import com.alinesno.infra.plat.console.adapter.dto.AgentRoleDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import com.dtflys.forest.annotation.*;
@@ -47,5 +47,11 @@ public interface BasePlatformProductConsumer {
      */
     @Get("/api/infra/base/platform/provider/agentChannel/findAll")
     R<AgentChannelResponse> queryAllAgentChannel();
+
+    /**
+     * 获取到角色列表 /api/infra/base/platform/provider/agentChannel/getAgentRole
+     */
+    @Get("/api/infra/base/platform/provider/agentChannel/getAgentRole")
+    R<List<AgentRoleDto>> queryAgentRole() ;
 
 }
