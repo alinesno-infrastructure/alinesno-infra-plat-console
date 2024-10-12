@@ -1,19 +1,15 @@
 package com.alinesno.infra.plat.console.api.controller.agent;
 
-import cn.hutool.core.util.IdUtil;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
 import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
-import com.alinesno.infra.plat.console.adapter.dto.AgentChannelDto;
 import com.alinesno.infra.plat.console.adapter.dto.AgentChannelResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 处理与BusinessLogEntity相关的请求的Controller。
