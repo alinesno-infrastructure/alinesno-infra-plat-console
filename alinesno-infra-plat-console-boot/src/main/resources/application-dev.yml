@@ -5,23 +5,19 @@ server:
 spring:
   application:
     name: alinesno-infra-plat-console-boot
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dev_alinesno_infra_plat_console_v100?characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
-    username: root
-    password:  adminer
+    id: 452226530000
   data:
     redis:
       host: 127.0.0.1
       port: 6379
-      password: aip@local
+#      password: aip@local
   devtools:
     restart:
       enabled: true
 
 # sa-token配置
 sa-token:
-  token-name: satoken
+  token-name: Authorization
   host-path: http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com
   sso:
     auth-url: ${sa-token.host-path}/login
@@ -30,9 +26,15 @@ sa-token:
     slo-url: ${sa-token.host-path}/sso/signout
     get-data-url: ${sa-token.host-path}/sso/getData
   sign:
-    secret-key:
+    secret-key: kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
 
 # alinesno配置
-alinesno.infra:
-  gateway:
-    host: http://alinesno-infra-base-gateway-proxy-application.beta.base.infra.linesno.com
+alinesno:
+  security:
+    # 排除路径
+    excludes:
+      - /sso/**
+      - /v1/api/infra/base/im/chat/displayImage/*
+  infra:
+    gateway:
+      host: http://alinesno-infra-base-gateway-proxy-application.beta.base.infra.linesno.com
