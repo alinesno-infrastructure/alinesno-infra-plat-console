@@ -34,7 +34,7 @@
     <DashboardNotices @handleChannelChat="handleChannelChat"/>
 
     <!-- 用户初始化信息 -->
-    <DashboardCollectInfo />
+    <!-- <DashboardCollectInfo /> -->
 
     <!-- 频道聊天 -->
     <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
@@ -46,9 +46,9 @@
 
 <script setup name="Index">
 
-import {
-  getGreeting
-} from '@/api/console/dashboard'
+// import {
+//   getGreeting
+// } from '@/api/console/dashboard'
 
 import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
@@ -60,7 +60,7 @@ const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
 const currentEnvClusterObj = ref({
-  appName : '晚上好, 罗小东'  , 
+  appName : 'AIP智能体'  , 
   clusterName: '集成多种能力的新型智能体基础设施'  , 
 }) 
 
@@ -72,11 +72,11 @@ function handleChannelChat(item){
     dialogVisible.value = true ;
 }
 
-onMounted(() => {
-  getGreeting().then(res => {
-    currentEnvClusterObj.value.appName = res.data;
-  })
-})
+// onMounted(() => {
+//   getGreeting().then(res => {
+//     currentEnvClusterObj.value.appName = res.data;
+//   })
+// })
 
 </script>
 
