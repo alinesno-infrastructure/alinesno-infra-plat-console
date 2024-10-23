@@ -47,6 +47,11 @@ export const constantRoutes = [
     component: () => import('@/views/error/404'),
     hidden: true
   },
+    {
+    path: '/createOrg',
+    component: () => import('@/views/createOrg'),
+    hidden: true
+  },
   {
     path: '/401',
     component: () => import('@/views/error/401'),
