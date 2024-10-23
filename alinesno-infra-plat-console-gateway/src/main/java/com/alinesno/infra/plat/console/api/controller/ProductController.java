@@ -1,6 +1,7 @@
 package com.alinesno.infra.plat.console.api.controller;
 
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
 import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
@@ -20,7 +21,7 @@ public class ProductController {
 
     @GetMapping("/getProduct")
     public AjaxResult genProduct() {
-        long orgId = 0L ;
+        long orgId = CurrentAccountJwt.get().getOrgId(); ;
         List<ProductTypeDto> productDtoList = productConsumer.queryOrgProductCategory(orgId).getData() ;
         return AjaxResult.success(productDtoList);
     }
@@ -34,7 +35,7 @@ public class ProductController {
     @PostMapping("/save")
     public AjaxResult saveProductType(@RequestBody ProductItemDto productItemDto) {
 
-        long orgId = 123456L ;
+        long orgId = CurrentAccountJwt.get().getOrgId(); ;
 
         productItemDto.setOrgId(orgId);
         productItemDto.setProductOwner("org");
