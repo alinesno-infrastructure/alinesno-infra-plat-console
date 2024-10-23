@@ -2,6 +2,15 @@ import request from '@/utils/request'
 
 const prefix = '/api/infra/plat/console/status'
 
+// 创建组织
+export function createOrg(data) {
+  return request({
+    url: prefix + '/createOrg' , 
+    method: 'post',
+    data: data 
+  })
+}
+
 // 获取到视图列表 
 export function getViewList() {
   return request({
