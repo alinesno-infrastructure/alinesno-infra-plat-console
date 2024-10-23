@@ -51,8 +51,8 @@ public class DashboardStatusController extends SuperController {
     @PostMapping("/feedback")
     public AjaxResult feedback(@RequestBody FeedbackDto feedback) {
 
-        long accountId = 0L ;
-        long orgId = 1L ;
+        long accountId = CurrentAccountJwt.getUserId();;
+        long orgId = CurrentAccountJwt.get().getOrgId();;
 
         feedback.setAccountId(accountId);
         feedback.setOrgId(orgId);
@@ -71,7 +71,7 @@ public class DashboardStatusController extends SuperController {
     public AjaxResult getViewList() {
 
         log.debug("--->>>>> = StpUtil = {}" , CurrentAccountJwt.isLogin());
-        long orgId = 1L ;
+        long orgId = CurrentAccountJwt.get().getOrgId();;
 
         List<MenuItem> menuList = platformConsoleConsumer.customView(orgId).getData() ;
 
@@ -106,7 +106,7 @@ public class DashboardStatusController extends SuperController {
     public AjaxResult updateViewList(@RequestBody List<MenuItem> menuList) {
         log.debug("--->>>>> = newMenusList = {}", menuList);
 
-        long orgId = 1L ;
+        long orgId = CurrentAccountJwt.get().getOrgId(); ;
         Boolean b =  platformConsoleConsumer.saveCustomView(menuList , orgId).getData();
 
         return AjaxResult.success("更新视图成功");
@@ -126,7 +126,7 @@ public class DashboardStatusController extends SuperController {
      */
     @RequestMapping("/logo-base64")
     public AjaxResult getLogoBase64FromUrl() {
-        String imageUrl = "http://portal.infra.linesno.com/logo.png"; // 图片的 URL
+        String imageUrl = "http://data.linesno.com/logo_2.png"; // 图片的 URL
         String base64Image = null;
 
         try {
@@ -152,7 +152,7 @@ public class DashboardStatusController extends SuperController {
      */
     @RequestMapping("/daySignIn")
     public AjaxResult daySignIn() {
-        long accountId = 1L ;
+        long accountId = CurrentAccountJwt.getUserId() ;
         int signInDay = platformConsoleConsumer.signIn(accountId).getData() ;
         return AjaxResult.success("签到成功." , signInDay);
     }
@@ -163,10 +163,21 @@ public class DashboardStatusController extends SuperController {
     @PostMapping("/updateOrgCustomTheme")
     public AjaxResult updateOrgCustomTheme(@RequestBody OrganizationDto dto) {
 
-        long orgId = 9527L ;
+        long orgId = CurrentAccountJwt.get().getOrgId();
 
         dto.setId(orgId);
         authorityConsumer.updateOrg(dto);
+
+        return AjaxResult.success() ;
+    }
+
+    /**
+     * 创建组织 createOrg
+     */
+    @PostMapping("/createOrg")
+    public AjaxResult createOrg(@RequestBody OrganizationDto dto) {
+
+        authorityConsumer.createOrJoinOrg(dto , CurrentAccountJwt.getUserId());
 
         return AjaxResult.success() ;
     }
@@ -177,7 +188,8 @@ public class DashboardStatusController extends SuperController {
     @GetMapping("/findOrg")
     public AjaxResult findOrg() {
 
-        long orgId = 9527L ;
+        long orgId = CurrentAccountJwt.get().getOrgId();
+        log.debug("--->>>>> = orgId = {}" , orgId);
 
         OrganizationDto dto = authorityConsumer.findOrg(orgId).getData() ;
         return AjaxResult.success(dto);
