@@ -31,4 +31,11 @@ public interface BaseAuthorityConsumer {
     @Post("/v1/api/base/authority/organize/updateOrg")
     R<Boolean> updateOrg(@JSONBody OrganizationDto organize);
 
+    /**
+     * 用户创建或者加入组织
+     * @param dto
+     */
+    @Post("/v1/api/base/authority/organize/createOrJoinOrg")
+    void createOrJoinOrg(@JSONBody OrganizationDto dto , @Query("userId") long userId);
+
 }
