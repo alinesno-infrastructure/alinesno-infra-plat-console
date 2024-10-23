@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class ProductItemDto extends BaseDto {
 
-    private long orgId ; // 所属组织id
+//    private long orgId ; // 所属组织id
 
     private String name; // 产品名称
     private String icon; // 产品图标
