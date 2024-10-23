@@ -5,22 +5,18 @@ import request from '@/utils/request'
 export function isSsoLogin(){
   return request({
     url: '/sso/isLogin',
-    headers: {
-      "satoken": "Bearer " + localStorage.getItem("satoken")
-    },
+    // headers: {
+    //   "satoken": "Bearer " + localStorage.getItem("satoken")
+    // },
     method: 'get'
   })
 }
 
 // 用户退出
-export function ssoLogout(satoken) {
+export function ssoLogout() {
   return request({
-    url: '/sso/logout',
-    headers: {
-      isToken: false
-    },
-    method: 'post',
-    data: { satoken}
+    url: '/sso/logout' ,
+    method: 'get'
   })
 }
 
