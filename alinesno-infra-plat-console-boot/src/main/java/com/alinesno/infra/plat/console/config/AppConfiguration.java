@@ -4,6 +4,7 @@ import com.alinesno.infra.common.web.adapter.sso.enable.EnableInfraSsoApi;
 import com.dtflys.forest.springboot.annotation.ForestScan;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -11,7 +12,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @EnableInfraSsoApi
-@ForestScan(basePackages = "com.alinesno.infra.plat.console.adapter")
+@ForestScan({
+        "com.alinesno.infra.common.web.adapter.base.consumer" ,
+        "com.alinesno.infra.plat.console.adapter"
+})
 @Configuration
 public class AppConfiguration implements CommandLineRunner {
 
