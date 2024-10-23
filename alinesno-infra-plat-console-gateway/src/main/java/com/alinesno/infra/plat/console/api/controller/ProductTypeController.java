@@ -2,6 +2,7 @@ package com.alinesno.infra.plat.console.api.controller;
 
 import cn.hutool.core.util.IdUtil;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
 import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ public class ProductTypeController {
     @PostMapping("/save")
     public AjaxResult saveProductType(@RequestBody ProductTypeDto productTypeDto) {
 
-        long orgId = 1234568L ;
+        long orgId = CurrentAccountJwt.get().getOrgId(); ;
 
         productTypeDto.setCode(IdUtil.nanoId(8));
         productTypeDto.setOrgId(orgId);
@@ -37,7 +38,7 @@ public class ProductTypeController {
     @GetMapping("/datatables")
     public AjaxResult queryOrgProductCategory() {
 
-        long orgId = 1234568L ;
+        long orgId = CurrentAccountJwt.get().getOrgId(); ;
 
         List<ProductTypeDto> productTypeDtoList = productConsumer.queryOrgProductCategory(orgId).getData() ;
         return AjaxResult.success(productTypeDtoList);
