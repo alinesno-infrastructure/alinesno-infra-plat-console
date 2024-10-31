@@ -47,9 +47,14 @@ export const constantRoutes = [
     component: () => import('@/views/error/404'),
     hidden: true
   },
-    {
+  {
     path: '/createOrg',
     component: () => import('@/views/createOrg'),
+    hidden: true
+  },
+  {
+    path: '/demo',
+    component: () => import('@/views/demo'),
     hidden: true
   },
   {
@@ -145,6 +150,12 @@ export const constantRoutes = [
         component: () => import('@/views/businessWorkspace'),
         name: '/dashboard/businessWorkspace',
         meta: { title: '业务建设', icon: 'dashboard', affix: true }
+      },
+      {
+        path: '/dashboard/suportTechnique',
+        component: () => import('@/views/suportTechnique'),
+        name: '/dashboard/suportTechnique',
+        meta: { title: '支持管理', icon: 'dashboard', affix: true }
       },
       {
         path: '/dashboard/dataWorkspace',
