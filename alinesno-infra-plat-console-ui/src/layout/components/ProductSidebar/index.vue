@@ -2,7 +2,7 @@
   <div class="siderbar">
     <el-menu default-active="1" class="el-menu-vertical" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
 
-      <el-tooltip :content="item.content" placement="right" v-for="item in menuItems">
+      <el-tooltip :content="item.content" placement="right" v-for="item in menuItems" :key="item.id">
         <el-menu-item :index="item.index" @click="jumpTo(item.link)">
           <i :class="item.icon"></i>
         </el-menu-item>
@@ -68,8 +68,8 @@ const { form, rules } = toRefs(data);
 
 const menuItems = ref([
   {"index": "1","content": "平台监控","icon": "fa-solid fa-desktop","onClick": "jumpTo" , "link":"/index"},
-  {"index": "3","content": "智能体频道","icon": "fa-solid fa-user-shield","onClick": "openSmartService" , "link":"/dashboard/channelHome"},
-  {"index": "4","content": "智能体","icon": "fa-solid fa-masks-theater","onClick": "openAgentService" , "link":"/dashboard/agentList"},
+  // {"index": "3","content": "智能体频道","icon": "fa-solid fa-user-shield","onClick": "openSmartService" , "link":"/dashboard/channelHome"},
+  // {"index": "4","content": "智能体","icon": "fa-solid fa-masks-theater","onClick": "openAgentService" , "link":"/dashboard/agentList"},
   {"index": "2", "content": "支撑平台", "icon": "fa-solid fa-sailboat", "onClick": "openServiceList" , "link":"/dashboard/serviceList"}
 ]);
 
