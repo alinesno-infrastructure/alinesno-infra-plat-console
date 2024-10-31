@@ -60,7 +60,7 @@ const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
 const currentEnvClusterObj = ref({
-  appName : 'AIP智能体'  , 
+  appName : 'AIP智能体管理平台'  , 
   clusterName: '集成多种能力的新型智能体基础设施'  , 
 }) 
 
