@@ -21,9 +21,9 @@
 
                   <div class="app-info">
                     <div class="app-item-title">
-                      <el-linkPath class="app-item-title" :underline="false" :href="item.linkPath" target="_blank">
-                        {{ item.name }}
-                      </el-linkPath>
+                      <a class="app-item-title" :underline="false" :href="i.linkPath" target="_blank">
+                        {{ i.name }}
+                      </a>
                     </div>
                     <div class="app-item desc">{{ i.productDescribe }}</div>
                   </div>
