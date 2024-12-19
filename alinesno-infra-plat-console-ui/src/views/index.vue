@@ -25,16 +25,18 @@
     </el-row>
 
     <!-- 面板服务 -->
-    <DashboardServiceStatus @handleChannelChat="handleChannelChat" />
+    <!-- <DashboardServiceStatus @handleChannelChat="handleChannelChat" /> -->
 
     <!-- 解决方案 -->
-    <!-- <DashboardRunStatus /> -->
+    <DashboardService />
+    <!-- <DashboardApp/> -->
 
     <!-- 通知服务 -->
     <DashboardNotices @handleChannelChat="handleChannelChat"/>
 
     <!-- 用户初始化信息 -->
     <!-- <DashboardCollectInfo /> -->
+    <!-- <DashboardRunStatus /> -->
 
     <!-- 频道聊天 -->
     <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
@@ -52,6 +54,9 @@
 
 import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
+import DashboardService from './dashboard/service'
+import DashboardApp from './dashboard/apps'
+import DashboardRunStatus from './dashboard/dashboardRunStatus'
 import DashboardNotices from './dashboard/notices.vue'
 import HeadTypeTab from './headTypeTab.vue'
 
@@ -60,7 +65,7 @@ const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
 const currentEnvClusterObj = ref({
-  appName : 'AIP智能体管理平台'  , 
+  appName : 'Multi-Agent管理平台'  , 
   clusterName: '集成多种能力的新型智能体基础设施'  , 
 }) 
 
