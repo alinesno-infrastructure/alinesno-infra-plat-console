@@ -115,7 +115,7 @@ export default {
         {name:'审计日志监控统计' , count:932 , icon:'fas fa-laptop-code' , link:"https://192.168.1.55:5601/app/dashboards#/view/722b74f0-b882-11e8-a6d9-e546fe2bba5f?_g=(filters:!(),refreshInterval:(pause:!f,value:900000),time:(from:now-7d,to:now))&_a=(description:'Analyze%20mock%20eCommerce%20orders%20and%20revenue',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),query:(language:kuery,query:''),tags:!(),timeRestore:!t,title:'%5BeCommerce%5D%20Revenue%20Dashboard',viewMode:edit)"} ,
         {name:'容器云运行状态' , count:122 , icon:'fas fa-server' , link:"https://192.168.1.161:30080/kubernetes/default/cluster/overview"} ,
         {name:'自动化任务管理' , count:932 , icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
-        {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
+        {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/aip-platform/-/"} ,
         {name:'中间件运行统计' , count:312 , icon:'fas fa-pencil-ruler'} ,
         {name:'系统访问统计' , count:192 , icon:'fas fa-shipping-fast'} ,
       ],
