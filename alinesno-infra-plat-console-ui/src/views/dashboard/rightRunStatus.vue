@@ -2,12 +2,12 @@
   <div style="padding-top:0px;">
     <el-row :gutter="20" style="float:left;width:100%;margin-bottom:0px;">
       <el-col :span="24" style="padding:0px !important;border:0px;">
-          <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 应用服务概览</div>
-          </div>
+        <div class="panel-header">
+          <div class="header-title"><i class="fa-solid fa-link"></i> 应用服务概览</div>
+        </div>
         <div class="data-card">
           <ul class="count-list summary-panel">
-            <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
+            <li class="count-data bg-red" v-for="(item, index) in runCountArr" :key="index">
               <i :class="item.icon"></i>
               <span class="label-tip">
                 <a target="_blank" :href="item.link">
@@ -44,14 +44,14 @@ export default {
   data() {
     return {
       appCount: 10,
-      runCountArr:[
-        {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-        {name:'服务运行健康报告' , count:292 , icon:'fas fa-shipping-fast' , link:'https://192.168.1.161:30090/promethues/alerts'} ,
-        {name:'运行监控日志审计' , count:322 , icon:'fas fa-pencil-ruler' , link:"https://192.168.1.55:5601/app/discover#/view/ae40de50-d919-11ed-a141-51d122929855?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1y,to:now))&_a=(columns:!(message,'@timestamp',service,host),filters:!(),index:'32258160-bfb4-11ec-8af6-65a485b4d749',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))"} ,
-        {name:'监控服务器统计' , count:812 , icon:'fas fa-server' , link:'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv'} ,
-        {name:'自动化任务管理' , count:932 , icon:'fas fa-train' , link:"https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/"} ,
-        {name:'自动化任务脚本' , count:132 , icon:'fas fa-server' , link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/jm-gjj/-/"} ,
-        {name:'中间件运行统计' , count:312 , icon:'fas fa-pencil-ruler'} ,
+      runCountArr: [
+        { name: '监控服务器统计', count: 812, icon: 'fas fa-server', link: 'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv' },
+        { name: '服务运行健康报告', count: 292, icon: 'fas fa-shipping-fast', link: 'https://192.168.1.161:30090/promethues/alerts' },
+        { name: '运行监控日志审计', count: 322, icon: 'fas fa-pencil-ruler', link: "https://192.168.1.55:5601/app/discover#/view/ae40de50-d919-11ed-a141-51d122929855?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-1y,to:now))&_a=(columns:!(message,'@timestamp',service,host),filters:!(),index:'32258160-bfb4-11ec-8af6-65a485b4d749',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))" },
+        { name: '监控服务器统计', count: 812, icon: 'fas fa-server', link: 'https://192.168.1.170:3000/d/aka/node-exporter-dashboard?orgId=1&kiosk=tv' },
+        { name: '自动化任务管理', count: 932, icon: 'fas fa-train', link: "https://192.168.1.161:8000/view/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E4%BB%BB%E5%8A%A1/" },
+        { name: '自动化任务脚本', count: 132, icon: 'fas fa-server', link: "https://192.168.1.79/-/ide/project/capinfo-platform-jm/capinfo-platform-operation-manager/edit/aip-platform/-/" },
+        { name: '中间件运行统计', count: 312, icon: 'fas fa-pencil-ruler' },
       ],
       functionCount: 123,
       accountCount: 1200,
@@ -60,30 +60,30 @@ export default {
           title: "日志集成监控",
           status: "1",
           desc: "集成分布式日志服务和容器、服务日志",
-          link: "#" ,
+          link: "#",
         },
         {
           title: "自动化任务集成",
           status: "1",
           desc: "集成自动化任务管理，日志迁移备份等",
-          link: "#" ,
+          link: "#",
         },
         {
           title: "服务器集成监控",
           status: "0",
           desc: "服务器和中间件集成监控，资源状态监控",
-          link: "#" ,
+          link: "#",
         },
         {
           title: "分布式链路集成(APM)",
           status: "0",
           desc: "应用运行状态监控，集成Java应用运行状态",
-          link: "#" ,
+          link: "#",
         },
         {
           title: "预警集成监控",
           desc: "集成邮件、企业微信机器从通知预警",
-          link: "#" ,
+          link: "#",
         },
       ],
     };
@@ -103,40 +103,40 @@ export default {
     },
     drawBar2() {
       let barChart = echarts.init(document.getElementById('echarts-bar-chart-41'))
-        var lineOption;
+      var lineOption;
 
       // prettier-ignore
       const hours = [
-          '12a', '1a', '2a', '3a', '4a', '5a', '6a',
-          '7a', '8a', '9a', '10a', '11a',
-          '12p', '1p', '2p', '3p', '4p', '5p',
-          '6p', '7p', '8p', '9p', '10p', '11p'
+        '12a', '1a', '2a', '3a', '4a', '5a', '6a',
+        '7a', '8a', '9a', '10a', '11a',
+        '12p', '1p', '2p', '3p', '4p', '5p',
+        '6p', '7p', '8p', '9p', '10p', '11p'
       ];
       // prettier-ignore
-      const days = ['星期六', '星期五', '星期四','星期三', '星期二', '星期一', '星期日'];
+      const days = ['星期六', '星期五', '星期四', '星期三', '星期二', '星期一', '星期日'];
 
       // prettier-ignore
       const data = [[0, 0, 5], [0, 1, 1], [0, 2, 0], [0, 3, 0], [0, 4, 0], [0, 5, 0],
-                    [0, 6, 0], [0, 7, 0], [0, 8, 0], [0, 9, 0], [0, 10, 0], [0, 11, 2],
-                    [2, 1, 1], [2, 2, 0], [2, 3, 0], [2, 4, 0], [2, 5, 0], [2, 6, 0], [2, 7, 0],
-                    [2, 22, 2], [2, 23, 4], [3, 0, 7], [3, 1, 3], [3, 2, 0], [3, 3, 0], [3, 4, 0],
-                    [3, 5, 0], [3, 6, 0], [3, 7, 0], [3, 8, 1], [3, 9, 0], [3, 10, 5], [3, 11, 4],
-                    [3, 12, 7], [3, 13, 14], [3, 14, 13], [3, 15, 12], [3, 16, 9], [3, 17, 5], [3, 18, 5],
-                    [3, 19, 10], [3, 20, 6], [3, 21, 4], [3, 22, 4], [3, 23, 1], [4, 0, 1], [4, 1, 3],
-                    [0, 12, 4], [0, 13, 1], [0, 14, 1], [0, 15, 3], [0, 16, 4], [0, 17, 6],
-                    [0, 18, 4], [0, 19, 4], [0, 20, 3], [0, 21, 3], [0, 22, 2], [0, 23, 5],
-                    [2, 8, 0], [2, 9, 0], [2, 10, 3], [2, 11, 2], [2, 12, 1], [2, 13, 9], [2, 14, 8],
-                    [2, 15, 10], [2, 16, 6], [2, 17, 5], [2, 18, 5], [2, 19, 5], [2, 20, 7], [2, 21, 4],
-                    [1, 0, 7], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0],
-                    [1, 7, 0], [1, 8, 0], [1, 9, 0], [1, 10, 5], [1, 11, 2], [1, 12, 2],
-                    [1, 13, 6], [1, 14, 9], [1, 15, 11], [1, 16, 6], [1, 17, 7], [1, 18, 8],
-                    [1, 19, 12], [1, 20, 5], [1, 21, 5], [1, 22, 7], [1, 23, 2], [2, 0, 1],
-                    [4, 2, 0], [4, 3, 0], [4, 4, 0], [4, 5, 1], [4, 6, 0], [4, 7, 0], [4, 8, 0], [4, 9, 2], [4, 10, 4], [4, 11, 4], [4, 12, 2], [4, 13, 4], [4, 14, 4], [4, 15, 14], [4, 16, 12], [4, 17, 1], [4, 18, 8], [4, 19, 5], [4, 20, 3], [4, 21, 7], [4, 22, 3], [4, 23, 0], [5, 0, 2], [5, 1, 1], [5, 2, 0], [5, 3, 3], [5, 4, 0], [5, 5, 0], [5, 6, 0], [5, 7, 0], [5, 8, 2], [5, 9, 0], [5, 10, 4], [5, 11, 1], [5, 12, 5], [5, 13, 10], [5, 14, 5], [5, 15, 7], [5, 16, 11], [5, 17, 6], [5, 18, 0], [5, 19, 5], [5, 20, 3], [5, 21, 4], [5, 22, 2], [5, 23, 0], [6, 0, 1], [6, 1, 0], [6, 2, 0], [6, 3, 0], [6, 4, 0], [6, 5, 0], [6, 6, 0], [6, 7, 0], [6, 8, 0], [6, 9, 0], [6, 10, 1], [6, 11, 0], [6, 12, 2], [6, 13, 1], [6, 14, 3], [6, 15, 4], [6, 16, 0], [6, 17, 0], [6, 18, 0], [6, 19, 0], [6, 20, 1], [6, 21, 2], [6, 22, 2], [6, 23, 6]]
-          .map(function (item) {
+      [0, 6, 0], [0, 7, 0], [0, 8, 0], [0, 9, 0], [0, 10, 0], [0, 11, 2],
+      [2, 1, 1], [2, 2, 0], [2, 3, 0], [2, 4, 0], [2, 5, 0], [2, 6, 0], [2, 7, 0],
+      [2, 22, 2], [2, 23, 4], [3, 0, 7], [3, 1, 3], [3, 2, 0], [3, 3, 0], [3, 4, 0],
+      [3, 5, 0], [3, 6, 0], [3, 7, 0], [3, 8, 1], [3, 9, 0], [3, 10, 5], [3, 11, 4],
+      [3, 12, 7], [3, 13, 14], [3, 14, 13], [3, 15, 12], [3, 16, 9], [3, 17, 5], [3, 18, 5],
+      [3, 19, 10], [3, 20, 6], [3, 21, 4], [3, 22, 4], [3, 23, 1], [4, 0, 1], [4, 1, 3],
+      [0, 12, 4], [0, 13, 1], [0, 14, 1], [0, 15, 3], [0, 16, 4], [0, 17, 6],
+      [0, 18, 4], [0, 19, 4], [0, 20, 3], [0, 21, 3], [0, 22, 2], [0, 23, 5],
+      [2, 8, 0], [2, 9, 0], [2, 10, 3], [2, 11, 2], [2, 12, 1], [2, 13, 9], [2, 14, 8],
+      [2, 15, 10], [2, 16, 6], [2, 17, 5], [2, 18, 5], [2, 19, 5], [2, 20, 7], [2, 21, 4],
+      [1, 0, 7], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0],
+      [1, 7, 0], [1, 8, 0], [1, 9, 0], [1, 10, 5], [1, 11, 2], [1, 12, 2],
+      [1, 13, 6], [1, 14, 9], [1, 15, 11], [1, 16, 6], [1, 17, 7], [1, 18, 8],
+      [1, 19, 12], [1, 20, 5], [1, 21, 5], [1, 22, 7], [1, 23, 2], [2, 0, 1],
+      [4, 2, 0], [4, 3, 0], [4, 4, 0], [4, 5, 1], [4, 6, 0], [4, 7, 0], [4, 8, 0], [4, 9, 2], [4, 10, 4], [4, 11, 4], [4, 12, 2], [4, 13, 4], [4, 14, 4], [4, 15, 14], [4, 16, 12], [4, 17, 1], [4, 18, 8], [4, 19, 5], [4, 20, 3], [4, 21, 7], [4, 22, 3], [4, 23, 0], [5, 0, 2], [5, 1, 1], [5, 2, 0], [5, 3, 3], [5, 4, 0], [5, 5, 0], [5, 6, 0], [5, 7, 0], [5, 8, 2], [5, 9, 0], [5, 10, 4], [5, 11, 1], [5, 12, 5], [5, 13, 10], [5, 14, 5], [5, 15, 7], [5, 16, 11], [5, 17, 6], [5, 18, 0], [5, 19, 5], [5, 20, 3], [5, 21, 4], [5, 22, 2], [5, 23, 0], [6, 0, 1], [6, 1, 0], [6, 2, 0], [6, 3, 0], [6, 4, 0], [6, 5, 0], [6, 6, 0], [6, 7, 0], [6, 8, 0], [6, 9, 0], [6, 10, 1], [6, 11, 0], [6, 12, 2], [6, 13, 1], [6, 14, 3], [6, 15, 4], [6, 16, 0], [6, 17, 0], [6, 18, 0], [6, 19, 0], [6, 20, 1], [6, 21, 2], [6, 22, 2], [6, 23, 6]]
+        .map(function (item) {
           return [item[1], item[0], item[2] || '-'];
-      });
+        });
 
-      lineOption= {
+      lineOption = {
         title: {
           text: '日志采集量统计'
         },
@@ -316,7 +316,7 @@ export default {
   width: 100%;
 }
 
-.function-btn{
+.function-btn {
   width: 100%;
   float: left;
   margin-bottom: 10px;
@@ -596,27 +596,27 @@ li.product_list_li.count-li {
     font-weight: 500;
   }
 
-.bg-purple-dark {
-  background: #99a9bf;
-}
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
 
-.bg-purple {
-  background: #d3dce6;
-}
+  .bg-purple {
+    background: #d3dce6;
+  }
 
-.bg-purple-light {
-  background: #e5e9f2;
-}
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
 
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
 
-.row-bg {
-  padding: 10px 0;
-  background-color: #f9fafc;
-}
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
 
   ul.count-list {
     list-style: none;
@@ -646,14 +646,14 @@ li.product_list_li.count-li {
       margin-top: 5px;
       margin-left: 10px;
 
-      i{
+      i {
         float: right;
         position: absolute;
         right: 10px;
         font-size: 30px;
-        opacity: .4;
+        // opacity: .4;
         top: 15px;
-        color: #005bd5;
+        color: #3b5998;
       }
 
       span.label-tip {
@@ -698,5 +698,4 @@ li.product_list_li.count-li {
     background: #fe892c;
   }
 }
-
 </style>
