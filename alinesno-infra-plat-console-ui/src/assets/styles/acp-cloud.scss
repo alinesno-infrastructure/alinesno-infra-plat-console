@@ -259,7 +259,7 @@ $chartColor: #3b5998;
           }
 
           .item-text-main-desc {
-            margin-top: 10px;
+            margin-top: 5px;
             font-size: 14px;
           }
         }
@@ -270,6 +270,7 @@ $chartColor: #3b5998;
   .item-health-box {
     float: left;
     width: 100%;
+    padding-right: 20px;
 
     .item-health-title {
       font-size: 12px;
