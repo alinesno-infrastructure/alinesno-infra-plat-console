@@ -8,158 +8,66 @@
           </div>
           <div class="panel-body">
             <ul class="panel-item-text">
-              <li>
+              <li v-for="item in acpProjectBuild" :key="item.id">
                 <div class="item-icon">
-                  <img
-                    src="https://d1.awsstatic.com/webteam/homepage/solutions/60-analytics.27a6ebec1a9e415ef6cea6ec2c9f7761c8aa3ea6.png" />
+                  <i :class="item.icon" style="font-size:25px;margin-right:5px;color: #3b5998;margin-top:10px;"></i>
                 </div>
                 <div class="item-text">
-                  <div class="item-text-main-title">AIP 有什么新动向？ </div>
-                  <div class="item-text-main-desc">了解基础知识并找到有用的信息</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-icon">
-                  <img
-                    src="https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png" />
-                </div>
-                <div class="item-text">
-                  <div class="item-text-main-title">AIP入门</div>
-                  <div class="item-text-main-desc">探索新的 AIP 服务、功能和区域。</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-icon">
-                  <img
-                    src="https://d1.awsstatic.com/webteam/homepage/solutions/60-storage.2fae209fbce7aa8e4eee9b6bde7c64e2798fe1e3.png" />
-                </div>
-                <div class="item-text">
-                  <div class="item-text-main-title">AIP 有什么新动向？ </div>
-                  <div class="item-text-main-desc">探索新的 AIP 服务、功能和区域。</div>
+                  <div class="item-text-main-title">{{ item.title }}</div>
+                  <div class="item-text-main-desc">{{ item.desc }}</div>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="panel-footer">
-            <div class="footer-link">
-            </div>
-          </div>
+
         </div>
       </el-col>
 
       <!-- 协助列表-->
-      <!-- 
-      <el-col :span="7">
+      <el-col :span="8">
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title">新最公告</div>
+            <div class="header-title">最新解决方案</div>
           </div>
           <div class="panel-body">
             <ul class="panel-item-text">
-              <li>
+              <li v-for="item in solutionItems" :key="item">
                 <div class="item-datetime">
                   <div class="item-datetime-month">7月</div>
                   <div class="item-datetime-date">12</div>
                 </div>
                 <div class="item-text">
-                  <div class="item-text-main-title">在AIP使用k8s快速搭建基设平台服务系统</div>
-                  <div class="item-text-main-desc">了解基础知识并找到有用的信息</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-datetime">
-                  <div class="item-datetime-month">7月</div>
-                  <div class="item-datetime-date">12</div>
-                </div>
-                <div class="item-text">
-                  <div class="item-text-main-title">在校园数据开发项目上使用AIP集成的实战经验</div>
-                  <div class="item-text-main-desc">探索新的 AIP 服务、功能和区域。</div>
-                </div>
-              </li>
-              <li>
-                <div class="item-datetime">
-                  <div class="item-datetime-month">7月</div>
-                  <div class="item-datetime-date">12</div>
-                </div>
-                <div class="item-text">
-                  <div class="item-text-main-title">某集团在使用AIP服务构建和集成的示例</div>
-                  <div class="item-text-main-desc">探索新的 AIP 服务、功能和区域。</div>
+                  <div class="item-text-main-title">{{ item.title }}</div>
+                  <div class="item-text-main-desc">{{ item.description }}</div>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="panel-footer">
-            <div class="footer-link">
-            </div>
-          </div>
         </div>
       </el-col> 
-      -->
       
-      <el-col class="panel-col" :span="9">
+      <el-col class="panel-col" :span="11">
+
         <div class="grid-content">
           <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-user-tag"></i> 推荐智能体</div>
+            <div class="header-title"><i class="fas fa-shipping-fast"></i> 运行统计</div>
           </div>
-          <div class="panel-body" style="padding:0px;">
-            <el-empty v-if="tableData.length == 0" :image-size="100" description="这可能是因为您没有运行 Trusted Advisor 检查，或者您没有 Business 或 Enterprise Support 计划。" />
+          <div class="panel-body">
+            <ul class="panel-item-text">
 
-            <el-table :data="tableData" stripe style="width: 100%">
-              <!-- <el-table-column type="index" width="55" label="序号" align="center" /> -->
-              <el-table-column label="角色" align="left" width="200px" prop="icon" :show-overflow-tooltip="true">
-                  <template #default="scope">
-                    <img :src="'http://data.linesno.com/icons/header/' + (scope.row.link+1) + '.jpg'" style="width:26px;height:26px;float:left; border-radius: 8px" />
-                    <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
-                      {{ scope.row.name }}
-                    </div>
-                  </template>
-              </el-table-column>
-              <el-table-column prop="count" label="角色描述" :show-overflow-tooltip="true" />
-              <el-table-column prop="level" align="center" label="操作" width="100">
-                <template #default="scope">
-                  <div class="role-icon">
-                    <el-button type="primary" bg link @click="handleRoleChat(scope.row)">
-                      <i class="fa-solid fa-feather-pointed" style="font-size: 15px;margin-right:5px"></i> 进入 
-                    </el-button>
+              <!-- 使用 v-for 指令来遍历 panelItems 数组 -->
+              <li v-for="(item, index) in panelItems" :key="index" style="width:50%;">
+                <div class="item-health-box">
+                  <div class="item-health-title" style="font-size: 15px;color: #3b5998;font-weight: 550;">
+                    <i :class="item.icon" />
+                    {{ item.title }}
                   </div>
-              </template>
-              </el-table-column>
-            </el-table>
+                  <div class="item-health-count">{{ item.count }}</div>
+                  <div class="item-health-outtime">{{ item.outtime }}</div>
+                </div>
+              </li>
 
-          </div>
-        </div>
-      </el-col>
-
-      <el-col class="panel-col" :span="10">
-        <div class="grid-content">
-          <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-truck-fast"></i> 推荐频道</div>
-          </div>
-          <div class="panel-body" style="padding:0px;">
-            <el-empty v-if="tableData.length == 0" :image-size="100" description="这可能是因为您没有运行 Trusted Advisor 检查，或者您没有 Business 或 Enterprise Support 计划。" />
-
-            <el-table :data="tableData" stripe style="width: 100%">
-              <!-- <el-table-column type="index" width="55" label="序号" align="center" /> -->
-              <el-table-column label="频道" align="left" width="200px" prop="icon" :show-overflow-tooltip="true">
-                  <template #default="scope">
-                    <img :src="'http://data.linesno.com/icons/header/' + (scope.row.link+6) + '.jpg'" style="width:26px;height:26px;float:left; border-radius: 8px" />
-                    <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
-                      {{ scope.row.name }}
-                    </div>
-                  </template>
-              </el-table-column>
-              <el-table-column prop="count" label="频道描述" :show-overflow-tooltip="true" />
-              <el-table-column prop="level" align="center" label="操作" width="100">
-                <template #default="scope">
-                  <div class="role-icon">
-                    <el-button type="primary" @click="handleChannelChat(scope.row)" bg link>
-                      <i class="fa-solid fa-feather-pointed" style="font-size: 15px;margin-right:5px"></i> 进入 
-                    </el-button>
-                  </div>
-              </template>
-              </el-table-column>
-            </el-table>
-
+            </ul>
           </div>
         </div>
       </el-col>
@@ -182,14 +90,110 @@ const chatTitle = ref("")
 const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
-const tableData = [
-  {name:'需求文档分析频道' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:1} ,
-  {name:'项目功能细化分析频道' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:2} ,
-  {name:'K8S问题排查频道' , count:'排查k8s问题分析，正在发送给业务人员，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:3} ,
-  {name:'Ansible自动化工程师' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:4} ,
-  {name:'产品客户服务频道' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: 5} ,
-  {name:'开发编码规范频道' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler' , link: 6} ,
-]
+// const tableData = [
+//   {name:'需求文档分析频道' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:1} ,
+//   {name:'项目功能细化分析频道' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:2} ,
+//   {name:'K8S问题排查频道' , count:'排查k8s问题分析，正在发送给业务人员，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:3} ,
+//   {name:'Ansible自动化工程师' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:4} ,
+//   {name:'产品客户服务频道' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: 5} ,
+//   {name:'开发编码规范频道' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler' , link: 6} ,
+// ]
+
+const acpProjectBuild = [
+  {
+    id: '2',
+    icon: 'fas fa-book-reader',
+    title: '快速上手指南',
+    desc: '完成你的第一个智能体创建与配置',
+    link: '/dashboard/getting-started/quick-start'
+  },
+  {
+    id: '3',
+    icon: 'fas fa-code',
+    title: '编写第一个智能体脚本',
+    desc: '如何编写简单的脚本来实现自动化',
+    link: '/dashboard/getting-started/write-first-script'
+  },
+  {
+    id: '4',
+    icon: 'fas fa-wrench',
+    title: '配置智能体知识库',
+    desc: '如何设置智能体的数据资产和知识',
+    link: '/dashboard/getting-started/configure-permissions'
+  }
+];
+
+const solutionItems = ref([
+  {
+    datetime: '2024-12-19',
+    title: '智能化运维分析：通过智能体优化系统性能',
+    description: '利用智能体实时监控和自动调整系统参数，降低了运维成本。'
+  },
+  {
+    datetime: '2024-12-19',
+    title: '智能化运维分析：智能日志管理与故障预测',
+    description: '引入智能体进行日志管理和故障预测，问题的提前预警和快速定位。'
+  },
+  {
+    datetime: '2024-12-19',
+    title: '软文推广营销：社交媒体自动化互动',
+    description: '使用智能体实现社交媒体上的自动化互动，增大曝光度和用户参与度。'
+  }
+]);
+
+
+const panelItems = ref([
+  {
+    icon: 'fa-solid fa-signature',
+    title: '消耗Token数量',
+    count: 250000,
+    outtime: '过去7天',
+    cost: '$750.00'
+  },
+  {
+    icon: 'fa-solid fa-image',
+    title: '生成图片数量',
+    count: 3500,
+    outtime: '过去7天',
+    cost: '$300.00'
+  },
+  {
+    icon: 'fa-solid fa-robot',
+    title: '调用智能体次数',
+    count: 7500,
+    outtime: '过去7天',
+    cost: '$500.00'
+  },
+  {
+    icon: 'fa-solid fa-check-circle',
+    title: '正常执行的次数',
+    count: 85000,
+    outtime: '过去7天',
+    cost: '$600.00'
+  },
+  {
+    icon: 'fa-solid fa-exclamation-triangle',
+    title: '异常的次数',
+    count: 500,
+    outtime: '过去7天',
+    cost: '$150.00'
+  },
+  {
+    icon: 'fa-solid fa-stopwatch',
+    title: '生成的时间消耗 (秒)',
+    count: 23, // 假设是分钟
+    outtime: '过去7天',
+    cost: '$30.00'
+  },
+  {
+    icon: 'fas fa-file-signature',
+    title: '消费使用金额(RMB)',
+    count: 612, // 假设是分钟
+    outtime: '过去7天',
+    cost: '$30.00'
+  }
+]);
+
 
 /** 与单个频道发信息 */
 function handleChannelChat(item){
