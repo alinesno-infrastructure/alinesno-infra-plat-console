@@ -15,7 +15,7 @@
                     <i class="fa-solid fa-laptop-code"></i>
                   </div> -->
                   <div class="app-status-text">
-                    <div class="app-status-text-desc">&nbsp;展示当前运行服务概览和详情，您可以查看了解目前集成的基础能力和平台能力。 演示环境为最新功能预览版</div>
+                    <div class="app-status-text-desc">&nbsp;演示环境为最新功能预览版</div>
                   </div>
                 </div>
               </el-col>
@@ -191,9 +191,9 @@ function getProductList() {
       border: 0px;
       position: relative;
       text-align: left;
-      margin-right: 8px;
+      margin-right: 0px;
       padding: 10px 15px;
-      width: calc(50% - 10px);
+      width: calc(50% - 0px);
       text-decoration: none;
       overflow: hidden;
       border-width: 0px;
