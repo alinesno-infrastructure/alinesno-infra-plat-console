@@ -38,10 +38,14 @@
     <!-- <DashboardCollectInfo /> -->
     <!-- <DashboardRunStatus /> -->
 
-    <!-- 频道聊天 -->
+    <!-- 工具区功能全景图 -->
+    <DashboardProductAll />
+
+    <!-- 频道聊天 
     <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
       <iframe :src="roleChatUri" class="role-chat-iframe"></iframe>
     </el-dialog>
+    -->
 
   </div>
 </template>
@@ -53,6 +57,7 @@
 // } from '@/api/console/dashboard'
 
 import DashboardCollectInfo from './dashboard/collect-info'
+import DashboardProductAll from './dashboard/product-all'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
 import DashboardService from './dashboard/service'
 import DashboardApp from './dashboard/apps'
@@ -65,8 +70,8 @@ const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
 const currentEnvClusterObj = ref({
-  appName : 'Multi-Agent管理平台'  , 
-  clusterName: '集成多种能力的新型智能体基础设施'  , 
+  appName : 'AIP工作区(Studio)'  , 
+  clusterName: '赋能团队创建自主智能体的全生命周期管理平台，驱动业务创新与智能自动化'  , 
 }) 
 
 /** 与单个频道发信息 */
