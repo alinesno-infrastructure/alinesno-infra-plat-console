@@ -1,11 +1,11 @@
 <template>
     <div class="container">
       <el-dialog
-        v-model="centerDialogVisible" 
+        v-model="centerDialogVisible"
         title="AIP工作区全景图"
-        width="50%" 
+        width="50%"
         :before-close="handleClose"
-        :close-on-press-escape="false" 
+        :close-on-press-escape="false"
         :close-on-click-modal="false" append-to-body align-center>
 
         <div class="product-panel">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <br/>
-      </el-dialog>  
+      </el-dialog>
     </div>
 </template>
 
