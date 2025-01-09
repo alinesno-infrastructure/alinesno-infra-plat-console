@@ -41,7 +41,7 @@
     <!-- 工具区功能全景图 -->
     <DashboardProductAll />
 
-    <!-- 频道聊天 
+    <!-- 频道聊天
     <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
       <iframe :src="roleChatUri" class="role-chat-iframe"></iframe>
     </el-dialog>
@@ -70,9 +70,9 @@ const dialogVisible = ref(false)
 const roleChatUri = ref("")
 
 const currentEnvClusterObj = ref({
-  appName : 'AIP工作区(Studio)'  , 
-  clusterName: '赋能团队创建自主智能体的全生命周期管理平台，驱动业务创新与智能自动化'  , 
-}) 
+  appName : 'AIP工作区(Studio)'  ,
+  clusterName: '赋能团队创建自主智能体的全生命周期管理平台，驱动业务创新与智能自动化'  ,
+})
 
 /** 与单个频道发信息 */
 function handleChannelChat(item){
