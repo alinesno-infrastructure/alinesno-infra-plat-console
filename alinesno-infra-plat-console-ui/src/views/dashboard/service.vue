@@ -127,7 +127,7 @@
 import { getProduct } from "@/api/console/product";
 
 const runCountArr = ref([
-      {name:'大模型推理服务' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'http://alinesno-infra-smart-expert-ui.beta.smart.infra.linesno.com'} ,
+      {name:'大模型推理服务' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'http://alinesno-infra-smart-expert-ui.beta.base.infra.linesno.com'} ,
       {name:'数据资产服务' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "http://alinesno-infra-data-assets-ui.beta.base.infra.linesno.com"} ,
       {name:'数据编排计算服务' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'http://alinesno-infra-data-scheduler-ui.beta.base.infra.linesno.com'} ,
       {name:'向量库搜索服务' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'http://alinesno-infra-base-search-ui.beta.base.infra.linesno.com'} ,
