@@ -18,7 +18,9 @@
           <div class="panel-body" style="height:auto">
             <div class="acp-app-list">
               <ul>
-                <li class="app-items" style="width:calc(100% - 10px);padding:10px 0px" v-for="item in apps" :key="item">
+                <li class="app-items"
+                    style="width: calc(100% - 10px);padding: 10px 0px;display: flex;flex-wrap: nowrap;"
+                    v-for="item in apps" :key="item">
                   <div class="app-icon" style="font-size:1.4rem">
                     <i :class="item.icon"></i>
                   </div>
@@ -26,7 +28,7 @@
                     <div class="app-item-title">{{ item.name }}</div>
                     <div class="app-item desc">{{ item.typeDescribe }}</div>
                   </div>
-                  <div class="app-tip" @click="handleUpdate(item)" style="float: right;font-size: 0.8rem;color:#a5a5a5">
+                  <div class="app-tip" @click="handleUpdate(item)" style="float: right;font-size: 0.8rem;color:#a5a5a5;width:80px;text-align:right">
                     <i class="fas fa-tools"></i> <span class="counter issues-label">编辑</span>
                   </div>
                 </li>
