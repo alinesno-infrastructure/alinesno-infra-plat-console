@@ -2,11 +2,15 @@ package com.alinesno.infra.plat.console.api.controller;
 
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.response.AjaxResult;
+import com.alinesno.infra.common.facade.response.R;
 import com.alinesno.infra.common.web.adapter.login.account.CurrentAccountJwt;
 import com.alinesno.infra.common.web.adapter.rest.SuperController;
 import com.alinesno.infra.plat.console.adapter.BaseAuthorityConsumer;
 import com.alinesno.infra.plat.console.adapter.BasePlatformConsoleConsumer;
+import com.alinesno.infra.plat.console.adapter.BasePlatformProductConsumer;
 import com.alinesno.infra.plat.console.adapter.dto.OrganizationDto;
+import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
+import com.alinesno.infra.plat.console.adapter.dto.SolutionItemDto;
 import com.alinesno.infra.plat.console.api.FeedbackDto;
 import com.alinesno.infra.plat.console.api.MenuItem;
 import com.alinesno.infra.plat.console.api.tools.TimePeriodTool;
@@ -41,6 +45,9 @@ public class DashboardStatusController extends SuperController {
 
     @Autowired
     private BasePlatformConsoleConsumer platformConsoleConsumer ;
+
+    @Autowired
+    private BasePlatformProductConsumer platformProductConsumer ;
 
     @Autowired
     private BaseAuthorityConsumer authorityConsumer;
@@ -87,6 +94,24 @@ public class DashboardStatusController extends SuperController {
         }
 
         return AjaxResult.success(menuList);
+    }
+
+    /**
+     * 获取推荐的应用
+     */
+    @GetMapping("/getRecommendedProducts")
+    public AjaxResult getRecommendedProducts() {
+        List<ProductItemDto> list = platformProductConsumer.recommendedProducts().getData() ;
+        return AjaxResult.success("操作成功." , list);
+    }
+
+    /**
+     * 获取最新的解决方案
+     */
+    @GetMapping("/getNewSolution")
+    public AjaxResult getNewSolution() {
+        List<SolutionItemDto> list = platformProductConsumer.getNewSolution().getData() ;
+        return AjaxResult.success("操作成功." , list);
     }
 
     /**
