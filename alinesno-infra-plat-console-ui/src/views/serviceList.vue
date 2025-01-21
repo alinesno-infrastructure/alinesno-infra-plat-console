@@ -95,7 +95,7 @@ getProductList() ;
     padding: 10px;
     margin: 10px;
     width: 90%;
-    max-width: 1240px;
+    // max-width: 1240px;
     margin: auto;
 
     .header {
@@ -160,7 +160,7 @@ getProductList() ;
             margin: 0 -2.5%;
 
             .app-item {
-                width: calc(33% - 20px);
+                width: calc(25% - 20px);
                 padding: 20px 0;
                 margin: 0 10px;
 
