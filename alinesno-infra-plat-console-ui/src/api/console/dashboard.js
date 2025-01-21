@@ -2,6 +2,22 @@ import request from '@/utils/request'
 
 const prefix = '/api/infra/plat/console/status'
 
+// 获取推荐的产品列表
+export function getRecommendedProducts() {
+  return request({
+    url: prefix + '/getRecommendedProducts' ,
+    method: 'get'
+  })
+}
+
+// 获取最新的解决方案
+export function getNewSolution() {
+  return request({
+    url: prefix + '/getNewSolution' ,
+    method: 'get'
+  })
+}
+
 // 创建组织
 export function createOrg(data) {
   return request({
