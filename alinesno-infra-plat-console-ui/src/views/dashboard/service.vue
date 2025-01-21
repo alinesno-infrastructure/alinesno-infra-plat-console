@@ -4,16 +4,10 @@
 
       <el-col class="panel-col" :span="13">
         <div class="grid-content">
-          <!-- <div class="panel-header">
-            <div class="header-title"><i class="fa-solid fa-link"></i> 服务运行状态</div>
-          </div> -->
-          <div class="panel-body">
+          <div class="panel-body" style="padding: 0px !important">
             <el-row>
               <el-col :span="24">
                 <div class="panel-app-status">
-                  <!-- <div class="app-status-icon">
-                    <i class="fa-solid fa-laptop-code"></i>
-                  </div> -->
                   <div class="app-status-text">
                     <div class="app-status-text-desc">&nbsp;演示环境为最新功能预览版</div>
                   </div>
@@ -26,16 +20,16 @@
                       <i class="fa-solid fa-users-gear"></i> 最近使用
                     </div>
                   </div>
-                  <div class="data-card">
+                  <div class="data-card" v-loading="hasRecommendLoading">
                     <ul class="count-list summary-panel">
                       <li class="count-data bg-red" v-for="(item , index) in runCountArr" :key="index">
                         <span class="label-tip">
-                          <a :href="item.link" style="display: flex;flex-wrap: wrap;align-items: center;">
+                          <a :href="item.linkPath" style="display: flex;flex-wrap: wrap;align-items: center;">
                             <i :class="item.icon"></i>
                             <div style="float: left;margin-top: 3px;margin-left: 10px;width: calc(100% - 50px);">
                               {{ item.name }}
                               <br/>
-                              <span class="label" style="font-size: 13px;line-height: 13px;font-weight: lighter;">{{ item.count }}</span>
+                              <span class="label" style="font-size: 13px;line-height: 13px;font-weight: lighter;">{{ item.productDescribe }}</span>
                             </div>
                           </a>
                         </span>
@@ -65,9 +59,9 @@
                 </div>
                 <div class="item-text">
                   <div class="item-text-main-title">
-                    <router-link :to="item.link">
+                    <a :href="item.link">
                      {{ item.title }}  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </router-link>
+                    </a>
                   </div>
                   <div class="item-text-main-desc">{{ item.desc }}</div>
                 </div>
@@ -124,16 +118,11 @@
 
 <script setup>
 
-import { getProduct } from "@/api/console/product";
+// import { getProduct } from "@/api/console/product";
+import { getRecommendedProducts } from '@/api/console/dashboard'
 
-const runCountArr = ref([
-      {name:'大模型推理服务' , count:'正在分析数据工程结构，分析需求文档中', icon:'fa-solid fa-file-shield' , link:'http://alinesno-infra-smart-expert-ui.beta.base.infra.linesno.com'} ,
-      {name:'数据资产服务' , count:'客户服务专家列表结构，正在跟客户沟通中', icon:'fas fa-server' , link: "http://alinesno-infra-data-assets-ui.beta.base.infra.linesno.com"} ,
-      {name:'数据编排计算服务' , count:'数据功能细化分析中，异常问题收集', icon:'fas fa-shipping-fast' , link:'http://alinesno-infra-data-scheduler-ui.beta.base.infra.linesno.com'} ,
-      {name:'向量库搜索服务' , count:'排查k8s问题分析，正在发送给业务人员', icon:'fa-solid fa-feather-pointed' , link:'http://alinesno-infra-base-search-ui.beta.base.infra.linesno.com'} ,
-      {name:'权限配置服务' , count:'生成自动化运营平台，正在集成业务服务', icon:'fas fa-train' , link:"http://alinesno-infra-base-authority-ui.beta.base.infra.linesno.com"} ,
-      {name:'异构系统抽取服务' , count:'编码结构的失败服务，正在进一步编码中', icon:'fas fa-pencil-ruler' , link: "http://alinesno-infra-data-pipeline-ui.beta.base.infra.linesno.com"} ,
-]) ;
+const hasRecommendLoading = ref(true)
+const runCountArr = ref([]) ;
 
 const acpProjectBuild = [
   {
@@ -141,32 +130,45 @@ const acpProjectBuild = [
     icon: 'fa-solid fa-signature',
     title: '创建AIP智能体角色',
     desc: '通过模板快速定义智能体的角色与权限',
-    link: '/dashboard/build/business'
-  },
-  {
-    id: '2',
-    icon: 'fas fa-file-signature',
-    title: '创建业务服务能力',
-    desc: '构建和优化业务服务流程，集成智能体能力',
-    link: '/dashboard/build/data'
+    link: 'http://alinesno-infra-smart-expert-ui.beta.base.infra.linesno.com'
   },
   {
     id: '3',
     icon: 'fas fa-laptop-code',
     title: '创建智能体数据资产',
     desc: '数据管理和治理，管理智能体数据资产',
-    link: '/dashboard/build/operation'
+    link: 'http://alinesno-infra-data-scheduler-ui.beta.base.infra.linesno.com'
+  },
+  {
+    id: '2',
+    icon: 'fas fa-file-signature',
+    title: '创建业务服务能力',
+    desc: '构建和优化业务服务流程，集成智能体能力',
+    link: 'http://alinesno-infra-base-starter-ui.beta.base.infra.linesno.com'
   },
 ];
 
-const screenJsonList = [];
-
-function getProductList() {
-    getProduct().then(response => {
-        console.log('response = ' + response);
-        productList.value = response.data ;
-    });
+const handleGetRecommendedProducts = () => {
+  getRecommendedProducts().then(response => {
+    console.log(response);
+    runCountArr.value = response.data ;
+    hasRecommendLoading.value = false 
+  }).catch(error => {
+    console.log(error);
+    hasRecommendLoading.value = false 
+  });
 };
+
+handleGetRecommendedProducts() ;
+
+// const screenJsonList = [];
+
+// function getProductList() {
+//     getProduct().then(response => {
+//         console.log('response = ' + response);
+//         productList.value = response.data ;
+//     });
+// };
 
 </script>
 
