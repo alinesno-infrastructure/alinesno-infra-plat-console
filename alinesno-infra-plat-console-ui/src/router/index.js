@@ -99,28 +99,28 @@ export const constantRoutes = [
         name: '/dashboard/build/business',
         meta: { title: '创建业务服务', icon: 'dashboard', affix: true }
       },
-      {
-        path: '/dashboard/smartService',
-        redirect: '/chat',
-      },
-      {
-        path: '/chat',
-        component: () => import('@/views/specialist/index'),
-        name: '/chat',
-        meta: { title: '聊天', icon: 'dashboard', affix: true }
-      },
-      {
-        path: '/dashboard/agentList',
-        component: () => import('@/views/specialist/agentList'),
-        name: '/dashboard/agentList',
-        meta: { title: '智能体列表', icon: 'dashboard', affix: true }
-      },
-      {
-        path: '/dashboard/channelHome',
-        component: () => import('@/views/specialist/channelHome'),
-        name: '/dashboard/channelHome',
-        meta: { title: '服务列表', icon: 'dashboard', affix: true }
-      },
+      // {
+      //   path: '/dashboard/smartService',
+      //   redirect: '/chat',
+      // },
+      // {
+      //   path: '/chat',
+      //   component: () => import('@/views/specialist/index'),
+      //   name: '/chat',
+      //   meta: { title: '聊天', icon: 'dashboard', affix: true }
+      // },
+      // {
+      //   path: '/dashboard/agentList',
+      //   component: () => import('@/views/specialist/agentList'),
+      //   name: '/dashboard/agentList',
+      //   meta: { title: '智能体列表', icon: 'dashboard', affix: true }
+      // },
+      // {
+      //   path: '/dashboard/channelHome',
+      //   component: () => import('@/views/specialist/channelHome'),
+      //   name: '/dashboard/channelHome',
+      //   meta: { title: '服务列表', icon: 'dashboard', affix: true }
+      // },
       {
         path: '/dashboard/dashboardTheme',
         component: () => import('@/views/dashboardTheme'),
