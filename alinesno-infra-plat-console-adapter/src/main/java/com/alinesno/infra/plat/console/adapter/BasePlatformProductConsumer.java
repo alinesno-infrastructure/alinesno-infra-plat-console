@@ -1,10 +1,7 @@
 package com.alinesno.infra.plat.console.adapter;
 
 import com.alinesno.infra.common.facade.response.R;
-import com.alinesno.infra.plat.console.adapter.dto.AgentChannelResponse;
-import com.alinesno.infra.plat.console.adapter.dto.AgentRoleDto;
-import com.alinesno.infra.plat.console.adapter.dto.ProductItemDto;
-import com.alinesno.infra.plat.console.adapter.dto.ProductTypeDto;
+import com.alinesno.infra.plat.console.adapter.dto.*;
 import com.dtflys.forest.annotation.*;
 
 import java.util.List;
@@ -17,6 +14,18 @@ import java.util.List;
         connectTimeout = 30*1000
 )
 public interface BasePlatformProductConsumer {
+
+    /**
+     * 获取最新的解决方案
+     */
+    @Get("/api/infra/base/platform/provider/solution/getNewSolution")
+    R<List<SolutionItemDto>> getNewSolution();
+
+    /**
+     * 获取推荐管理应用
+     */
+    @Get("/api/infra/base/platform/provider/product/recommendedProducts")
+    R<List<ProductItemDto>> recommendedProducts();
 
     /**
      * 保存组织业务产品
