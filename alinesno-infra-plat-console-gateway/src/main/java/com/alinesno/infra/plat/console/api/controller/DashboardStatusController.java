@@ -86,11 +86,13 @@ public class DashboardStatusController extends SuperController {
             menuList = new ArrayList<>();
 
             menuList.add(new MenuItem(0, "fa-brands fa-slack", "仪盘表", "0", "/index", "运营自动化门户"));
-            menuList.add(new MenuItem(0, "fa-solid fa-pen-ruler", "研发服务", "1", "/dashboard/businessWorkspace", "公共的业务建设组件服务"));
-            menuList.add(new MenuItem(0, "fa-solid fa-rocket", "数据治理", "2", "/dashboard/dataWorkspace", "数据治理开发治理"));
-            menuList.add(new MenuItem(0, "fa-solid fa-sailboat", "智能服务", "3", "/dashboard/smartWorkspace", "智能化专家服务"));
-            menuList.add(new MenuItem(0, "fas fa-shipping-fast", "运营服务", "4", "/dashboard/operationWorkspace", "整体服务的运营监控"));
-            menuList.add(new MenuItem(0, "fas fa-feather fa-fw", "自定义服务", "5", "/dashboard/customWorkspace", "个性化服务视图配置"));
+            menuList.add(new MenuItem(0, "fa-solid fa-rocket", "大模型套件", "2", "/dashboard/dataWorkspace", "数据治理开发治理"));
+            menuList.add(new MenuItem(0, "fa-solid fa-pen-ruler", "业务基础套件", "1", "/dashboard/businessWorkspace", "公共的业务建设组件服务"));
+            
+            // menuList.add(new MenuItem(0, "fa-solid fa-sailboat", "智能服务", "3", "/dashboard/smartWorkspace", "智能化专家服务"));
+            // menuList.add(new MenuItem(0, "fas fa-shipping-fast", "运营服务", "4", "/dashboard/operationWorkspace", "整体服务的运营监控"));
+            
+            menuList.add(new MenuItem(0, "fas fa-feather fa-fw", "自定义套件", "5", "/dashboard/customWorkspace", "个性化服务视图配置"));
         }
 
         return AjaxResult.success(menuList);
