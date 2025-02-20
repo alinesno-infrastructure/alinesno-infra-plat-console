@@ -208,3 +208,10 @@ function handleAddProduct(){
 getList();
 
 </script>
+
+<style lang="scss" scope>
+.grid-content {
+    float: left;
+    width: 100%;
+}
+</style>
