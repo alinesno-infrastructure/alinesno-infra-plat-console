@@ -24,28 +24,17 @@
       </el-col>
     </el-row>
 
-    <!-- 面板服务 -->
-    <!-- <DashboardServiceStatus @handleChannelChat="handleChannelChat" /> -->
-
     <!-- 解决方案 -->
     <DashboardService />
-    <!-- <DashboardApp/> -->
 
     <!-- 通知服务 -->
     <DashboardNotices @handleChannelChat="handleChannelChat"/>
 
-    <!-- 用户初始化信息 -->
-    <!-- <DashboardCollectInfo /> -->
-    <!-- <DashboardRunStatus /> -->
-
     <!-- 工具区功能全景图 -->
-    <DashboardProductAll />
+    <!-- <DashboardProductAll /> -->
 
-    <!-- 频道聊天
-    <el-dialog v-model="dialogVisible" :title="chatTitle" width="80%" :before-close="handleClose">
-      <iframe :src="roleChatUri" class="role-chat-iframe"></iframe>
-    </el-dialog>
-    -->
+    <!-- 企业授权码-->
+    <AuthDashboard />
 
   </div>
 </template>
@@ -56,6 +45,7 @@
 //   getGreeting
 // } from '@/api/console/dashboard'
 
+import AuthDashboard from './authDashboard.vue'
 import DashboardCollectInfo from './dashboard/collect-info'
 import DashboardProductAll from './dashboard/product-all'
 import DashboardServiceStatus from './dashboard/serviceStatus.vue'
