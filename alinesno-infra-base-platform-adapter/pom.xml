@@ -20,8 +20,25 @@
             <groupId>com.alinesno.infra.base</groupId>
             <artifactId>alinesno-infra-base-platform-facade</artifactId>
             <version>${revision}</version>
-            <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.alinesno.infra.common</groupId>
+            <artifactId>alinesno-infra-common-web-api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 引入forest_starter_start -->
+        <dependency>
+            <groupId>com.dtflys.forest</groupId>
+            <artifactId>forest-spring-boot3-starter</artifactId>
+            <version>${forest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- 引入forest_starter_end -->
 
     </dependencies>
 
