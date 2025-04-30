@@ -1,5 +1,6 @@
 package com.alinesno.infra.base.platform.config;
 
+import com.alinesno.infra.base.platform.console.controller.ProductController;
 import com.alinesno.infra.common.extend.datasource.enable.EnableInfraDataScope;
 import com.alinesno.infra.common.facade.enable.EnableActable;
 import com.alinesno.infra.common.web.adapter.sso.enable.EnableInfraSsoApi;
@@ -27,9 +28,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @Configuration
 public class AppConfiguration implements CommandLineRunner {
 
-//    @Autowired
-//    private IPlatformInitService platformInitService ;
-
     @Bean
     public LogAspect getLogAspect(){
         return new LogAspect() ;
@@ -37,14 +35,7 @@ public class AppConfiguration implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        platformInitService.initProductType();   // 初始化产品类型
-//        platformInitService.initProduct();  // 初始化产品
-//
-//        platformInitService.initPlanType(); // 初始化方案类型
-//        platformInitService.initPlan(); // 初始化方案
-//
-//        platformInitService.initChannel(); // 初始化频道
-//
-//        platformInitService.initContent(); // 初始化内容
+
+        ProductController productController = new ProductController() ;
     }
 }
